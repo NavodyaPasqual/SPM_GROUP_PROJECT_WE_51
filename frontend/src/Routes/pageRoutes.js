@@ -6,6 +6,8 @@ import Navbar from "../Home/navBar";
 import Footer from "../Home/footer";
 import AddRegistrationPayment from "../Student/Payments/addRegistrationPayment";
 import AccountantDashboard from "../Accountant/dashboard";
+import TeacherRegistration from "../Teacher/teacherRegistration";
+import TeacherProfile from "../Teacher/teacherProfile";
 
 function PageRoutes() {
     return (
@@ -15,6 +17,8 @@ function PageRoutes() {
                 <section className="content">
                     <Switch>
                         <Route path="/" component={HomePage} exact/>
+                        <Route path="/teacher/registration-form-one" component={TeacherRegistration}/>
+                        <Route path="/teacher/profile" component={TeacherProfile}/>
                         <Route path="/student/registration/add-payment" component={AddRegistrationPayment}/>
                         <Route path="/accountant/" component={AccountantDashboard}/>
                     </Switch>
