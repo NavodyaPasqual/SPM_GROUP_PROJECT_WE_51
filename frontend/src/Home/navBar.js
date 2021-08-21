@@ -20,7 +20,7 @@ const Navbar = () =>{
                 <div className="container-fluid">
                     <div className="navbar-brand">
                         <a className="navbar-brand" href="/">
-                            &nbsp;<span>Institute</span>
+                            &nbsp;<span>TAPROBANE</span>
                         </a>
                     </div>
 
@@ -31,12 +31,25 @@ const Navbar = () =>{
                     </button>
                     <div className="nav collapse navbar-collapse" id="navbarNav">
                         <ul className="navbar-nav ">
+                            {/* Without Login */}
                             <li className="nav-item">
                                 <Link className="nav-link" style={isActive(history, '/')} to="/">Home</Link>
                             </li>
+
+                            {/* With Student Login */}
                             <li className="nav-item">
                                 <Link className="nav-link" style={isActive(history, '/student/registration/add-payment')} to="/student/registration/add-payment">Registration Payment</Link>
                             </li>
+
+                            {/* With Teacher Login */}
+
+
+                            {/* With Admin Login */}
+
+
+                            {/* With Accountant Login */}
+
+
                         </ul>
                     </div>
                 </div>

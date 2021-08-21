@@ -13,16 +13,16 @@ class Footer extends Component {
                 <br/><br/><br/><br/><br/>
                 <footer className="footer-distributed">
                     <div className="footer-left">
-                        <h3>INS<span>TITUTE</span></h3>
+                        <h3>TAP<span>ROBANE</span></h3>
                         <p className="footer-links">
                             <a  href="/">Home</a>&nbsp;
                             ·&nbsp;
-                            <a className="mr-5" href="/view"> AboutUs</a>&nbsp;
+                            <a className="mr-5" href="#"> AboutUs</a>&nbsp;
                             ·&nbsp;
-                            <a className="mr-5" href="/workshop"> Contact</a>
+                            <a className="mr-5" href="#"> Contact</a>
                         </p>
 
-                        <p className="footer-company-name">XXXXXX &copy; 2019</p>
+                        <p className="footer-company-name">TAPROBANE &copy; 2019</p>
                     </div>
 
                     <div className="footer-center">
@@ -39,7 +39,7 @@ class Footer extends Component {
 
                         <div>
                             <i className="fa fa-envelope"/>
-                            <p><a href="#">info@XXXXX.com</a></p>
+                            <p><a href="#">info@taprobane.com</a></p>
                         </div>
 
                     </div>
@@ -47,11 +47,11 @@ class Footer extends Component {
                     <div className="footer-right">
 
                         <p className="footer-company-about">
-                            <span>About the institute</span>
-                            XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-                            XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-                            XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-                            XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+                            <span>About the Taprobane Institute</span>
+                            The Taprobane Institute is a leading educational centre in Colombo district
+                            which aim to give knowledge of academic disciplines through one-on-one
+                            tuition classes held by professionals and scholars who are specialized in
+                            specific subject areas.
                         </p>
 
                         <div className="footer-icons">
