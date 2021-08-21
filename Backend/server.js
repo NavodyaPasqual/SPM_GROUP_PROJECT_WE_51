@@ -3,13 +3,15 @@ const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const cors = require('cors');
 const bodyParser = require('body-parser');
+const TeacherAPI = require('./Routes/Teacher/route.teacher');
+const ProfileAPI = require('./Routes/Teacher/route.tprofile');
 
 dotenv.config();
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 8082;
 /**
  * Get MONGODB_URI from .env
  */
@@ -38,6 +40,8 @@ app.route('/').get((req, res) => {
 });
 
 //API endpoints
+app.use('/teacher', TeacherAPI());
+app.use('/profile', ProfileAPI());
 
 
 

@@ -1,9 +1,9 @@
-const Teacher = require('../../Modules/Teacher/module.teacher');
+const Profile = require('../../Modules/Teacher/module.tprofile');
 
-const createTeacher = async (req, res) => {
+const createProfile = async (req, res) => {
     if(req.body) {
-        const teacher = new Teacher(req.body);
-        await teacher.save()
+        const profile = new Profile(req.body);
+        await profile.save()
             .then(data=>{
                 res.status(200).send({data: data});
             })
@@ -13,8 +13,8 @@ const createTeacher = async (req, res) => {
     }
 }
 
-const getAllTeachers = async (req, res) => {
-    await Teacher.find({})
+const getAllProfiles = async (req, res) => {
+    await Profile.find({})
         .then(data=>{
             res.status(200).send({data: data});
         })
@@ -23,10 +23,10 @@ const getAllTeachers = async (req, res) => {
         });
 }
 
-const viewTeacherById = async (req, res) => {
+const viewProfileById = async (req, res) => {
     if (req.params && req.params.id) {
-        await Teacher.findById(req.params.id)
-            .populate('teachers', '_id firstName lastName nic contactNumber email qualificationType')
+        await Profile.findById(req.params.id)
+            .populate('profile', '_id registrationNumber fName lName nic passportNumber address contactNumber email password editedDate')
             .then(response => {
                 res.status(200).send({ data: response });
             })
@@ -37,31 +37,31 @@ const viewTeacherById = async (req, res) => {
 }
 
 
-const updateById = async (req, res) => {
+const updateProfileById = async (req, res) => {
     const id = req.params.id;
     const {status} = req.body;
-    const updateTeacher = {
+    const updateProfile = {
         status
     }
-    const update = await Teacher.findByIdAndUpdate(id, updateTeacher)
+    const update = await Profile.findByIdAndUpdate(id, updateProfile)
         .then(() => {
-            res.status(200).send({status: "Teacher Registration Updated"})
+            res.status(200).send({status: "Teacher Profile Updated"})
         }).catch((err) => {
             console.log(err);
             res.status(500).send({status: " Error", error:err.message});
         })
 }
 
-const deleteById = async (req, res) => {
+const deleteProfileById = async (req, res) => {
     const id = req.params.id
-    await Teacher.findByIdAndRemove(id).exec()
-    res.send('Teacher Registration Declined');
+    await Profile.findByIdAndRemove(id).exec()
+    res.send('Teacher Profile Deleted');
 }
 
 module.exports = {
-    createTeacher,
-    getAllTeachers,
-    viewTeacherById,
-    updateById,
-    deleteById
+    createProfile,
+    getAllProfiles,
+    viewProfileById,
+    updateProfileById,
+    deleteProfileById
 }

@@ -42,7 +42,13 @@ const Navbar = () =>{
                             </li>
 
                             {/* With Teacher Login */}
+                            <li className="nav-item">
+                                <Link className="nav-link" style={isActive(history, '/teacher/registration-form-one')} to="/teacher/registration-form-one">Teacher Registration</Link>
+                            </li>
 
+                            <li className="nav-item">
+                                <Link className="nav-link" style={isActive(history, '/teacher/profile')} to="/teacher/profile">Teacher Profile</Link>
+                            </li>
 
                             {/* With Admin Login */}
 
