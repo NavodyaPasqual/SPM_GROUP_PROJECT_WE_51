@@ -4,6 +4,8 @@ const dotenv = require('dotenv');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 
+const studentPaymentRoute = require('./Routes/Accountant/route.student.payment');
+
 dotenv.config();
 const app = express();
 app.use(cors());
@@ -38,7 +40,7 @@ app.route('/').get((req, res) => {
 });
 
 //API endpoints
-
+app.use('/student-payment', studentPaymentRoute());
 
 
 app.listen(PORT,()=>{
