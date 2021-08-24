@@ -1,0 +1,10 @@
+.background img{
+    position: absolute;
+    right: 100px;
+    width: 180px;
+}
+.background-view .top{
+    position: absolute;
+    right: 0px;
+    width: 190px;
+}

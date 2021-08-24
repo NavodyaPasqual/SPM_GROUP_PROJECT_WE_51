@@ -38,7 +38,10 @@ const Navbar = () =>{
 
                             {/* With Student Login */}
                             <li className="nav-item">
-                                <Link className="nav-link" style={isActive(history, '/student/registration/add-payment')} to="/student/registration/add-payment">Registration Payment</Link>
+                                <Link className="nav-link" style={isActive(history, '/student/add-payment')} to="/student/add-payment">Register Payment</Link>
+                            </li>
+                            <li className="nav-item">
+                                <Link className="nav-link" style={isActive(history, '/student/payment')} to="/student/payment">My Payments</Link>
                             </li>
 
                             {/* With Teacher Login */}
@@ -54,7 +57,12 @@ const Navbar = () =>{
 
 
                             {/* With Accountant Login */}
-
+                            <li className="nav-item">
+                                <Link className="nav-link" style={isActive(history, '/accountant/')} to="/accountant/">Dashboard</Link>
+                            </li>
+                            <li className="nav-item">
+                                <Link className="nav-link" style={isActive(history, '/accountant/student-payment')} to="/accountant/student-payment">Student Payment</Link>
+                            </li>
 
                         </ul>
                     </div>

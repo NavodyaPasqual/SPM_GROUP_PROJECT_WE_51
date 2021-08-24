@@ -45,7 +45,6 @@ app.use('/teacher', TeacherAPI());
 app.use('/profile', ProfileAPI());
 app.use('/student-payment', studentPaymentRoute());
 
-
 app.listen(PORT,()=>{
     console.log(`server is up on PORT ${PORT}`);
 });
