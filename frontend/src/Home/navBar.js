@@ -50,6 +50,10 @@ const Navbar = () =>{
                                 <Link className="nav-link" style={isActive(history, '/teacher/profile')} to="/teacher/profile">Teacher Profile</Link>
                             </li>
 
+                            <li className="nav-item">
+                                <Link className="nav-link" style={isActive(history, '/teacher/view-registration')} to="/teacher/view-registration">Pending Teachers</Link>
+                            </li>
+
                             {/* With Admin Login */}
 
 

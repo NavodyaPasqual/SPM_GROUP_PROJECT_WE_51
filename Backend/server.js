@@ -12,7 +12,7 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 8081;
 /**
  * Get MONGODB_URI from .env
  */

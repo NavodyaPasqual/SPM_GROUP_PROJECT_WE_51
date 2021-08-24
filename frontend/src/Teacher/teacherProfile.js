@@ -1,93 +1,197 @@
 import React, { Component} from 'react';
 import axios from 'axios';
-import './styles/teacherRegistration.css';
+import './styles/teacherProfile.css';
+
+//Initial states of input fields
+const initialState = {
+    registrationNumber: '',
+    fName: '',
+    lName: '',
+    NIC: '',
+    passportNumber: '',
+    address: '',
+    contactNumber: '',
+    email: '',
+    password: '',
+    editedDate: ''
+}
 
 class TeacherProfile extends Component {
     constructor(props) {
         super(props);
+        //bind onChange function
+        this.onChange = this.onChange.bind(this);
+        //bind onSubmit function
+        this.onSubmit = this.onSubmit.bind(this);
+        this.state = initialState;
     }
+
+    onChange(e) {
+        this.setState({[e.target.name]: e.target.value})
+    }
+
+    //To pass values into database
+    onSubmit(e) {
+        e.preventDefault();
+        //create a object to send to database
+        let profile = {
+            registrationNumber: this.state.registrationNumber,
+            fName: this.state.fName,
+            lName: this.state.lName,
+            NIC: this.state.NIC,
+            passportNumber: this.state.passportNumber,
+            address: this.state.address,
+            contactNumber: this.state.contactNumber,
+            email: this.state.email,
+            password: this.state.password,
+            editedDate: this.state.editedDate,
+        }
+        //call the end point and pass the values using axios
+        console.log('data to send', profile);
+        axios.post('http://localhost:8081/profile/createProfile', profile )
+            .then(response => {
+                alert('Data successfully inserted')
+                //this.props.history.push('/workshop-attendee');
+            })
+            .catch(error => {
+                console.log(error.message);
+                alert(error.message)
+            })
+    }
+
+
     render() {
         return (
             <div>
-                <h2>Teacher Profile</h2>
+                <h2>Create Teacher Profile</h2>
 
-                <form className="row g-3">
-                    <h5>Personal Details</h5>
+                <form onSubmit={this.onSubmit}
+                      className="row g-3">
+
                     <div className="col-md-4">
-                        <label htmlFor="inputEmail4" className="form-label">First Name</label>
-                        <input type="text" className="form-control" id="inputEmail4" required />
+                        <label htmlFor="registrationNumber" className="form-label">Registration Number</label>
+                        <input
+                            type="text"
+                            className="form-control"
+                            id="registrationNumber"
+                            name="registrationNumber"
+                            value={this.state.registrationNumber}
+                            onChange={this.onChange}
+                            required
+                        />
                     </div>
                     <div className="col-md-4">
-                        <label htmlFor="inputPassword4" className="form-label">Last Name</label>
-                        <input type="text" className="form-control" id="inputPassword4" />
+                        <label htmlFor="fName" className="form-label">First Name</label>
+                        <input
+                            type="text"
+                            className="form-control"
+                            id="fName"
+                            name="fName"
+                            value={this.state.fName}
+                            onChange={this.onChange}
+                            required
+                        />
                     </div>
                     <div className="col-md-4">
-                        <label htmlFor="inputState" className="form-label">Gender</label>
-                        <select id="inputState" className="form-select">
-                            <option>Male</option>
-                            <option>Female</option>
-                        </select>
+                        <label htmlFor="lName" className="form-label">Last Name</label>
+                        <input
+                            type="text"
+                            className="form-control"
+                            id="lName"
+                            name="lName"
+                            value={this.state.lName}
+                            onChange={this.onChange}
+                        />
                     </div>
                     <div className="col-md-4">
-                        <label htmlFor="inputAddress" className="form-label">National Identity Card No:</label>
-                        <input type="text" className="form-control" id="inputAddress" placeholder="1234 Main St" />
+                        <label htmlFor="NIC" className="form-label">National Identity Card No:</label>
+                        <input
+                            type="text"
+                            className="form-control"
+                            id="NIC"
+                            name="NIC"
+                            placeholder="1234 Main St"
+                            value={this.state.NIC}
+                            onChange={this.onChange}
+                        />
                     </div>
                     <div className="col-md-4">
-                        <label htmlFor="inputAddress2" className="form-label">Passport No:</label>
-                        <input type="text" className="form-control" id="inputAddress2"/>
+                        <label htmlFor="passportNumber" className="form-label">Passport No:</label>
+                        <input
+                            type="text"
+                            className="form-control"
+                            id="passportNumber"
+                            name="passportNumber"
+                            value={this.state.passportNumber}
+                            onChange={this.onChange}
+                        />
                     </div>
-                    <h5>Contact Details</h5>
                     <div className="col-md-8">
-                        <label htmlFor="inputCity" className="form-label">Postal Address</label>
-                        <input type="text" className="form-control" id="inputCity" placeholder="Apartment, studio, or floor" />
+                        <label htmlFor="address" className="form-label">Postal Address</label>
+                        <input
+                            type="text"
+                            className="form-control"
+                            id="address"
+                            name="address"
+                            placeholder="Apartment, studio, or floor"
+                            value={this.state.address}
+                            onChange={this.onChange}
+                        />
                     </div>
                     <div className="col-md-4">
-                        <label htmlFor="inputCity" className="form-label">Telephone No:</label>
-                        <input type="text" className="form-control" id="inputCity" />
+                        <label htmlFor="contactNumber" className="form-label">Telephone No:</label>
+                        <input
+                            type="text"
+                            className="form-control"
+                            id="contactNumber"
+                            name="contactNumber"
+                            value={this.state.contactNumber}
+                            onChange={this.onChange}
+                        />
                     </div>
                     <div className="col-md-6">
-                        <label htmlFor="exampleFormControlInput1" className="form-label">Email address</label>
-                        <input type="email" className="form-control" id="exampleFormControlInput1"
-                               placeholder="name@example.com" />
+                        <label htmlFor="email" className="form-label">Email address</label>
+                        <input
+                            type="email"
+                            className="form-control"
+                            id="email"
+                            name="email"
+                            placeholder="name@example.com"
+                            value={this.state.email}
+                            onChange={this.onChange}
+                        />
                     </div>
 
-                    <h5>Educational Background</h5>
-                    <h6>Highest Academic Qualification</h6>
                     <div className="col-md-8">
-                        <label htmlFor="inputEmail4" className="form-label">Name of Qualification</label>
-                        <input type="text" className="form-control" id="inputEmail4" required />
+                        <label htmlFor="password" className="form-label">Password</label>
+                        <input
+                            type="password"
+                            className="form-control"
+                            id="password"
+                            name="password"
+                            value={this.state.password}
+                            onChange={this.onChange}
+                            required
+                        />
                     </div>
+
                     <div className="col-md-4">
-                        <label htmlFor="inputState" className="form-label">Type of Qualification (Please select)</label>
-                        <select id="inputState" className="form-select">
-                            <option>Degree</option>
-                            <option>Diploma</option>
-                            <option>Certificate</option>
-                        </select>
-                    </div>
-                    <div className="col-md-8">
-                        <label htmlFor="inputPassword4" className="form-label">Institute Where qualification obtained</label>
-                        <input type="text" className="form-control" id="inputPassword4" />
-                    </div>
-                    <div className="col-md-4">
-                        <label htmlFor="inputPassword4" className="form-label">Year</label>
-                        <input type="text" className="form-control" id="inputPassword4" />
-                    </div>
-                    <div className="col-md-6">
-                        <label htmlFor="inputAddress" className="form-label">Specialized Field</label>
-                        <input type="text" className="form-control" id="inputAddress" placeholder="Mathematics" />
+                        <label htmlFor="editedDate" className="form-label">Edited Date</label>
+                        <input
+                            type="text"
+                            className="form-control"
+                            id="editedDate"
+                            name="editedDate"
+                            value={this.state.editedDate}
+                            onChange={this.onChange}
+                        />
                     </div>
 
                     <div className="col-12">
-                        <div className="form-check">
-                            <input className="form-check-input" type="checkbox" id="gridCheck" required/>
-                            <label className="form-check-label" htmlFor="gridCheck">
-                                I agreed to terms and conditions
-                            </label>
-                        </div>
+                        <button type="submit" className="btn btn-primary">Create Profile</button>
                     </div>
                     <div className="col-12">
-                        <button type="submit" className="btn btn-primary">Save & Next</button>
+                        <button type="submit" className="btn btn-primary">Cancel Profile</button>
                     </div>
                 </form>
 
