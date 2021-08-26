@@ -1,4 +1,5 @@
-# TAPROBANE INSTITUTE
+# TAPROBANE INSTITUTE 
+![visitors](https://visitor-badge.laobi.icu/badge?page_id=SPM_GROUP_PROJECT_WE_51.visitor-badge)
 
 The Taprobane Institute is an educational centre which aim to give knowledge of academic disciplines through one-on-one tuition classes held by professionals and scholars who are specialized in specific subject areas. We are a group of software engineering students who are developing a managing software for Taprobane.
 
@@ -22,8 +23,4 @@ The Taprobane Institute is an educational centre which aim to give knowledge of 
 ## Frontend Technologies
 
     react boostrap materialUI 
-
-### Visitors
-
-![visitors](https://visitor-badge.laobi.icu/badge?page_id=SPM_GROUP_PROJECT_WE_51.visitor-badge)
 
