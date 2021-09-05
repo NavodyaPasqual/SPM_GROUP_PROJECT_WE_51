@@ -1,10 +1,36 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {useHistory,useLocation ,Link} from "react-router-dom";
+
+
+import AuthService from "../services/auth.service";
 import "./styles/navBar.css";
 
 const Navbar = () =>{
     const history = useHistory();
     const location = useLocation();
+
+    const [showAdminBoard, setShowAdminBoard] = useState(false);
+    const [showStudentBoard, setshowStudentBoard] = useState(false);
+    const [showTeacherBoard, setshowTeacherBoard] = useState(false);
+    const [showManagerBoard, setshowManagerBoard] = useState(false);
+    const [currentUser, setCurrentUser] = useState(undefined);
+
+    useEffect(() => {
+     const user = AuthService.getCurrentUser();
+
+        if (user) {
+         setCurrentUser(user);
+         setShowAdminBoard(user.roles.includes("ROLE_ADMIN"));
+         setshowStudentBoard(user.roles.includes("ROLE_STUDENT"));
+         setshowTeacherBoard(user.roles.includes("ROLE_TEACHER"));
+         setshowManagerBoard(user.roles.includes("ROLE_MANAGER"));
+        }
+     }, []);
+
+    const logOut = () => {
+        AuthService.logout();
+    };
+
 
     const isActive = (history, path) => {
         if(history.location.pathname === path){
@@ -19,10 +45,12 @@ const Navbar = () =>{
             <nav className="navbar navbar-expand-lg navbar-custom">
                 <div className="container-fluid">
                     <div className="navbar-brand">
-                        <a className="navbar-brand" href="/">
+                        <a className="navbar-brand" href="/"> 
                             &nbsp;<span>TAPROBANE</span>
                         </a>
                     </div>
+                    
+                    
 
                     <button className="navbar-toggler ml-auto custom-toggler" type="button" data-bs-toggle="collapse"
                             data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
@@ -31,41 +59,54 @@ const Navbar = () =>{
                     </button>
                     <div className="nav collapse navbar-collapse" id="navbarNav">
                         <ul className="navbar-nav ">
-                            {/* Without Login */}
+
+                        <div className="navbar-nav mr-auto">
                             <li className="nav-item">
-                                <Link className="nav-link" style={isActive(history, '/')} to="/">Home</Link>
+                                <Link to={"/"} style={isActive(history, '/')} className="nav-link">
+                                Home
+                                </Link>
                             </li>
 
-                            {/* With Student Login */}
-                            <li className="nav-item">
-                                <Link className="nav-link" style={isActive(history, '/student/add-payment')} to="/student/add-payment">Register Payment</Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link className="nav-link" style={isActive(history, '/student/payment')} to="/student/payment">My Payments</Link>
-                            </li>
+                            {/* Teacher nav */}
+                            {showAdminBoard && (
+                                <li className="nav-item">
+                                <Link to={"/teacher/profile"} style={isActive(history, '/teacher/profile')} className="nav-link">
+                                Teacher Profile
+                                </Link>
+                                </li>
+                            )}
 
-                            {/* With Teacher Login */}
-                            <li className="nav-item">
-                                <Link className="nav-link" style={isActive(history, '/teacher/registration-form-one')} to="/teacher/registration-form-one">Teacher Registration</Link>
-                            </li>
-
-                            <li className="nav-item">
-                                <Link className="nav-link" style={isActive(history, '/teacher/profile')} to="/teacher/profile">Teacher Profile</Link>
-                            </li>
-
-                            {/* With Admin Login */}
-
-
-                            {/* With Accountant Login */}
-                            <li className="nav-item">
-                                <Link className="nav-link" style={isActive(history, '/accountant/')} to="/accountant/">Dashboard</Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link className="nav-link" style={isActive(history, '/accountant/student-payment')} to="/accountant/student-payment">Student Payment</Link>
-                            </li>
-
+                        </div>
                         </ul>
                     </div>
+                    {currentUser ? (
+                            <div className="navbar-nav ml-auto">
+                                <li className="nav-item">
+                                <Link to={"/profile"} className="nav-link">
+                                    <b>{currentUser.username}</b>
+                                </Link>
+                                </li>
+                                <li className="nav-item">
+                                <a href="/login"  style={isActive(history, '/login')} className="nav-link" onClick={logOut}>
+                                    LogOut
+                                </a>
+                                </li>
+                            </div>
+                            ) : (
+                            <div className="navbar-nav ml-auto">
+                                <li className="nav-item">
+                                <Link to={"/login"}  style={isActive(history, '/login')} className="nav-link">
+                                    Login
+                                </Link>
+                                </li>
+
+                                <li className="nav-item">
+                                <Link to={"/register"} style={isActive(history, '/register')} className="nav-link">
+                                    Sign Up
+                                </Link>
+                                </li>
+                            </div>
+                            )}
                 </div>
             </nav>
         </div>
