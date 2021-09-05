@@ -19,6 +19,8 @@ import TeacherProfile from "../Teacher/teacherProfile";
 import Login from "../components/Login";
 import Register from "../components/Register"; 
 import Profile from "../components/Profile";
+import AboutUs from "../Home/aboutUs";
+import ContactUs from "../Home/contactUs";
 
 function PageRoutes() {
     return (
@@ -28,6 +30,8 @@ function PageRoutes() {
                 <section className="content">
                     <Switch>
                         <Route path="/" component={HomePage} exact/>
+                        <Route exact path="/aboutUs" component={AboutUs} />
+                        <Route exact path="/contactUs" component={ContactUs} />
                         <Route exact path="/login" component={Login} />
                         <Route exact path="/register" component={Register} />                        
                         <Route exact path="/profile" component={Profile} />

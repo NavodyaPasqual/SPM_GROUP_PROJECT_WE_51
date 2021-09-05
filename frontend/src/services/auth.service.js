@@ -3,12 +3,13 @@ import axios from "axios";
 const API_URL = "http://localhost:8081/api/auth/";
 
 const register = (username, email, password, number, roles) => {
+  console.log("dfsf "+roles);
   return axios.post(API_URL + "signup", {
     username,
     email,
     password,
     number,
-    roles,
+    roles : [roles]
   });
 };
 

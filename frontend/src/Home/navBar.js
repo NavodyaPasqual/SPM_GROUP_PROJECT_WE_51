@@ -34,9 +34,9 @@ const Navbar = () =>{
 
     const isActive = (history, path) => {
         if(history.location.pathname === path){
-            return { color: "#887688"}
-        } else {
             return { color: "#ffffff"}
+        } else {
+            return { color: "#887688"}
         }
     };
 
@@ -61,18 +61,48 @@ const Navbar = () =>{
                         <ul className="navbar-nav ">
 
                         <div className="navbar-nav mr-auto">
+                            {/* General nav */}
                             <li className="nav-item">
                                 <Link to={"/"} style={isActive(history, '/')} className="nav-link">
                                 Home
                                 </Link>
                             </li>
+                            <li className="nav-item">
+                                <Link to={"/aboutUs"} style={isActive(history, '/aboutUs')} className="nav-link">
+                                About Us
+                                </Link>
+                            </li>
+                            <li className="nav-item">
+                                <Link to={"/contactUs"} style={isActive(history, '/contactUs')} className="nav-link">
+                                Contact Us
+                                </Link>
+                            </li>
 
                             {/* Teacher nav */}
+                            {showTeacherBoard && (
+                                <li className="nav-item">
+                                {/* link */}
+                                </li>
+                            )}
+
+                            {/* Student nav */}
+                            {showStudentBoard && (
+                                <li className="nav-item">
+                                {/* link */}
+                                </li>
+                            )}
+
+                            {/* Manager nav */}
+                            {showManagerBoard && (
+                                <li className="nav-item">
+                                {/* link */}
+                                </li>
+                            )}
+
+                            {/* Admin nav */}
                             {showAdminBoard && (
                                 <li className="nav-item">
-                                <Link to={"/teacher/profile"} style={isActive(history, '/teacher/profile')} className="nav-link">
-                                Teacher Profile
-                                </Link>
+                                {/* link */}
                                 </li>
                             )}
 
