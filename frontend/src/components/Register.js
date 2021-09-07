@@ -69,6 +69,10 @@ const Register = (props) => {
   const [message, setMessage] = useState("");
   const[roles, setRole] = useState("");
   const options = [
+        {
+        label : "Choose..",
+        value : " "
+        },
       {
         label : "student",
         value : "student"
