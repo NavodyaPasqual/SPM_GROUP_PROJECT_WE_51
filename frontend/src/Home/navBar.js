@@ -89,6 +89,11 @@ const Navbar = () =>{
                             {showStudentBoard && (
                                 <li className="nav-item">
                                     <Link className="nav-link" style={isActive(history, '/student/add-payment')} to="/student/add-payment">Payment Registration</Link>
+                                </li>
+                            )}
+
+                            {showStudentBoard && (
+                                <li className="nav-item">
                                     <Link className="nav-link" style={isActive(history, '/student/payment')} to="/student/payment">My Payments</Link>
                                 </li>
                             )}
