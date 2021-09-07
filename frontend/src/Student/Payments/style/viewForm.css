@@ -1,0 +1,23 @@
+.background-view .top{
+    position: absolute;
+    right: 0px;
+    width: 190px;
+}
+
+.background-view h1{
+    color: #793179;
+    font-weight:  bold;
+}
+
+.background-view dt .col-sm-4{
+    color: #3b373b;
+}
+
+.background-view dd{
+    color: #806e80;
+}
+
+.largeImageSrc{
+    width: 100px;
+    height: 100px;
+}

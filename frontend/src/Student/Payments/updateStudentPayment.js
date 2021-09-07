@@ -3,6 +3,7 @@ import { Redirect } from 'react-router-dom';
 import './style/button.css';
 import './style/forms.css';
 import my from "./image/updateForm.png";
+import './style/alert.css';
 
 const UpdateStudentPayment = ({match}) => {
     const [values, setValues] = useState({
@@ -36,6 +37,7 @@ const UpdateStudentPayment = ({match}) => {
         classes,
         teacher,
         error,
+        loading,
         redirectTo,
         formData
     } = values;
@@ -45,7 +47,7 @@ const UpdateStudentPayment = ({match}) => {
     }, [])
 
     const updatePayment = (id,payment) => {
-        return fetch(`http://localhost:8080/student-payment/update/${id}`,{
+        return fetch(`http://localhost:8081/student-payment/update/${id}`,{
             method: "PUT",
             headers: {
                 Accept: "application/json"
@@ -59,7 +61,7 @@ const UpdateStudentPayment = ({match}) => {
     };
 
     const getOnePayment = (id) => {
-        return fetch(`http://localhost:8080/student-payment/${id}`, {
+        return fetch(`http://localhost:8081/student-payment/${id}`, {
             method: "GET"
         })
             .then(response => {
@@ -98,7 +100,7 @@ const UpdateStudentPayment = ({match}) => {
         setValues({...values, [name]: value})
     }
 
-    // After finishing update redirect to dashboard
+    // After finishing update redirect to list
     const redirectEditor = () => {
         if(redirectTo){
             if(!error){
@@ -139,15 +141,33 @@ const UpdateStudentPayment = ({match}) => {
             });
     };
 
+    const showLoading = () =>
+        loading && (<div aria-live="polite" aria-atomic="true" className="position-relative">
+            <div className="toast-container position-absolute top-0 end-0 p-3">
+                <div className="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                    <div className="toast-header">
+                        <div className="spinner-border text-warning" role="status">
+                            <span className="visually-hidden">Updating...</span>
+                        </div>
+                        <strong className="me-auto">&nbsp;&nbsp;Loading</strong>
+                        <small className="text-muted">just now</small>
+                        <button type="button" className="btn-close" data-bs-dismiss="toast"
+                                aria-label="Close"></button>
+                    </div>
+                </div>
+            </div>
+        </div>);
+
     return (
         <div className="background">
             <img src={my}/>
+            {showLoading()}
             <div className="container mt-4 shadow p-3 mb-5 bg-body rounded">
                 <div className="p-3">
                     <h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Update Your Payment</h1>
                     <div className="p-3">
                     <form className="row g-3" onSubmit={clickSubmit}>
-                        <h4>Student Details</h4>
+                        <h5>Student Details</h5>
                         <div className="col-12">
                             <label htmlFor="name" className="form-label">Full Name</label>
                             <div className="input-group mb-3">
@@ -218,7 +238,7 @@ const UpdateStudentPayment = ({match}) => {
                                 />
                             </div>
                         </div>
-                        <h4>Payment Details</h4>
+                        <h5>Payment Details</h5>
                         <div className="col-md-6">
                             <label htmlFor="type" className="form-label">Payment type</label>
                             <select

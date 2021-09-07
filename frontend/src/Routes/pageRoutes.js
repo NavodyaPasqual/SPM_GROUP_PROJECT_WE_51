@@ -4,10 +4,10 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import HomePage from "../Home/homePage";
 import Navbar from "../Home/navBar";
 //import Footer from "../Home/footer";
-
 import AddStudentPayment from "../Student/Payments/addStudentPayment";
 import ViewStudentPayments from "../Student/Payments/viewStudentPayments";
 import UpdateStudentPayment from "../Student/Payments/updateStudentPayment";
+import LoadingScreen from "../Student/Payments/style/loadingScreen";
 
 import AccountantDashboard from "../Accountant/dashboard";
 import ViewStudentPayment from "../Accountant/viewStudentPayment";
@@ -42,6 +42,7 @@ function PageRoutes() {
                         <Route path="/student/payment" component={ViewStudentPayments}/>
                         <Route path="/accountant/student-payment" component={ViewStudentPayment}/>
                         <Route path="/accountant/" component={AccountantDashboard}/>
+                        <Route path="/alert" component={LoadingScreen}/>
                     </Switch>
                 </section>
             </Router>

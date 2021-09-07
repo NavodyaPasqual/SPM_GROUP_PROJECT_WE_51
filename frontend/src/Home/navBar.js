@@ -88,14 +88,17 @@ const Navbar = () =>{
                             {/* Student nav */}
                             {showStudentBoard && (
                                 <li className="nav-item">
-                                {/* link */}
+                                    <Link className="nav-link" style={isActive(history, '/student/add-payment')} to="/student/add-payment">Payment Registration</Link>
+                                    <Link className="nav-link" style={isActive(history, '/student/payment')} to="/student/payment">My Payments</Link>
                                 </li>
                             )}
 
                             {/* Manager nav */}
                             {showManagerBoard && (
                                 <li className="nav-item">
-                                {/* link */}
+                                    {/* With Accountant Login */}
+                                    <Link className="nav-link" style={isActive(history, '/accountant/')} to="/accountant/">Dashboard</Link>
+                                    <Link className="nav-link" style={isActive(history, '/accountant/student-payment')} to="/accountant/student-payment">Student Payment</Link>
                                 </li>
                             )}
 

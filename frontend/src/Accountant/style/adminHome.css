@@ -1,0 +1,22 @@
+.admin-container {
+    width: 80%;
+    margin: auto;
+    padding: 10px;
+}
+.admin-container h3 {
+    font-family: "Century Schoolbook";
+    color: #8a1a8a;
+    font-weight: bold;
+}
+
+.admin-container a {
+    color: #986c98;
+    text-decoration: none;
+    font-weight: bold;
+}
+.dashboard-image img{
+    position: absolute;
+    right: 5px;
+    margin-top: 400px;
+    width: 290px;
+}
