@@ -91,16 +91,16 @@ const Navbar = () =>{
                                     <Link className="nav-link" style={isActive(history, '/accountant/student-payment')} to="/accountant/student-payment">Student Payment</Link>
                                 </li>
                             )}
-                            {showManagerBoard && (
-                                <li className="nav-item">
-                                    <Link className="nav-link" style={isActive(history, '/studentTask/')} to="/studentTask/">Add Student Task</Link>
-                                    <Link className="nav-link" style={isActive(history, '/studentTaskList/')} to="/studentTaskList/">Student Task List</Link>
-                                </li>
-                            )}
+                            
                             {showManagerBoard && (
                                 <li className="nav-item">
                                     <Link className="nav-link" style={isActive(history, '/teacherTask/')} to="/teacherTask/">Add Teacher Task</Link>
-                                    <Link className="nav-link" style={isActive(history, '/teacherTaskList/')} to="/teacherTaskList/">Teacher Task List</Link>
+                                </li>
+                            )}
+                            
+                            {showManagerBoard && (
+                                <li className="nav-item">
+                                    <Link className="nav-link" style={isActive(history, '/teacherTaskList/')} to="/teacherTaskList/">Add Teacher Task List</Link>
                                 </li>
                             )}
                             

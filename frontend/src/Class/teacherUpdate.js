@@ -5,14 +5,14 @@ import '../Student/Payments/style/forms.css'
 import '../Student/Payments/style/alert.css'
 
 
-const teacher = () => {
+const teacherUpdate = () => {
     
     return (
         <div className="background">
             <img src={my}/>
             <div className="container mt-4 shadow p-3 mb-5 bg-body rounded">
                 <div >
-                    <h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add Teacher Task</h1>
+                    <h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Update Teacher Task</h1>
                     <div className="p-3">
                         <form className="row g-3" onSubmit="#">
                             <h5>Task Details</h5>
@@ -99,4 +99,4 @@ const teacher = () => {
     );
 };
 
-export default teacher;
+export default teacherUpdate;
