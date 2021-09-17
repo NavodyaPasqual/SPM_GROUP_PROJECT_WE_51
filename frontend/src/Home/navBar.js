@@ -61,23 +61,6 @@ const Navbar = () =>{
                         <ul className="navbar-nav ">
 
                         <div className="navbar-nav mr-auto">
-                            {/* General nav */}
-                            <li className="nav-item">
-                                <Link to={"/"} style={isActive(history, '/')} className="nav-link">
-                                Home
-                                </Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link to={"/aboutUs"} style={isActive(history, '/aboutUs')} className="nav-link">
-                                About Us
-                                </Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link to={"/contactUs"} style={isActive(history, '/contactUs')} className="nav-link">
-                                Contact Us
-                                </Link>
-                            </li>
-
                             {/* Teacher nav */}
                             {showTeacherBoard && (
                                 <li className="nav-item">
@@ -97,19 +80,30 @@ const Navbar = () =>{
                                 </li>
                             )}
 
-                            {/* Manager nav */}
+                            {/* Manager nav / class nav*/}
                             {showManagerBoard && (
                                 <li className="nav-item">
-                                    {/* With Accountant Login */}
                                     <Link className="nav-link" style={isActive(history, '/accountant/')} to="/accountant/">Dashboard</Link>
                                 </li>
                             )}
                             {showManagerBoard && (
                                 <li className="nav-item">
-                                    {/* With Accountant Login */}
                                     <Link className="nav-link" style={isActive(history, '/accountant/student-payment')} to="/accountant/student-payment">Student Payment</Link>
                                 </li>
                             )}
+                            {showManagerBoard && (
+                                <li className="nav-item">
+                                    <Link className="nav-link" style={isActive(history, '/studentTask/')} to="/studentTask/">Add Student Task</Link>
+                                    <Link className="nav-link" style={isActive(history, '/studentTaskList/')} to="/studentTaskList/">Student Task List</Link>
+                                </li>
+                            )}
+                            {showManagerBoard && (
+                                <li className="nav-item">
+                                    <Link className="nav-link" style={isActive(history, '/teacherTask/')} to="/teacherTask/">Add Teacher Task</Link>
+                                    <Link className="nav-link" style={isActive(history, '/teacherTaskList/')} to="/teacherTaskList/">Teacher Task List</Link>
+                                </li>
+                            )}
+                            
 
                             {/* Admin nav */}
                             {showAdminBoard && (
@@ -136,6 +130,24 @@ const Navbar = () =>{
                             </div>
                             ) : (
                             <div className="navbar-nav ml-auto">
+                            {/* General nav */}
+                            <li className="nav-item">
+                                <Link to={"/"} style={isActive(history, '/')} className="nav-link">
+                                Home
+                                </Link>
+                            </li>
+                            <li className="nav-item">
+                                <Link to={"/aboutUs"} style={isActive(history, '/aboutUs')} className="nav-link">
+                                About Us
+                                </Link>
+                            </li>
+                            <li className="nav-item">
+                                <Link to={"/contactUs"} style={isActive(history, '/contactUs')} className="nav-link">
+                                Contact Us &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; 
+                                &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+                                </Link>
+                            </li>
+
                                 <li className="nav-item">
                                 <Link to={"/login"}  style={isActive(history, '/login')} className="nav-link">
                                     Login

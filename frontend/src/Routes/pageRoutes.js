@@ -22,6 +22,11 @@ import Profile from "../components/Profile";
 import AboutUs from "../Home/aboutUs";
 import ContactUs from "../Home/contactUs";
 
+import studentTask from "../Class/student";
+import studentTaskList from "../Class/studentTask";
+import teacherTask from "../Class/teacher";
+import teacherTaskList from "../Class/teacherTask";
+
 function PageRoutes() {
     return (
         <div>
@@ -42,6 +47,10 @@ function PageRoutes() {
                         <Route path="/student/payment" component={ViewStudentPayments}/>
                         <Route path="/accountant/student-payment" component={ViewStudentPayment}/>
                         <Route path="/accountant/" component={AccountantDashboard}/>
+                        <Route path="/studentTask/" component={studentTask}/>
+                        <Route path="/studentTaskList/" component={studentTaskList}/>
+                        <Route path="/teacherTask/" component={teacherTask}/>
+                        <Route path="/teacherTaskList/" component={teacherTaskList}/>
                         <Route path="/alert" component={LoadingScreen}/>
                     </Switch>
                 </section>
