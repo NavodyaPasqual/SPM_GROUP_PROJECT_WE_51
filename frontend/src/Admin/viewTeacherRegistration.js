@@ -22,7 +22,7 @@ class ViewTeacherRegistration extends Component {
     deleteTeacher(e, id){
         axios.delete(`http://localhost:8081/teacher/delete/${id}`)
             .then(response => {
-                alert('Data successfully deleted')
+                alert('Application Declined')
                 this.componentDidMount()
             })
     }
@@ -31,7 +31,7 @@ class ViewTeacherRegistration extends Component {
         const status = prompt("Enter the status: ");
         axios.put(`http://localhost:8081/teacher/update/${id}`, {status: status, id:id})
             .then(response => {
-                alert('Data successfully updated')
+                alert('Registration Status Changed')
                 this.componentDidMount()
             })
     }
@@ -39,31 +39,21 @@ class ViewTeacherRegistration extends Component {
     render() {
         return (
             <div className="p-3">
+                <div className="card shadow p-3 mb-4 bg-body rounded">
+                    <div className="search-wrapper">
+            <div className="p-3">
+                <h2>Pending Teachers</h2>
                 <header className="jumbotron">
                     <div className="table-responsive">
                         <table className="table table-striped table-hover">
                             <thead>
                             <tr>
-                                <th>First Name</th>
-                                <th>Last Name</th>
+                                <th>Teacher Name</th>
                                 <th>NIC</th>
                                 <th>Address</th>
-                                <th>Contact Number</th>
                                 <th>Email</th>
-                                <th>Qualification Type</th>
-                                <th>Institute</th>
-                                <th>Academic Year</th>
-                                <th>Subjects</th>
-                                <th>Teaching Institute</th>
-                                <th>Year</th>
-                                <th>Subjects</th>
-                                <th>Association Name</th>
-                                <th>Reg Number</th>
-                                <th>Year</th>
-                                <th>School</th>
-                                <th>Subject</th>
                                 <th>Current Status</th>
-                                <th>Update</th>
+                                <th>Update to Permanent</th>
                                 <th>Delete</th>
                             </tr>
                             </thead>
@@ -71,23 +61,9 @@ class ViewTeacherRegistration extends Component {
                             {this.state.teacher.length > 0 && this.state.teacher.map((item,index) => (
                                 <tr key={index} className="align-top">
                                     <td>{item.firstName}</td>
-                                    <td>{item.lastName}</td>
                                     <td>{item.nic}</td>
                                     <td>{item.address}</td>
-                                    <td>{item.contactNumber}</td>
                                     <td>{item.email}</td>
-                                    <td>{item.qualificationType}</td>
-                                    <td>{item.academicInstitute}</td>
-                                    <td>{item.academicYear}</td>
-                                    <td>{item.subjects}</td>
-                                    <td>{item.teachingInstitute}</td>
-                                    <td>{item.teachingYear}</td>
-                                    <td>{item.majorSubjects}</td>
-                                    <td>{item.associationName}</td>
-                                    <td>{item.regNumber}</td>
-                                    <td>{item.experienceYear}</td>
-                                    <td>{item.schoolName}</td>
-                                    <td>{item.taughtSubjects}</td>
                                     {item.status === "not approved" &&
                                     <td><span className="badge bg-danger">{item.status}</span></td>
                                     }
@@ -106,6 +82,9 @@ class ViewTeacherRegistration extends Component {
                         </table>
                     </div>
                 </header>
+            </div>
+                    </div>
+                </div>
             </div>
         )
     }

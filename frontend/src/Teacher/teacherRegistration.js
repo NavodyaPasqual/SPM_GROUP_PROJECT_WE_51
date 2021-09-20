@@ -1,6 +1,8 @@
 import React, { Component} from 'react';
 import axios from 'axios';
 import './styles/teacherRegistration.css';
+import my from "../Teacher/image/teacherReg.png";
+import {Link} from "react-router-dom";
 
 //Initial states of input fields
 const initialState = {
@@ -23,7 +25,9 @@ const initialState = {
     regNumber: '',
     experienceYear: '',
     schoolName: '',
-    taughtSubjects: ''
+    taughtSubjects: '',
+    dateFrom: '',
+    dateTo:''
 }
 
 class TeacherRegistration extends Component {
@@ -65,12 +69,14 @@ class TeacherRegistration extends Component {
             experienceYear: this.state.experienceYear,
             schoolName: this.state.schoolName,
             taughtSubjects: this.state.taughtSubjects,
+            dateFrom: this.state.dateFrom,
+            dateTo: this.state.dateTo,
         }
         //call the end point and pass the values using axios
         console.log('data to send', teacher);
         axios.post('http://localhost:8081/teacher/createTeacher', teacher )
             .then(response => {
-                alert('Data successfully inserted')
+                alert('Your Registration Form has been Submitted successfully')
                 //this.props.history.push('/workshop-attendee');
             })
             .catch(error => {
@@ -81,14 +87,21 @@ class TeacherRegistration extends Component {
 
     render() {
         return (
+            <div className="background">
+                <img src={my}/>
+                <div className="container mt-4 shadow p-3 mb-5 bg-body rounded">
             <div>
                 <h2>Teacher Registration Form</h2>
+                <br/><br/><br/>
 
                 <form onSubmit={this.onSubmit}
                       className="row g-3">
                     <h5>Personal Details</h5>
-                    <div className="col-md-4">
+                    <br/><br/>
+                    <div className="col-md-6">
                         <label htmlFor="firstName" className="form-label">First Name</label>
+                        <div className="input-group mb-3">
+                        <span className="input-group-text"><i className="fa fa-user"></i></span>
                         <input
                             type="text"
                             className="form-control"
@@ -98,9 +111,12 @@ class TeacherRegistration extends Component {
                             onChange={this.onChange}
                             required
                         />
+                        </div>
                     </div>
-                    <div className="col-md-4">
+                    <div className="col-md-6">
                         <label htmlFor="lastName" className="form-label">Last Name</label>
+                        <div className="input-group mb-3">
+                            <span className="input-group-text"><i className="fa fa-user-plus"></i></span>
                         <input
                             type="text"
                             className="form-control"
@@ -110,9 +126,12 @@ class TeacherRegistration extends Component {
                             onChange={this.onChange}
                             required
                         />
+                        </div>
                     </div>
-                    <div className="col-md-4">
+                    <div className="col-md-6">
                         <label htmlFor="gender" className="form-label">Gender</label>
+                        <div className="input-group mb-3">
+                            <span className="input-group-text"><i className="fa fa-venus-mars"></i></span>
                         <input
                             type="gender"
                             className="form-control"
@@ -123,8 +142,11 @@ class TeacherRegistration extends Component {
                             required
                         />
                     </div>
-                    <div className="col-md-4">
-                        <label htmlFor="nic" className="form-label">National Identity Card No:</label>
+                    </div>
+                    <div className="col-md-6">
+                        <label htmlFor="nic" className="form-label">National Identity Card Number</label>
+                        <div className="input-group mb-3">
+                        <span className="input-group-text"><i className="fa fa-id-card"></i></span>
                         <input
                             type="nic"
                             className="form-control"
@@ -133,10 +155,14 @@ class TeacherRegistration extends Component {
                             placeholder="123456789V"
                             value={this.state.nic}
                             onChange={this.onChange}
+                            required
                         />
                     </div>
-                    <div className="col-md-4">
-                        <label htmlFor="passportNumber" className="form-label">Passport No:</label>
+                    </div>
+                    <div className="col-md-6">
+                        <label htmlFor="passportNumber" className="form-label">Passport Number</label>
+                        <div className="input-group mb-3">
+                            <span className="input-group-text"><i className="fa fa-id-card"></i></span>
                         <input
                             type="text"
                             className="form-control"
@@ -146,9 +172,12 @@ class TeacherRegistration extends Component {
                             onChange={this.onChange}
                         />
                     </div>
+                    </div>
                     <h5>Contact Details</h5>
-                    <div className="col-md-8">
+                    <div className="col-md-12">
                         <label htmlFor="address" className="form-label">Postal Address</label>
+                        <div className="input-group mb-3">
+                            <span className="input-group-text"><i className="fa fa-address-book"></i></span>
                         <input
                             type="address"
                             className="form-control"
@@ -157,10 +186,14 @@ class TeacherRegistration extends Component {
                             placeholder="Apartment, studio, or floor"
                             value={this.state.address}
                             onChange={this.onChange}
+                            required
                         />
                     </div>
-                    <div className="col-md-4">
-                        <label htmlFor="contactNumber" className="form-label">Telephone No:</label>
+                    </div>
+                    <div className="col-md-6">
+                        <label htmlFor="contactNumber" className="form-label">Contact Number</label>
+                        <div className="input-group mb-3">
+                            <span className="input-group-text"><i className="fa fa-phone"></i></span>
                         <input
                             type="text"
                             className="form-control"
@@ -168,10 +201,14 @@ class TeacherRegistration extends Component {
                             name="contactNumber"
                             value={this.state.contactNumber}
                             onChange={this.onChange}
+                            required
                         />
+                    </div>
                     </div>
                     <div className="col-md-6">
                         <label htmlFor="email" className="form-label">Email address</label>
+                        <div className="input-group mb-3">
+                            <span className="input-group-text"><i className="fa fa-envelope"></i></span>
                         <input
                             type="email"
                             className="form-control"
@@ -180,13 +217,17 @@ class TeacherRegistration extends Component {
                             placeholder="name@example.com"
                             value={this.state.email}
                             onChange={this.onChange}
+                            required
                         />
+                    </div>
                     </div>
 
                     <h5>Educational Background</h5>
                     <h6>Highest Academic Qualification</h6>
-                        <div className="col-md-8">
+                        <div className="col-md-6">
                             <label htmlFor="qualificationType" className="form-label">Type of Qualification (Degree / Diploma / Certificate)</label>
+                            <div className="input-group mb-3">
+                                <span className="input-group-text"><i className="fa fa-credit-card"></i></span>
                             <input
                                 type="qualificationType"
                                 className="form-control"
@@ -194,10 +235,14 @@ class TeacherRegistration extends Component {
                                 name="qualificationType"
                                 value={this.state.qualificationType}
                                 onChange={this.onChange}
+                                required
                             />
                     </div>
-                    <div className="col-md-4">
+                        </div>
+                    <div className="col-md-6">
                         <label htmlFor="academicInstitute" className="form-label">Institute Where qualification obtained</label>
+                        <div className="input-group mb-3">
+                            <span className="input-group-text"><i className="fa fa-university"></i></span>
                         <input
                             type="academicInstitute"
                             className="form-control"
@@ -207,8 +252,11 @@ class TeacherRegistration extends Component {
                             onChange={this.onChange}
                         />
                     </div>
-                    <div className="col-md-4">
+                    </div>
+                    <div className="col-md-6">
                         <label htmlFor="academicYear" className="form-label">Year</label>
+                        <div className="input-group mb-3">
+                            <span className="input-group-text"><i className="fa fa-calendar"></i></span>
                         <input
                             type="academicYear"
                             className="form-control"
@@ -218,8 +266,11 @@ class TeacherRegistration extends Component {
                             onChange={this.onChange}
                         />
                     </div>
+                    </div>
                     <div className="col-md-6">
                         <label htmlFor="subjects" className="form-label">Specialized Field</label>
+                        <div className="input-group mb-3">
+                            <span className="input-group-text"><i className="fa fa-graduation-cap"></i></span>
                         <input
                             type="text"
                             className="form-control"
@@ -228,12 +279,16 @@ class TeacherRegistration extends Component {
                             placeholder="Mathematics"
                             value={this.state.subjects}
                             onChange={this.onChange}
+                            required
                         />
+                    </div>
                     </div>
 
                     <h6>Highest Teaching Qualification</h6>
-                    <div className="col-md-8">
+                    <div className="col-md-6">
                         <label htmlFor="teachingInstitute" className="form-label">Institute where the qualifications are obtained</label>
+                        <div className="input-group mb-3">
+                            <span className="input-group-text"><i className="fa fa-university"></i></span>
                         <input
                             type="text"
                             className="form-control"
@@ -244,8 +299,11 @@ class TeacherRegistration extends Component {
                             required
                         />
                     </div>
-                    <div className="col-md-4">
+                    </div>
+                    <div className="col-md-6">
                         <label htmlFor="teachingYear" className="form-label">Year</label>
+                        <div className="input-group mb-3">
+                            <span className="input-group-text"><i className="fa fa-calendar"></i></span>
                         <input
                             type="text"
                             className="form-control"
@@ -253,10 +311,14 @@ class TeacherRegistration extends Component {
                             name="teachingYear"
                             value={this.state.teachingYear}
                             onChange={this.onChange}
+                            required
                         />
+                    </div>
                     </div>
                     <div className="col-md-6">
                         <label htmlFor="majorSubjects" className="form-label">Specialized Subject</label>
+                        <div className="input-group mb-3">
+                            <span className="input-group-text"><i className="fa fa-graduation-cap"></i></span>
                         <input
                             type="text"
                             className="form-control"
@@ -265,12 +327,16 @@ class TeacherRegistration extends Component {
                             placeholder="Mathematics"
                             value={this.state.majorSubjects}
                             onChange={this.onChange}
+                            required
                         />
+                    </div>
                     </div>
 
                     <h6>Professional Registration</h6>
-                    <div className="col-md-8">
+                    <div className="col-md-6">
                         <label htmlFor="associationName" className="form-label">Name of the Association</label>
+                        <div className="input-group mb-3">
+                            <span className="input-group-text"><i className="fa fa-university"></i></span>
                         <input
                             type="text"
                             className="form-control"
@@ -281,8 +347,11 @@ class TeacherRegistration extends Component {
                             required
                         />
                     </div>
-                    <div className="col-md-4">
+                    </div>
+                    <div className="col-md-6">
                         <label htmlFor="regNumber" className="form-label">Registration Number</label>
+                        <div className="input-group mb-3">
+                            <span className="input-group-text"><i className="fa fa-registered"></i></span>
                         <input
                             type="text"
                             className="form-control"
@@ -293,8 +362,11 @@ class TeacherRegistration extends Component {
                             onChange={this.onChange}
                         />
                     </div>
-                    <div className="col-md-4">
+                    </div>
+                    <div className="col-md-6">
                         <label htmlFor="experienceYear" className="form-label">Year of Registration</label>
+                        <div className="input-group mb-3">
+                            <span className="input-group-text"><i className="fa fa-calendar"></i></span>
                         <input
                             type="text"
                             className="form-control"
@@ -304,12 +376,15 @@ class TeacherRegistration extends Component {
                             onChange={this.onChange}
                         />
                     </div>
+                    </div>
 
 
                     <h5>Teaching Experience</h5>
                     <h6>Latest Experience</h6>
-                    <div className="col-md-8">
-                        <label htmlFor="schoolName" className="form-label">Name of the School</label>
+                    <div className="col-md-6">
+                        <label htmlFor="schoolName" className="form-label">Name of the School or Institute</label>
+                        <div className="input-group mb-3">
+                            <span className="input-group-text"><i className="fa fa-university"></i></span>
                         <input
                             type="text"
                             className="form-control"
@@ -320,8 +395,11 @@ class TeacherRegistration extends Component {
                             required
                         />
                     </div>
-                    <div className="col-md-4">
+                    </div>
+                    <div className="col-md-6">
                         <label htmlFor="taughtSubjects" className="form-label">Subject</label>
+                        <div className="input-group mb-3">
+                            <span className="input-group-text"><i className="fa fa-archive"></i></span>
                         <input
                             type="text"
                             className="form-control"
@@ -329,11 +407,59 @@ class TeacherRegistration extends Component {
                             name="taughtSubjects"
                             value={this.state.taughtSubjects}
                             onChange={this.onChange}
+                            required
                         />
                     </div>
+                    </div>
+                    <div className="col-md-6">
+                        <label htmlFor="dateFrom" className="form-label">Date From</label>
+                        <div className="input-group mb-3">
+                            <span className="input-group-text"><i className="fa fa-calendar"></i></span>
+                        <input
+                            type="date"
+                            className="form-control"
+                            id="dateFrom"
+                            name="dateFrom"
+                            value={this.state.dateFrom}
+                            onChange={this.onChange}
+                        />
+                    </div>
+                    </div>
+                    <div className="col-md-6">
+                        <label htmlFor="dateTo" className="form-label">Date To</label>
+                        <div className="input-group mb-3">
+                            <span className="input-group-text"><i className="fa fa-calendar"></i></span>
+                        <input
+                            type="date"
+                            className="form-control"
+                            id="dateTo"
+                            name="dateTo"
+                            value={this.state.dateTo}
+                            onChange={this.onChange}
+                        />
+                    </div>
+                    </div>
 
+                    <h6>Declaration</h6>
+                    <p1>I hereby apply for registration as a teacher in accordance with Part V Section 32 of the Education Department,
+                        ACT 1980, and certify that the information given is correct.</p1>
+                    <p1>I have not been refused registration as a teacher or had my registration cancelled at any time during the last six
+                    months</p1>
 
-
+                    <h6>Documents Required</h6>
+                    <p1>All applicants are required to send two character references plus copies of following documents to the Office E-mail
+                    to complete the registration process</p1>
+                    <div className="col-12">
+                    <ul>
+                        <li>Birth Certificate</li>
+                        <li>Photocopies of claimed qualifications (professional and academic)</li>
+                        <li>A recent passport size color photo</li>
+                        <li>Photocopies of National Identity Card or Passport</li>
+                        <li>Grama Sevaka Certificate</li>
+                       <li>An affidavit with the signature
+                           of a Justice of Peace (JP) (Sample attached; make sure to sign across a stamp worth LKR 50.00)</li>
+                    </ul>
+                    </div>
                     <div className="col-12">
                         <div className="form-check">
                             <input className="form-check-input" type="checkbox" id="gridCheck" required/>
@@ -343,10 +469,14 @@ class TeacherRegistration extends Component {
                         </div>
                     </div>
                     <div className="col-12">
-                        <button type="submit" className="btn btn-primary">Save & Next</button>
+                        <button className="button-purple button2-purple">Submit Application</button>
+                        <Link to={`/teacher/complete-registration`}>
+                            <button className="button-purple button2-purple">Next Page</button>
+                        </Link>
                     </div>
                 </form>
-
+            </div>
+                </div>
             </div>
         );
     }

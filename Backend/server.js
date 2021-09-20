@@ -5,6 +5,7 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const TeacherAPI = require('./Routes/Teacher/route.teacher');
 const ProfileAPI = require('./Routes/Teacher/route.tprofile');
+const MaterialAPI = require('./Routes/Teacher/route.material');
 const studentPaymentRoute = require('./Routes/Accountant/route.student.payment');
 
 dotenv.config();
@@ -43,8 +44,8 @@ app.route('/').get((req, res) => {
 //API endpoints
 app.use('/teacher', TeacherAPI());
 app.use('/profile', ProfileAPI());
+app.use('/material', MaterialAPI());
 app.use('/student-payment', studentPaymentRoute());
-
 
 app.listen(PORT,()=>{
     console.log(`server is up on PORT ${PORT}`);

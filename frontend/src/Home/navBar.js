@@ -38,26 +38,58 @@ const Navbar = () =>{
 
                             {/* With Student Login */}
                             <li className="nav-item">
-                                <Link className="nav-link" style={isActive(history, '/student/registration/add-payment')} to="/student/registration/add-payment">Registration Payment</Link>
+                                <Link className="nav-link" style={isActive(history, '/student/add-payment')} to="/student/add-payment">Register Payment</Link>
+                            </li>
+                            <li className="nav-item">
+                                <Link className="nav-link" style={isActive(history, '/student/payment')} to="/student/payment">My Payments</Link>
                             </li>
 
                             {/* With Teacher Login */}
                             <li className="nav-item">
-                                <Link className="nav-link" style={isActive(history, '/teacher/registration-form-one')} to="/teacher/registration-form-one">Teacher Registration</Link>
+                                <Link className="nav-link" style={isActive(history, '/teacher/registration-form')} to="/teacher/registration-form">Teacher Registration</Link>
                             </li>
 
                             <li className="nav-item">
-                                <Link className="nav-link" style={isActive(history, '/teacher/profile')} to="/teacher/profile">Teacher Profile</Link>
+                                <Link className="nav-link" style={isActive(history, '/teacher/profile')} to="/teacher/profile">Create Profile</Link>
                             </li>
 
                             <li className="nav-item">
                                 <Link className="nav-link" style={isActive(history, '/teacher/view-registration')} to="/teacher/view-registration">Pending Teachers</Link>
                             </li>
 
+                            <li className="nav-item">
+                                <Link className="nav-link" style={isActive(history, '/teacher/view-profile')} to="/teacher/view-profile">All Profiles</Link>
+                            </li>
+
+                            <li className="nav-item">
+                                <Link className="nav-link" style={isActive(history, '/teacher/view-approved-registration')} to="/teacher/view-approved-registration">Permanent Teachers List</Link>
+                            </li>
+
+                            <li className="nav-item">
+                                <Link className="nav-link" style={isActive(history, '/teacher/view-pending-teachers')} to="/teacher/view-pending-teachers">Pending Teachers List</Link>
+                            </li>
+
+                            <li className="nav-item">
+                                <Link className="nav-link" style={isActive(history, '/teacher/add-course-materials')} to="/teacher/add-course-materials">Upload Materials</Link>
+                            </li>
+
+                            <li className="nav-item">
+                                <Link className="nav-link" style={isActive(history, '/teacher/view-lesson-materials')} to="/teacher/view-lesson-materials">Lesson Materials</Link>
+                            </li>
+
+
+
+
                             {/* With Admin Login */}
 
-
                             {/* With Accountant Login */}
+                            <li className="nav-item">
+                                <Link className="nav-link" style={isActive(history, '/accountant/')} to="/accountant/">Dashboard</Link>
+                            </li>
+                            <li className="nav-item">
+                                <Link className="nav-link" style={isActive(history, '/accountant/student-payment')} to="/accountant/student-payment">Student Payment</Link>
+                            </li>
+
 
 
                         </ul>

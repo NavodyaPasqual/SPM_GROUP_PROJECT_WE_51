@@ -1,32 +1,43 @@
-h2 {
+.h2 {
     font-family: bold;
-    font-weight: bold;
-    text-align: center;
-    font-size: 40px;
+    font-weight: normal;
+    text-align: left;
     padding-top: 5px;
 }
 
-h5{
+.h5{
     font-family: bold;
     font-weight: bold;
     padding-top: 10px;
 }
 
-h6{
+.h6{
     font-family: bold;
     font-weight: bold;
     padding-top: 10px;
 }
 
-label{
+
+
+.label{
     color: black;
 }
 
-form{
+.form{
+    padding-top: px;
     padding-left: 50px;
     padding-right: 50px;
 }
 
-card-body{
+.card-body{
     color: #3F71AE;
+}
+
+li {
+    font-weight: bold;
+    font-family: inter;
+}
+
+.button {
+    background-color: #7a067a;
 }

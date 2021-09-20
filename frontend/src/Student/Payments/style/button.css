@@ -1,0 +1,26 @@
+.button-purple {
+    background-color: Transparent; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 2px 2px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.button2-purple {
+    background-color: Transparent;
+    color: #7a067a;
+    font-weight: bold;
+    border: 2px solid #7a067a;
+}
+
+.button2-purple:hover {
+    background-color: #7a067a;
+    color: white;
+}
