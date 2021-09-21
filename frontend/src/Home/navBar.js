@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
 import {useHistory,useLocation ,Link} from "react-router-dom";
-
-
 import AuthService from "../services/auth.service";
 import "./styles/navBar.css";
 
@@ -91,7 +89,19 @@ const Navbar = () =>{
                                     <Link className="nav-link" style={isActive(history, '/accountant/student-payment')} to="/accountant/student-payment">Student Payment</Link>
                                 </li>
                             )}
-                            
+
+                            {showManagerBoard && (
+                                <li className="nav-item">
+                                    <Link className="nav-link" style={isActive(history, '/accountant/company-payment-incomes')} to="/accountant/company-payment-incomes">Company Incomes</Link>
+                                </li>
+                            )}
+
+                            {showManagerBoard && (
+                                <li className="nav-item">
+                                    <Link className="nav-link" style={isActive(history, '/accountant/company-payment-expenses')} to="/accountant/company-payment-expenses">Company Expenses</Link>
+                                </li>
+                            )}
+
                             {showManagerBoard && (
                                 <li className="nav-item">
                                     <Link className="nav-link" style={isActive(history, '/teacherTask/')} to="/teacherTask/">Add Teacher Task</Link>
@@ -124,7 +134,9 @@ const Navbar = () =>{
                                 </li>
                                 <li className="nav-item">
                                 <a href="/login"  style={isActive(history, '/login')} className="nav-link" onClick={logOut}>
+                                    <button className="button-submit button2-submit">
                                     LogOut
+                                    </button>
                                 </a>
                                 </li>
                             </div>
@@ -156,7 +168,7 @@ const Navbar = () =>{
 
                                 <li className="nav-item">
                                 <Link to={"/register"} style={isActive(history, '/register')} className="nav-link">
-                                    Sign Up
+                                    <button class="button-submit button2-submit">Sign Up</button>
                                 </Link>
                                 </li>
                             </div>

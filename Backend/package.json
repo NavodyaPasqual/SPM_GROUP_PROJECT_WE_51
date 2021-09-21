@@ -13,6 +13,7 @@
     "nodemon": "^2.0.12"
   },
   "devDependencies": {
-    "formidable": "^1.2.2"
+    "formidable": "^1.2.2",
+    "slugify": "^1.6.0"
   }
 }

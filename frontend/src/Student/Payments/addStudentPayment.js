@@ -178,18 +178,21 @@ const AddStudentPayment = () => {
                             <h5>Payment Details</h5>
                             <div className="col-md-6">
                                 <label htmlFor="type" className="form-label">Payment type</label>
-                                <select
-                                    className="form-select"
-                                    onChange={handleChange('type')}
-                                    id='type'
-                                    required="true"
-                                    value={type}
-                                    name="type"
-                                >
-                                    <option value="select">---Select a Payment Type---</option>
-                                    <option value="Registration payment">Registration payment</option>
-                                    <option value="Monthly Fee">Monthly Fee</option>
-                                </select>
+                                <div className="input-group mb-3">
+                                    <span className="input-group-text"><i className="fas fa-grip-horizontal"></i></span>
+                                    <select
+                                        className="form-select"
+                                        onChange={handleChange('type')}
+                                        id='type'
+                                        required="true"
+                                        value={type}
+                                        name="type"
+                                    >
+                                        <option value="select">---Select a Payment Type---</option>
+                                        <option value="Registration payment">Registration payment</option>
+                                        <option value="Monthly Fee">Monthly Fee</option>
+                                    </select>
+                                </div>
                             </div>
                             <div className="col-md-6">
                                 <label htmlFor="depositedAmount" className="form-label">Deposited Amount (Rs.)</label>
@@ -221,20 +224,23 @@ const AddStudentPayment = () => {
                             </div>
                             <div className="col-md-6">
                                 <label htmlFor="bank" className="form-label">Bank</label>
-                                <select
-                                    className="form-select"
-                                    onChange={handleChange('bank')}
-                                    id='bank'
-                                    required="true"
-                                    value={bank}
-                                    name="bank"
-                                >
-                                    <option value="select">---Select the bank---</option>
-                                    <option value="BOC">BOC</option>
-                                    <option value="People's bank">People's bank</option>
-                                    <option value="Commercial bank">Commercial bank</option>
-                                    <option value="NDB">NDB</option>
-                                </select>
+                                <div className="input-group mb-3">
+                                    <span className="input-group-text"><i className="fas fa-money-check-alt"></i></span>
+                                    <select
+                                        className="form-select"
+                                        onChange={handleChange('bank')}
+                                        id='bank'
+                                        required="true"
+                                        value={bank}
+                                        name="bank"
+                                    >
+                                        <option value="select">---Select the bank---</option>
+                                        <option value="BOC">BOC</option>
+                                        <option value="People's bank">People's bank</option>
+                                        <option value="Commercial bank">Commercial bank</option>
+                                        <option value="NDB">NDB</option>
+                                    </select>
+                                </div>
                             </div>
                             <div className="col-md-6 mb-3">
                                 <label htmlFor="branch" className="form-label">Branch</label>

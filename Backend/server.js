@@ -6,6 +6,7 @@ const bodyParser = require('body-parser');
 const TeacherAPI = require('./Routes/Teacher/route.teacher');
 const ProfileAPI = require('./Routes/Teacher/route.tprofile');
 const studentPaymentRoute = require('./Routes/Accountant/route.student.payment');
+const companyPaymentRoute = require('./Routes/Accountant/route.company.payment');
 
 dotenv.config();
 const app = express();
@@ -56,6 +57,7 @@ require('./routes/user.routes')(app);
 app.use('/teacher', TeacherAPI());
 app.use('/profile', ProfileAPI());
 app.use('/student-payment', studentPaymentRoute());
+app.use('/company-payment', companyPaymentRoute());
 
 app.listen(PORT, () => {
     console.log('######################################################');
