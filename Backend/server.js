@@ -8,6 +8,12 @@ const ProfileAPI = require('./Routes/Teacher/route.tprofile');
 const studentPaymentRoute = require('./Routes/Accountant/route.student.payment');
 const companyPaymentRoute = require('./Routes/Accountant/route.company.payment');
 
+//R.K Added:-
+const studentNoticesRoute = require('./Routes/Student/route.studentNotices');
+const studentFeedBackRoute = require('./Routes/Student/route.feedback');
+const MainStudentRoute = require('./Routes/Student/route.student');
+
+
 dotenv.config();
 const app = express();
 app.use(cors());
@@ -58,6 +64,13 @@ app.use('/teacher', TeacherAPI());
 app.use('/profile', ProfileAPI());
 app.use('/student-payment', studentPaymentRoute());
 app.use('/company-payment', companyPaymentRoute());
+
+//R.K Added:-
+app.use('/StudentNotices', studentNoticesRoute());
+app.use('/StudentFeedbacks', studentFeedBackRoute());
+app.use('/MainStudent', MainStudentRoute());
+
+
 
 app.listen(PORT, () => {
     console.log('######################################################');

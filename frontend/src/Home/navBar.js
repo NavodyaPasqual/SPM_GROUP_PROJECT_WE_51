@@ -77,6 +77,24 @@ const Navbar = () =>{
                                     <Link className="nav-link" style={isActive(history, '/student/payment')} to="/student/payment">My Payments</Link>
                                 </li>
                             )}
+                            {showStudentBoard && (
+                                <li className="nav-item">
+                                    <Link className="nav-link" style={isActive(history, '/student/notices')} to="/student/notices">Student Notices</Link>
+                                </li>
+                            )}
+                            {showStudentBoard && (
+                                <li className="nav-item">
+                                    <Link className="nav-link" style={isActive(history, '/student/feedback')} to="/student/feedback">Student Feedbacks</Link>
+                                </li>
+                            )}
+                            {showStudentBoard && (
+                                <li className="nav-item">
+                                    <Link className="nav-link" style={isActive(history, '/student/student-update')} to="/student/student-update">Student Profile update</Link>
+                                </li>
+                            )}
+
+
+
 
                             {/* Manager nav / class nav*/}
                             {showManagerBoard && (
@@ -153,6 +171,13 @@ const Navbar = () =>{
                                 About Us
                                 </Link>
                             </li>
+                                <li className="nav-item">
+                                    <Link to={"/Student-Registration"} style={isActive(history, '/Student-Registration')} className="nav-link">
+                                        Student Registration Portal
+                                    </Link>
+                                </li>
+
+
                             <li className="nav-item">
                                 <Link to={"/contactUs"} style={isActive(history, '/contactUs')} className="nav-link">
                                 Contact Us &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; 
