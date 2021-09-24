@@ -47,8 +47,6 @@ const Navbar = () =>{
                             &nbsp;<span>TAPROBANE</span>
                         </a>
                     </div>
-                    
-                    
 
                     <button className="navbar-toggler ml-auto custom-toggler" type="button" data-bs-toggle="collapse"
                             data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
@@ -61,85 +59,69 @@ const Navbar = () =>{
                         <div className="navbar-nav mr-auto">
                             {/* Teacher nav */}
                             {showTeacherBoard && (
-                                <li className="nav-item">
-                                {/* link */}
-                                </li>
+                                <>
+                                    <li className="nav-item">
+                                        <Link className="nav-link" style={isActive(history, '/teacher/registration-form-one')} to="/teacher/registration-form-one">Registration</Link>
+                                    </li>
+                                    <li className="nav-item">
+                                        <Link className="nav-link" style={isActive(history, '/teacher/profile')} to="/teacher/profile">My profile</Link>
+                                    </li>
+                                </>
                             )}
 
                             {/* Student nav */}
                             {showStudentBoard && (
-                                <li className="nav-item">
-                                    <Link className="nav-link" style={isActive(history, '/student/add-payment')} to="/student/add-payment">Payment Registration</Link>
-                                </li>
+                                <>
+                                    <li className="nav-item">
+                                        <Link className="nav-link" style={isActive(history, '/student/add-payment')} to="/student/add-payment">Payment Registration</Link>
+                                    </li>
+                                    <li className="nav-item">
+                                        <Link className="nav-link" style={isActive(history, '/student/payment')} to="/student/payment">My Payments</Link>
+                                    </li>
+                                    <li className="nav-item">
+                                        <Link className="nav-link" style={isActive(history, '/student/notices')} to="/student/notices">Student Notices</Link>
+                                    </li>
+                                    <li className="nav-item">
+                                        <Link className="nav-link" style={isActive(history, '/student/feedback')} to="/student/feedback">Student Feedbacks</Link>
+                                    </li>
+                                    <li className="nav-item">
+                                        <Link className="nav-link" style={isActive(history, '/student/student-update')} to="/student/student-update">Student Profile update</Link>
+                                    </li>
+                                </>
                             )}
-                            {showStudentBoard && (
-                                <li className="nav-item">
-                                    <Link className="nav-link" style={isActive(history, '/student/payment')} to="/student/payment">My Payments</Link>
-                                </li>
-                            )}
-                            {showStudentBoard && (
-                                <li className="nav-item">
-                                    <Link className="nav-link" style={isActive(history, '/student/notices')} to="/student/notices">Student Notices</Link>
-                                </li>
-                            )}
-                            {showStudentBoard && (
-                                <li className="nav-item">
-                                    <Link className="nav-link" style={isActive(history, '/student/feedback')} to="/student/feedback">Student Feedbacks</Link>
-                                </li>
-                            )}
-                            {showStudentBoard && (
-                                <li className="nav-item">
-                                    <Link className="nav-link" style={isActive(history, '/student/student-update')} to="/student/student-update">Student Profile update</Link>
-                                </li>
-                            )}
-
-
-
 
                             {/* Manager nav / class nav*/}
                             {showManagerBoard && (
-                                <li className="nav-item">
-                                    <Link className="nav-link" style={isActive(history, '/accountant/')} to="/accountant/">Dashboard</Link>
-                                </li>
+                                <>
+                                    <li className="nav-item">
+                                        <Link className="nav-link" style={isActive(history, '/accountant/')} to="/accountant/">Dashboard</Link>
+                                    </li>
+                                    <li className="nav-item">
+                                        <Link className="nav-link" style={isActive(history, '/accountant/student-payment')} to="/accountant/student-payment">Student Payment</Link>
+                                    </li>
+                                    <li className="nav-item">
+                                        <Link className="nav-link" style={isActive(history, '/accountant/company-payment-incomes')} to="/accountant/company-payment-incomes">Company Incomes</Link>
+                                    </li>
+                                    <li className="nav-item">
+                                        <Link className="nav-link" style={isActive(history, '/accountant/company-payment-expenses')} to="/accountant/company-payment-expenses">Company Expenses</Link>
+                                    </li>
+                                    <li className="nav-item">
+                                        <Link className="nav-link" style={isActive(history, '/teacherTask/')} to="/teacherTask/">Add Teacher Task</Link>
+                                    </li>
+                                    <li className="nav-item">
+                                        <Link className="nav-link" style={isActive(history, '/teacherTaskList/')} to="/teacherTaskList/">Add Teacher Task List</Link>
+                                    </li>
+                                </>
                             )}
-                            {showManagerBoard && (
-                                <li className="nav-item">
-                                    <Link className="nav-link" style={isActive(history, '/accountant/student-payment')} to="/accountant/student-payment">Student Payment</Link>
-                                </li>
-                            )}
-
-                            {showManagerBoard && (
-                                <li className="nav-item">
-                                    <Link className="nav-link" style={isActive(history, '/accountant/company-payment-incomes')} to="/accountant/company-payment-incomes">Company Incomes</Link>
-                                </li>
-                            )}
-
-                            {showManagerBoard && (
-                                <li className="nav-item">
-                                    <Link className="nav-link" style={isActive(history, '/accountant/company-payment-expenses')} to="/accountant/company-payment-expenses">Company Expenses</Link>
-                                </li>
-                            )}
-
-                            {showManagerBoard && (
-                                <li className="nav-item">
-                                    <Link className="nav-link" style={isActive(history, '/teacherTask/')} to="/teacherTask/">Add Teacher Task</Link>
-                                </li>
-                            )}
-                            
-                            {showManagerBoard && (
-                                <li className="nav-item">
-                                    <Link className="nav-link" style={isActive(history, '/teacherTaskList/')} to="/teacherTaskList/">Add Teacher Task List</Link>
-                                </li>
-                            )}
-                            
 
                             {/* Admin nav */}
                             {showAdminBoard && (
-                                <li className="nav-item">
-                                {/* link */}
-                                </li>
+                                <>
+                                    <li className="nav-item">
+                                    {/* link */}
+                                    </li>
+                                </>
                             )}
-
                         </div>
                         </ul>
                     </div>
@@ -171,12 +153,11 @@ const Navbar = () =>{
                                 About Us
                                 </Link>
                             </li>
-                                <li className="nav-item">
-                                    <Link to={"/Student-Registration"} style={isActive(history, '/Student-Registration')} className="nav-link">
-                                        Student Registration Portal
-                                    </Link>
-                                </li>
-
+                            <li className="nav-item">
+                                <Link className="nav-link" style={isActive(history, '/Student-Registration')} to={"/Student-Registration"}  >
+                                    Student Registration Portal
+                                </Link>
+                            </li>
 
                             <li className="nav-item">
                                 <Link to={"/contactUs"} style={isActive(history, '/contactUs')} className="nav-link">

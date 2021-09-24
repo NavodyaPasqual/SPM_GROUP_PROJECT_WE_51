@@ -53,6 +53,7 @@ class studentFeedBack extends Component {
 
     render() {
         return (
+            <div className="student-feedback">
             <div className="container">
                 <br/>
                 <br/>
@@ -190,6 +191,7 @@ class studentFeedBack extends Component {
                 <br/>
                 <br/>
 
+            </div>
             </div>
         )
     }

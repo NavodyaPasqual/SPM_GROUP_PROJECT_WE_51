@@ -20,9 +20,8 @@ class StudentNotices extends Component {
 
     render() {
         return (
-
+        <div className="student-notices">
             <div className="container">
-
                 <br/>
                 {this.state.courses.length > 0 && this.state.courses.map((item, index) => (
                     <div key={index} >
@@ -63,6 +62,7 @@ class StudentNotices extends Component {
                 <br/>
                 <br/>
             </div>
+        </div>
         )
     }
 }

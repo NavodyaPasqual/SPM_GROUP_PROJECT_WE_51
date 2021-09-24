@@ -10,7 +10,6 @@ class TeacherProfile extends Component {
         return (
             <div>
                 <h2>Teacher Profile</h2>
-
                 <form className="row g-3">
                     <h5>Personal Details</h5>
                     <div className="col-md-4">

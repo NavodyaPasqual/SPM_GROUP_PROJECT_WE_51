@@ -17,7 +17,6 @@ import ViewStudentPayments from "../Student/Payments/viewStudentPayments";
 import UpdateStudentPayment from "../Student/Payments/updateStudentPayment";
 import LoadingScreen from "../Student/Payments/style/loadingScreen";
 
-//Student-Part two by R.K
 import ViewStudentNotices from "../Student/Students Notices/StudentNotices";
 import StudentFeedback from "../Student/StudetFeedBack/StdentFeeedBack";
 import StudentUpdate from "../Student/Student Update Profile/StdentsUpdate";
@@ -47,24 +46,20 @@ function PageRoutes() {
                 <section className="content">
                     <Switch>
                         <Route path="/" component={HomePage} exact/>
-                        <Route exact path="/aboutUs" component={AboutUs} />
-                        <Route exact path="/contactUs" component={ContactUs} />
-                        <Route exact path="/Student-Registration" component={StudentRegistration} />
+                        <Route path="/aboutUs" component={AboutUs} />
+                        <Route path="/contactUs" component={ContactUs} />
+                        <Route path="/login" component={Login} />
+                        <Route path="/register" component={Register} />
+                        <Route path="/profile" component={Profile} />
 
-                        <Route exact path="/login" component={Login} />
-                        <Route exact path="/register" component={Register} />                        
-                        <Route exact path="/profile" component={Profile} />
-                        <Route path="/teacher/registration-form-one" component={TeacherRegistration}/>
-                        <Route path="/teacher/profile" component={TeacherProfile}/>
+                        <Route path="/Student-Registration" component={StudentRegistration} />
+                        <Route path="/student/student-update" component={StudentUpdate}/>
+                        <Route path="/student/notices" component={ViewStudentNotices}/>
+                        <Route path="/student/feedback" component={StudentFeedback}/>
                         <Route path="/student/payment/update/:id" component={UpdateStudentPayment}/>
                         <Route path="/student/add-payment" component={AddStudentPayment}/>
                         <Route path="/student/payment" component={ViewStudentPayments}/>
-
-
-                        <Route path="/student/notices" component={ViewStudentNotices}/>
-                        <Route path="/student/feedback" component={StudentFeedback}/>
-                        <Route path="/student/student-update" component={StudentUpdate}/>
-
+                        <Route path="/alert" component={LoadingScreen}/>
 
                         <Route path="/accountant/company-payment-incomes" component={ViewIncomeTransaction}/>
                         <Route path="/accountant/company-payment-expenses" component={ViewOutcomeTransaction}/>
@@ -74,14 +69,15 @@ function PageRoutes() {
                         <Route path="/accountant/calender" component={AccountantCalender}/>
                         <Route path="/accountant/report" component={Report}/>
                         <Route path="/accountant/" component={AccountantDashboard}/>
+
+                        <Route path="/teacher/registration-form-one" component={TeacherRegistration}/>
+                        <Route path="/teacher/profile" component={TeacherProfile}/>
                         <Route path="/teacherTaskUpdate/" component={teacherTaskUpdate}/>
                         <Route path="/teacherTask/" component={teacherTask}/>
                         <Route path="/teacherTaskList/" component={teacherTaskList}/>
-                        <Route path="/alert" component={LoadingScreen}/>
                     </Switch>
                 </section>
             </Router>
-
             {/* <Footer />*/}
         </div>
     );

@@ -67,20 +67,13 @@ class updateStudent extends Component {
                 alert(error.message)
             })
     }
-
-
-
-
     render() {
         return (
-
+            <div className="student-update">
             <div className="container">
                 <br/>
-
                 <form onSubmit={this.onSubmit}data-testid ="form-tag" className="container">
-
                     <br/>
-
                     <h2><b><center>Student Profile</center></b></h2>
 
                     <div className="banner8" Style = " Left:82%" >
@@ -241,6 +234,7 @@ class updateStudent extends Component {
                 <br/>
                 <br/>
                 <br/>
+            </div>
             </div>
         )
     }
