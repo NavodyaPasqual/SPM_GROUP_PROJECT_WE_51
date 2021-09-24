@@ -70,8 +70,6 @@ app.use('/StudentNotices', studentNoticesRoute());
 app.use('/StudentFeedbacks', studentFeedBackRoute());
 app.use('/MainStudent', MainStudentRoute());
 
-
-
 app.listen(PORT, () => {
     console.log('######################################################');
     console.log(`Server is ON and running on PORT : ${PORT}`);

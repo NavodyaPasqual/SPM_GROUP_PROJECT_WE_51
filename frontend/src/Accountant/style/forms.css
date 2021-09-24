@@ -31,3 +31,8 @@
 .background label{
     color: #6b556b;
 }
+
+.background-update-transaction {
+    max-width: 50%;
+    position: center;
+}

@@ -96,7 +96,7 @@ const ViewIncomeTransaction = () => {
             <div className="card shadow p-3 mb-4 bg-body rounded">
                 <div className="row g-2">
                     <div className="col-md">
-                        <h1>Company Expenses</h1><br/>
+                        <h1>Company Incomes</h1><br/>
                     </div>
                     <div className="col-md">
                         <div className="mb-3 mt-2 d-md-flex justify-content-md-end">
@@ -167,7 +167,7 @@ const ViewIncomeTransaction = () => {
                                     }
                                     {c.type === "Incomes" &&
                                         <td>
-                                            <Link to={`/accountant/update-payment/${c.id}`}>
+                                            <Link to={`/accountant/update-payment/${c._id}`}>
                                                 <button className="btn btn-outline-warning me-md-2">
                                                     <i className="fas fa-edit"></i>
                                                 </button>

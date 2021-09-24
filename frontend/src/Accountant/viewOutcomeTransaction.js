@@ -166,7 +166,7 @@ const ViewOutcomeTransaction = () => {
                                     }
                                     {c.type === "Expenses" &&
                                     <td>
-                                        <Link to={`/accountant/update-payment/${c.id}`}>
+                                        <Link to={`/accountant/update-payment/${c._id}`}>
                                             <button className="btn btn-outline-warning me-md-2">
                                                 <i className="fas fa-edit"></i>
                                             </button>

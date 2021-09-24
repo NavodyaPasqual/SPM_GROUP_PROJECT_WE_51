@@ -26,10 +26,11 @@ import StudentRegistration from "../Student/Student Registation/student";
 import AccountantDashboard from "../Accountant/dashboard";
 import ViewStudentPayment from "../Accountant/viewStudentPayment";
 import AddCompanyPayment from "../Accountant/addTransactions";
+import UpdateCompanyPayment from "../Accountant/updateTransactions";
 import ViewIncomeTransaction from "../Accountant/viewIncomeTransactions";
 import ViewOutcomeTransaction from "../Accountant/viewOutcomeTransaction";
 import AccountantCalender from "../Accountant/calender";
-import Report from "../Accountant/report";
+import ReactPDF from "../Accountant/reportPDF";
 
 //Teacher
 import TeacherRegistration from "../Teacher/teacherRegistration";
@@ -63,11 +64,11 @@ function PageRoutes() {
 
                         <Route path="/accountant/company-payment-incomes" component={ViewIncomeTransaction}/>
                         <Route path="/accountant/company-payment-expenses" component={ViewOutcomeTransaction}/>
-                        <Route path="/accountant/update-payment/:id" component={AddCompanyPayment}/>
+                        <Route path="/accountant/update-payment/:id" component={UpdateCompanyPayment}/>
                         <Route path="/accountant/add-payment" component={AddCompanyPayment}/>
                         <Route path="/accountant/student-payment" component={ViewStudentPayment}/>
                         <Route path="/accountant/calender" component={AccountantCalender}/>
-                        <Route path="/accountant/report" component={Report}/>
+                        <Route path="/accountant/report" component={ReactPDF}/>
                         <Route path="/accountant/" component={AccountantDashboard}/>
 
                         <Route path="/teacher/registration-form-one" component={TeacherRegistration}/>

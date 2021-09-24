@@ -71,154 +71,74 @@ const AddCompanyPayment = () => {
         </div>);
 
     return (
-        <div className="background row p-4">
+        <div className="background row p-4 d-flex justify-content-center">
             {showLoading()}
-            <div className="col-md-6">
-                <div className="container-1 mt-4 mb-5 shadow pb-4 pt-4  rounded">
-                    <h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;New Company Payment Record</h3>
-                    <div className="p-3">
-                        <form className="row g-3" onSubmit={clickSubmit}>
-                            <div className="col-12">
-                                <label htmlFor="name" className="form-label">Name of the payment</label>
-                                <div className="input-group mb-3">
-                                    <span className="input-group-text"><i className="fas fa-user"></i></span>
-                                    <input
-                                        type="text"
-                                        className="form-control"
-                                        id="name"
-                                        name="name"
-                                        value={name}
-                                        onChange={handleChange('name')}
-                                    />
-                                </div>
+            <div className="container-1 w-50 mt-4 mb-5 shadow pb-4 pt-4  rounded">
+                <h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;New Company Payment Record</h3>
+                <div className="p-3">
+                    <form className="row g-3" onSubmit={clickSubmit}>
+                        <div className="col-12">
+                            <label htmlFor="name" className="form-label">Name of the payment</label>
+                            <div className="input-group mb-3">
+                                <span className="input-group-text"><i className="fas fa-user"></i></span>
+                                <input
+                                    type="text"
+                                    className="form-control"
+                                    id="name"
+                                    name="name"
+                                    value={name}
+                                    onChange={handleChange('name')}
+                                />
                             </div>
-                            <div className="col-12">
-                                <label htmlFor="contactNo" className="form-label">Amount</label>
-                                <div className="input-group mb-3">
-                                    <span className="input-group-text"><i className="fas fa-dollar-sign"></i></span>
-                                    <input
-                                        type="text"
-                                        className="form-control"
-                                        id="amount"
-                                        name="amount"
-                                        value={amount}
-                                        onChange={handleChange('amount')}
-                                    />
-                                </div>
-                            </div>
-                            <div className="col-12">
-                                <label htmlFor="studentID" className="form-label">Date</label>
-                                <div className="input-group mb-3">
-                                    <span className="input-group-text"><i className="fas fa-id-card-alt"></i></span>
-                                    <input
-                                        type="date"
-                                        className="form-control"
-                                        id="date"
-                                        name="date"
-                                        value={date}
-                                        onChange={handleChange('date')}
-                                    />
-                                </div>
-                            </div>
-                            <div className="col-12">
-                                <label htmlFor="type" className="form-label">Payment type</label>
-                                <div className="input-group mb-3">
-                                    <span className="input-group-text"><i className="fas fa-grip-horizontal"></i></span>
-                                    <select
-                                        className="form-select"
-                                        onChange={handleChange('type')}
-                                        id='type'
-                                        required="true"
-                                        value={type}
-                                        name="type"
-                                    >
-                                        <option value="select">---Select a Payment Type---</option>
-                                        <option value="Incomes">Incomes</option>
-                                        <option value="Expenses">Expenses</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <button className="mt-5 button-green button2-green">Submit Payment</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <div className="col-md-6">
-                {showLoading()}
-                <div className="container-2 mt-4 shadow pb-4 pt-4 mb-5 rounded">
-                    <div >
-                        <h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Edit Company Payment</h3>
-                        <div className="p-3">
-                            <form className="row g-3" onSubmit={clickSubmit}>
-                                <div className="col-12">
-                                    <label htmlFor="name" className="form-label">Name of the payment</label>
-                                    <div className="input-group mb-3">
-                                        <span className="input-group-text"><i className="fas fa-user"></i></span>
-                                        <input
-                                            type="text"
-                                            className="form-control"
-                                            id="name"
-                                            name="name"
-                                            value={name}
-                                            onChange={handleChange('name')}
-                                        />
-                                    </div>
-                                </div>
-                                <div className="col-12">
-                                    <label htmlFor="contactNo" className="form-label">Amount (Rs.)</label>
-                                    <div className="input-group mb-3">
-                                        <span className="input-group-text"><i className="fas fa-dollar-sign"></i></span>
-                                        <input
-                                            type="text"
-                                            className="form-control"
-                                            id="amount"
-                                            name="amount"
-                                            value={amount}
-                                            onChange={handleChange('amount')}
-                                        />
-                                    </div>
-                                </div>
-                                <div className="col-12">
-                                    <label htmlFor="studentID" className="form-label">Date</label>
-                                    <div className="input-group mb-3">
-                                        <span className="input-group-text"><i className="fas fa-id-card-alt"></i></span>
-                                        <input
-                                            type="date"
-                                            className="form-control"
-                                            id="date"
-                                            name="date"
-                                            value={date}
-                                            onChange={handleChange('date')}
-                                        />
-                                    </div>
-                                </div>
-                                <div className="col-12">
-                                    <label htmlFor="type" className="form-label">Payment type</label>
-                                    <div className="input-group mb-3">
-                                        <span className="input-group-text"><i className="fas fa-grip-horizontal"></i></span>
-                                        <select
-                                            className="form-select"
-                                            onChange={handleChange('type')}
-                                            id='type'
-                                            required="true"
-                                            value={type}
-                                            name="type"
-                                        >
-                                            <option value="select">---Select a Payment Type---</option>
-                                            <option value="Incomes">Incomes</option>
-                                            <option value="Expenses">Expenses</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div className="col-md-6">
-                                    <button className="mt-4 button-red button2-red">Delete Payment</button>
-                                </div>
-                                <div className="col-md-6 d-flex justify-content-md-end">
-                                    <button className="mt-4 button-orange button2-orange">Update Payment</button>
-                                </div>
-                            </form>
                         </div>
-                    </div>
+                        <div className="col-12">
+                            <label htmlFor="contactNo" className="form-label">Amount</label>
+                            <div className="input-group mb-3">
+                                <span className="input-group-text"><i className="fas fa-dollar-sign"></i></span>
+                                <input
+                                    type="text"
+                                    className="form-control"
+                                    id="amount"
+                                    name="amount"
+                                    value={amount}
+                                    onChange={handleChange('amount')}
+                                />
+                            </div>
+                        </div>
+                        <div className="col-12">
+                            <label htmlFor="studentID" className="form-label">Date</label>
+                            <div className="input-group mb-3">
+                                <span className="input-group-text"><i className="fas fa-id-card-alt"></i></span>
+                                <input
+                                    type="date"
+                                    className="form-control"
+                                    id="date"
+                                    name="date"
+                                    value={date}
+                                    onChange={handleChange('date')}
+                                />
+                            </div>
+                        </div>
+                        <div className="col-12">
+                            <label htmlFor="type" className="form-label">Payment type</label>
+                            <div className="input-group mb-3">
+                                <span className="input-group-text"><i className="fas fa-grip-horizontal"></i></span>
+                                <select
+                                    className="form-select"
+                                    onChange={handleChange('type')}
+                                    id='type'
+                                    required="true"
+                                    value={type}
+                                    name="type"
+                                >
+                                    <option value="select">---Select a Payment Type---</option>
+                                    <option value="Incomes">Incomes</option>
+                                    <option value="Expenses">Expenses</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button className="mt-5 button-green button2-green">Submit Payment</button>
+                    </form>
                 </div>
             </div>
         </div>

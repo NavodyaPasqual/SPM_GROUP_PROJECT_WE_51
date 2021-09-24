@@ -2,6 +2,7 @@ const formidable = require("formidable");
 const _ = require("lodash");
 const slugify = require("slugify");
 const CompanyPayment = require('../../Modules/Accountant/module.company.payment');
+const {next} = require("lodash");
 
 /**
  * Create Company Payment controller
@@ -59,15 +60,13 @@ const getAllCompanyPayment = (req, res) => {
  * @returns {Promise<any>}
  */
 const companyPaymentById = async (req, res) => {
-    if (req.params && req.params.id) {
-        await CompanyPayment.findById(req.params.id)
-            .then(response => {
-                res.status(200).send({data: response});
-            })
-            .catch(error => {
-                res.status(500).send({error: error.message});
-            });
-    }
+    CompanyPayment.findById(req.params.id, (error, data) =>{
+        if (error) {
+            return next(error)
+        } else {
+            res.json(data)
+        }
+    })
 };
 
 /**
