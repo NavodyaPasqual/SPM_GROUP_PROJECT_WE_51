@@ -25,3 +25,19 @@
 .custom-toggler.navbar-toggler {
     border-color: rgb(255,102,203);
 }
+
+.navbar-right button{
+    background-color: #ffffff;
+    font-size: 18px;
+    border: none;
+    color: #754b7e;
+    padding: 10px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 2px 2px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    cursor: pointer;
+
+}

@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import './style/button.css';
 import my from "./image/paymentForm.png";
 import './style/forms.css'
+import './style/alert.css'
 
 const AddStudentPayment = () => {
 
@@ -32,6 +33,7 @@ const AddStudentPayment = () => {
         bank,
         branch,
         type,
+        loading,
         classes,
         teacher,
         formData
@@ -71,23 +73,38 @@ const AddStudentPayment = () => {
                     if (data.error) {
                         setValues({...values, error: data.error})
                     } else {
-                        alert('Successfully submitted.')
-                        //this.props.history.push('/student/payment');
                         window.location.href = "/student/payment";
                     }
                 });
     };
 
+    const showLoading = () =>
+        loading && (<div aria-live="polite" aria-atomic="true" className="position-relative">
+            <div className="toast-container position-absolute top-0 end-0 p-3">
+                <div className="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                    <div className="toast-header">
+                        <div className="spinner-border text-warning" role="status">
+                            <span className="visually-hidden">Loading...</span>
+                        </div>
+                        <strong className="me-auto">&nbsp;&nbsp;Loading</strong>
+                        <small className="text-muted">just now</small>
+                        <button type="button" className="btn-close" data-bs-dismiss="toast"
+                                aria-label="Close"></button>
+                    </div>
+                </div>
+            </div>
+        </div>);
 
     return (
         <div className="background">
             <img src={my}/>
+            {showLoading()}
             <div className="container mt-4 shadow p-3 mb-5 bg-body rounded">
                 <div >
-                    <h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Payment Submission</h1>
+                    <h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Student Payment Submission</h1>
                     <div className="p-3">
                         <form className="row g-3" onSubmit={clickSubmit}>
-                            <h4>Student Details</h4>
+                            <h5>Student Details</h5>
                             <div className="col-12">
                                 <label htmlFor="name" className="form-label">Full Name</label>
                                 <div className="input-group mb-3">
@@ -158,7 +175,7 @@ const AddStudentPayment = () => {
                                     />
                                 </div>
                             </div>
-                            <h4>Payment Details</h4>
+                            <h5>Payment Details</h5>
                             <div className="col-md-6">
                                 <label htmlFor="type" className="form-label">Payment type</label>
                                 <select
@@ -234,7 +251,7 @@ const AddStudentPayment = () => {
                                 </div>
                             </div>
                             <div className="col-md-6 mb-3">
-                                <label htmlFor="paymentSlip" className="form-label">Payment Slip (Maximum file size 10MB)</label>
+                                <label htmlFor="paymentSlip" className="form-label">Payment Slip <i>(Maximum file size 10MB)</i></label>
                                 <input
                                     type="file"
                                     className="form-control"

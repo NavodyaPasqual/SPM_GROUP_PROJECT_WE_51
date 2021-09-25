@@ -194,12 +194,23 @@ const deleteById = (req, res) => {
 };
 
 /**
+ * Calculate total Fee controller
+ * @param req
+ * @param res
+ * @returns {Promise<any>}
+ */
+const calculateAmount = async (req, res) => {
+
+}
+
+/**
  * export controllers
  * @type {{createStudentPayment: createStudentPayment,
  * getAllStudentPayment: getAllStudentPayment,
  * viewStudentPaymentById: viewStudentPaymentById,
  * updateById: updateById,
- * deleteById: deleteById}}
+ * deleteById: deleteById,
+ * calculateAmount: calculateAmount}}
  */
 module.exports = {
     studentPaymentById,
@@ -209,5 +220,6 @@ module.exports = {
     photo,
     updateStatus,
     updateById,
-    deleteById
+    deleteById,
+    calculateAmount
 }

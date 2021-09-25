@@ -77,6 +77,9 @@ const Navbar = () =>{
                                 <Link className="nav-link" style={isActive(history, '/teacher/view-lesson-materials')} to="/teacher/view-lesson-materials">Lesson Materials</Link>
                             </li>
 
+                            <li className="nav-item">
+                                <Link className="nav-link" style={isActive(history, '/supervisor/')} to="/supervisor/">Supervisor Dashboard</Link>
+                            </li>
 
 
 

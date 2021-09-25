@@ -57,7 +57,7 @@ class CreateMaterial extends Component {
                 <img src={my}/>
                 <div className="container mt-4 shadow p-3 mb-5 bg-body rounded">
                     <div>
-                        <h2>Upload Teaching Materials</h2>
+                        <h2>Upload Lessons</h2>
                         <br/><br/><br/>
 
                         <form onSubmit={this.onSubmit}

@@ -17,5 +17,7 @@ module.exports = function () {
     router.put('/update/:id', controller.updateById);
     //UPDATE payment status
     router.put('/update-status/:id', controller.updateStatus);
+    //Calculation
+    router.get('/cal', controller.calculateAmount);
     return router;
 }
