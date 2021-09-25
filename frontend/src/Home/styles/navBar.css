@@ -26,18 +26,28 @@
     border-color: rgb(255,102,203);
 }
 
-.navbar-right button{
-    background-color: #ffffff;
-    font-size: 18px;
+.button-submit{
     border: none;
-    color: #754b7e;
-    padding: 10px 32px;
+    padding: 6px 30px;
     text-align: center;
-    text-decoration: none;
     display: inline-block;
-    margin: 2px 2px;
+    font-size: 16px;
     -webkit-transition-duration: 0.4s;
     transition-duration: 0.4s;
     cursor: pointer;
+    font-size: 17px;
+}
 
+.button2-submit {
+    background-color: #ffffff;
+    color: #6b556b;
+    font-weight: bold;
+    border: 2px solid #ffffff;
+}
+
+.button2-submit:hover {
+    background-color: #882e88;
+    color: #ffffff;
+    border: 2px solid #882e88;
+    transform: scale(1.01);
 }

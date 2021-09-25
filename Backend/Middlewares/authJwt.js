@@ -4,7 +4,6 @@ const db = require("../Modules");
 const User = db.user;
 const Role = db.role;
 
-
 verifyToken = (req, res, next) => {
     let token = req.headers["x-access-token"];
   
@@ -144,6 +143,7 @@ verifyToken = (req, res, next) => {
       );
     });
   };
+
   const authJwt = {
     verifyToken,
     isAdmin,

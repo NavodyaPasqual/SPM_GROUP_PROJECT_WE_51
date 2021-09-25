@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, useRef} from "react";
 import axios from "axios";
 import Typed from "react-typed";
 import spinner from "../Student/Payments/image/spinner.gif";
@@ -6,6 +6,8 @@ import '../Student/Payments/style/loading.css';
 import './style/viewStudentPayment.css';
 
 const ViewStudentPayment = () => {
+
+    //Search
     const [payment, setPayment] = useState([]);
     const [setError] = useState([]);
     const [q, setQ] = useState("");
