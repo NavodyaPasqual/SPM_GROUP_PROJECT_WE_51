@@ -35,9 +35,19 @@ import ReactPDF from "../Accountant/reportPDF";
 //Teacher
 import TeacherRegistration from "../Teacher/teacherRegistration";
 import TeacherProfile from "../Teacher/teacherProfile";
+import ViewTeacherRegistration from "../Supervisor/viewTeacherRegistration";
+import ViewProfile from "../Teacher/viewProfile";
+import ViewApprovedTeachers from "../Teacher/viewApprovedTeachers";
+import RegistrationCompletion from "../Teacher/registrationCompletion";
+import ViewPendingTeachers from "../Teacher/viewPendingTeachers";
+import CreateMaterial from "../Teacher/createMaterial";
+import ViewUploadedMaterials from "../Teacher/viewUploadedMaterials";
+import supervisorDashboard from "../Supervisor/supervisorDashboard";
+
 import teacherTaskUpdate from "../Class/teacherUpdate";
 import teacherTask from "../Class/teacher";
 import teacherTaskList from "../Class/teacherTask";
+
 
 function PageRoutes() {
     return (
@@ -73,6 +83,17 @@ function PageRoutes() {
 
                         <Route path="/teacher/registration-form-one" component={TeacherRegistration}/>
                         <Route path="/teacher/profile" component={TeacherProfile}/>
+                        <Route path="/teacher/view-registration" component={ViewTeacherRegistration}/>
+                        <Route path="/teacher/view-profile" component={ViewProfile}/>
+                        <Route path="/teacher/view-approved-registration" component={ViewApprovedTeachers}/>
+                        <Route path="/teacher/complete-registration" component={RegistrationCompletion}/>
+                        <Route path="/teacher/view-pending-teachers" component={ViewPendingTeachers}/>
+                        <Route path="/teacher/add-course-materials" component={CreateMaterial}/>
+                        <Route path="/teacher/view-lesson-materials" component={ViewUploadedMaterials}/>
+                        <Route path="/supervisor/" component={supervisorDashboard}/>
+
+
+
                         <Route path="/teacherTaskUpdate/" component={teacherTaskUpdate}/>
                         <Route path="/teacherTask/" component={teacherTask}/>
                         <Route path="/teacherTaskList/" component={teacherTaskList}/>
