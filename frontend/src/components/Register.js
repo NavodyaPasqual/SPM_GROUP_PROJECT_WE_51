@@ -5,6 +5,7 @@ import CheckButton from "react-validation/build/button";
 import { isEmail } from "validator";
 
 import AuthService from "../services/auth.service";
+import img from "./images/registration.png";
 
 const required = (value) => {
   if (!value) {
@@ -143,14 +144,19 @@ const Register = (props) => {
   };
 
   return (
-      <div className="col-md-12">
-        <div className="card card-container">
-
+      <div className="container mt-4 shadow p-3 mb-5 bg-body rounded">
+        <div className="p-3 row">
+          <div className="col-md-6">
+            <img src={img} height="320px" alt="" className="mt-5"/>
+          </div>
+          <div className="col-md-6">
+            <h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sign Up</h1>
+            <div className="p-3">
           <Form onSubmit={handleRegister} ref={form} data-testid='from-tag'>
             {!successful && (
                 <div>
-                  <div className="form-group">
-                    <label htmlFor="username">Username</label>
+                  <div className="col-md-12">
+                    <label className="form-label" htmlFor="username">Username</label>
                     <Input
                         type="text"
                         className="form-control"
@@ -162,8 +168,8 @@ const Register = (props) => {
                     />
                   </div>
 
-                  <div className="form-group">
-                    <label htmlFor="email">Email</label>
+                  <div className="col-md-12">
+                    <label className="form-label" htmlFor="email">Email</label>
                     <Input
                         type="text"
                         className="form-control"
@@ -175,8 +181,8 @@ const Register = (props) => {
 
                   </div>
 
-                  <div className="form-group">
-                    <label htmlFor="password">Password</label>
+                  <div className="col-md-12">
+                    <label className="form-label" htmlFor="password">Password</label>
                     <Input
                         type="password"
                         className="form-control"
@@ -187,8 +193,8 @@ const Register = (props) => {
                     />
                   </div>
 
-                  <div className="form-group">
-                    <label htmlFor="number">Phone Number</label>
+                  <div className="col-md-12">
+                    <label className="form-label" htmlFor="number">Phone Number</label>
                     <Input
                         type="number"
                         className="form-control"
@@ -199,8 +205,8 @@ const Register = (props) => {
                     />
                   </div>
 
-                  <div className="form-group">
-                    <label htmlFor="Role">Role &nbsp; &nbsp;
+                  <div className="col-md-12">
+                    <label className="form-label" htmlFor="Role">Role</label>
                       <select
                           value={roles}
                           onChange = {onChangeRole}
@@ -208,10 +214,10 @@ const Register = (props) => {
                         {options.map((option) => (
                             <option value={option.value}>{option.label}</option>
                         ))}
-                      </select></label>
+                      </select>
                   </div>
 
-                  <div className="form-group">
+                  <div className="d-grid mt-3 gap-2">
                     <button data-testid='submit-btn' className="btn btn-primary btn-block">Sign Up</button>
                   </div>
                 </div>
@@ -231,6 +237,8 @@ const Register = (props) => {
             )}
             <CheckButton style={{ display: "none" }} ref={checkBtn} />
           </Form>
+            </div>
+          </div>
         </div>
       </div>
   );

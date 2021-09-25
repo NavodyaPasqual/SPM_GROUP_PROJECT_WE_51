@@ -2,7 +2,7 @@ import React, { useState, useRef } from "react";
 import Form from "react-validation/build/form";
 import Input from "react-validation/build/input";
 import CheckButton from "react-validation/build/button";
-
+import img from './images/login.png'
 
 import AuthService from "../services/auth.service";
 
@@ -67,12 +67,17 @@ const Login = (props) => {
   };
 
   return (
-      <div className="col-md-12">
-        <div className="card card-container">
-
-          <Form onSubmit={handleLogin} ref={form}>
-            <div className="form-group">
-              <label htmlFor="username">username</label>
+      <div className="container mt-4 shadow p-3 mb-5 bg-body rounded">
+        <div className="p-3 row">
+          <div className="col-md-6">
+            <img src={img} height="320px" alt="" className="mt-5"/>
+          </div>
+          <div className="col-md-6">
+            <h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sign In</h1>
+            <div className="p-3">
+          <Form className="row g-3" onSubmit={handleLogin} ref={form}>
+            <div className="col-md-12">
+              <label className="form-label" htmlFor="username">username</label>
               <Input
                   type="text"
                   className="form-control"
@@ -83,8 +88,8 @@ const Login = (props) => {
               />
             </div>
 
-            <div className="form-group">
-              <label htmlFor="password">Password</label>
+            <div className="col-md-12">
+              <label className="form-label" htmlFor="password">Password</label>
               <Input
                   type="password"
                   className="form-control"
@@ -95,7 +100,7 @@ const Login = (props) => {
               />
             </div>
 
-            <div className="form-group">
+            <div className="d-grid mt-5 gap-2">
               <button className="btn btn-primary btn-block" disabled={loading}>
                 {loading && (
                     <span className="spinner-border spinner-border-sm"></span>
@@ -113,6 +118,8 @@ const Login = (props) => {
             )}
             <CheckButton style={{ display: "none" }} ref={checkBtn} />
           </Form>
+            </div>
+          </div>
         </div>
       </div>
   );
