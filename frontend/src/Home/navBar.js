@@ -143,15 +143,24 @@ const Navbar = () =>{
                                     </>
                                 )}
 
-                                {/* Admin nav */}
-                                {showAdminBoard && (
-                                    <>
-                                        <li className="nav-item">
-                                            {/* link */}
-                                        </li>
-                                    </>
-                                )}
-                            </div>
+                            {/* Admin nav */}
+                            {showAdminBoard && (
+                                <>
+                                    <li className="nav-item">
+                                    {/* link */}
+                                    </li>
+                                    <li className="nav-item">
+                                      <Link className="nav-link" style={isActive(history, '/studentManager/view-feedback')} to="/studentManager/view-feedback">View/Reply Student Feedbacks</Link>
+                                    </li>
+                                    <li className="nav-item">
+                                    <Link className="nav-link" style={isActive(history, '/studentManager/Enter-Notices')} to="/studentManager/Enter-Notices">Enter Notices</Link>
+                                    </li>
+                                    <li className="nav-item">
+                                        <Link className="nav-link" style={isActive(history, '/studentManager/View-Students-Details')} to="/studentManager/View-Students-Details">Current Student Report</Link>
+                                    </li>
+                                </>
+                            )}
+                        </div>
                         </ul>
                     </div>
                     {currentUser ? (
@@ -183,10 +192,15 @@ const Navbar = () =>{
                                 </Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" style={isActive(history, '/Student-Registration')} to={"/Student-Registration"}  >
+                                <Link className="nav-link" style={isActive(history, '/Student/Registration')} to={"/Student/Registration"}  >
                                     Student Registration Portal
                                 </Link>
                             </li>
+                                <li className="nav-item">
+                                    <Link className="nav-link" style={isActive(history, '/student/notices')} to={"/student/notices"}  >
+                                        Taprobane Notices
+                                    </Link>
+                                </li>
 
                             <li className="nav-item">
                                 <Link to={"/contactUs"} style={isActive(history, '/contactUs')} className="nav-link">

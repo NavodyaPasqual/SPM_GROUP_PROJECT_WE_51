@@ -17,10 +17,17 @@ import ViewStudentPayments from "../Student/Payments/viewStudentPayments";
 import UpdateStudentPayment from "../Student/Payments/updateStudentPayment";
 import LoadingScreen from "../Student/Payments/style/loadingScreen";
 
+//New Students
 import ViewStudentNotices from "../Student/Students Notices/StudentNotices";
 import StudentFeedback from "../Student/StudetFeedBack/StdentFeeedBack";
 import StudentUpdate from "../Student/Student Update Profile/StdentsUpdate";
 import StudentRegistration from "../Student/Student Registation/student";
+
+//Students' Manager
+import ViewFeedbacks from "../StudentManager/ViewFeedBack/ViewFeedBacks";
+import EnterNotices from "../StudentManager/EnterNotices/EnterNotices";
+import ViewStudents from "../StudentManager/ViewStudentDetails/viewStudentDetails";
+
 
 //Manager
 import AccountantDashboard from "../Accountant/dashboard";
@@ -63,7 +70,7 @@ function PageRoutes() {
                         <Route path="/register" component={Register} />
                         <Route path="/profile" component={Profile} />
 
-                        <Route path="/Student-Registration" component={StudentRegistration} />
+                        <Route path="/Student/Registration" component={StudentRegistration} />
                         <Route path="/student/student-update" component={StudentUpdate}/>
                         <Route path="/student/notices" component={ViewStudentNotices}/>
                         <Route path="/student/feedback" component={StudentFeedback}/>
@@ -71,6 +78,11 @@ function PageRoutes() {
                         <Route path="/student/add-payment" component={AddStudentPayment}/>
                         <Route path="/student/payment" component={ViewStudentPayments}/>
                         <Route path="/alert" component={LoadingScreen}/>
+
+                        <Route path="/studentManager/view-feedback" component={ViewFeedbacks}/>
+                        <Route path="/studentManager/Enter-Notices" component={EnterNotices}/>
+                        <Route path="/studentManager/View-Students-Details" component={ViewStudents}/>
+
 
                         <Route path="/accountant/company-payment-incomes" component={ViewIncomeTransaction}/>
                         <Route path="/accountant/company-payment-expenses" component={ViewOutcomeTransaction}/>

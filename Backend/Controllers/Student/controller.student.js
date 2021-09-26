@@ -125,7 +125,6 @@ const getDetailsForStudent = async (req, res) => {
 
 
 
-
 module.exports = {
     createStudent,
     getAllStudents,

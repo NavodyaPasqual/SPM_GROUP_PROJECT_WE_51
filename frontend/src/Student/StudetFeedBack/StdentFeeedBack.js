@@ -2,7 +2,6 @@ import React, { Component} from 'react';
 import axios from 'axios';
 import './StudentFeedBack.css';
 let n = "not selected";
-//import styles from './studentfeedbacktry.module.css'; // Import css modules stylesheet as styles
 
 const initialState = {
     title: '',
