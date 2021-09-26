@@ -1,43 +1,41 @@
-.h2 {
+.background-teacher .h2 {
     font-family: bold;
     font-weight: normal;
     text-align: left;
     padding-top: 5px;
 }
 
-.h5{
+.background-teacher .h5{
     font-family: bold;
     font-weight: bold;
     padding-top: 10px;
 }
 
-.h6{
+.background-teacher .h6{
     font-family: bold;
     font-weight: bold;
     padding-top: 10px;
 }
 
-
-
-.label{
+.background-teacher .label{
     color: black;
 }
 
-.form{
-    padding-top: px;
+.background-teacher .form{
+    padding-top: 0px;
     padding-left: 50px;
     padding-right: 50px;
 }
 
-.card-body{
+.background-teacher .card-body{
     color: #3F71AE;
 }
 
-li {
+.background-teacher li {
     font-weight: bold;
     font-family: inter;
 }
 
-.button {
+.background-teacher .button {
     background-color: #7a067a;
 }
