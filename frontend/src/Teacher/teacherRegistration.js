@@ -91,9 +91,9 @@ class TeacherRegistration extends Component {
                 <img src={my}/>
                 <div className="container mt-4 shadow p-3 mb-5 bg-body rounded">
             <div>
-                <h2>Teacher Registration Form</h2>
-                <br/><br/><br/>
-
+                <p3>Teacher Registration</p3>
+                <br/><br/>
+                <div className="container mt-4 p-3 mb-5 bg-body rounded">
                 <form onSubmit={this.onSubmit}
                       className="row g-3">
                     <h5>Personal Details</h5>
@@ -132,15 +132,19 @@ class TeacherRegistration extends Component {
                         <label htmlFor="gender" className="form-label">Gender</label>
                         <div className="input-group mb-3">
                             <span className="input-group-text"><i className="fa fa-venus-mars"></i></span>
-                        <input
+                        <select
                             type="gender"
-                            className="form-control"
+                            className="form-select"
                             id="gender"
                             name="gender"
                             value={this.state.gender}
                             onChange={this.onChange}
                             required
-                        />
+                        >
+                            <option value="select">- -Select gender- -</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                        </select>
                     </div>
                     </div>
                     <div className="col-md-6">
@@ -225,18 +229,23 @@ class TeacherRegistration extends Component {
                     <h5>Educational Background</h5>
                     <h6>Highest Academic Qualification</h6>
                         <div className="col-md-6">
-                            <label htmlFor="qualificationType" className="form-label">Type of Qualification (Degree / Diploma / Certificate)</label>
+                            <label htmlFor="qualificationType" className="form-label">Type of the Qualification</label>
                             <div className="input-group mb-3">
                                 <span className="input-group-text"><i className="fa fa-credit-card"></i></span>
-                            <input
+                            <select
                                 type="qualificationType"
-                                className="form-control"
+                                className="form-select"
                                 id="qualificationType"
                                 name="qualificationType"
                                 value={this.state.qualificationType}
                                 onChange={this.onChange}
                                 required
-                            />
+                                >
+                                <option value="select">- -Select qualification type- -</option>
+                                <option value="Degree">Degree</option>
+                                <option value="Diploma">Diploma</option>
+                                <option value="Certificate">Certificate</option>
+                            </select>
                     </div>
                         </div>
                     <div className="col-md-6">
@@ -316,7 +325,7 @@ class TeacherRegistration extends Component {
                     </div>
                     </div>
                     <div className="col-md-6">
-                        <label htmlFor="majorSubjects" className="form-label">Specialized Subject</label>
+                        <label htmlFor="majorSubjects" className="form-label">Experienced Subject</label>
                         <div className="input-group mb-3">
                             <span className="input-group-text"><i className="fa fa-graduation-cap"></i></span>
                         <input
@@ -332,7 +341,7 @@ class TeacherRegistration extends Component {
                     </div>
                     </div>
 
-                    <h6>Professional Registration</h6>
+                    <h6>Latest Professional Registration</h6>
                     <div className="col-md-6">
                         <label htmlFor="associationName" className="form-label">Name of the Association</label>
                         <div className="input-group mb-3">
@@ -440,13 +449,13 @@ class TeacherRegistration extends Component {
                     </div>
                     </div>
 
-                    <h6>Declaration</h6>
+                    <h5>Declaration</h5>
                     <p1>I hereby apply for registration as a teacher in accordance with Part V Section 32 of the Education Department,
                         ACT 1980, and certify that the information given is correct.</p1>
                     <p1>I have not been refused registration as a teacher or had my registration cancelled at any time during the last six
                     months</p1>
 
-                    <h6>Documents Required</h6>
+                    <h5>Documents Required</h5>
                     <p1>All applicants are required to send two character references plus copies of following documents to the Office E-mail
                     to complete the registration process</p1>
                     <div className="col-12">
@@ -460,21 +469,17 @@ class TeacherRegistration extends Component {
                            of a Justice of Peace (JP) (Sample attached; make sure to sign across a stamp worth LKR 50.00)</li>
                     </ul>
                     </div>
+
                     <div className="col-12">
-                        <div className="form-check">
-                            <input className="form-check-input" type="checkbox" id="gridCheck" required/>
-                                <label className="form-check-label" htmlFor="gridCheck">
-                                    I agreed to terms and conditions
-                                </label>
-                        </div>
+                        <button type="submit" className="button-purple button2-purple">Submit Your Application</button>
                     </div>
                     <div className="col-12">
-                        <button className="button-purple button2-purple">Submit Application</button>
                         <Link to={`/teacher/complete-registration`}>
-                            <button className="button-purple button2-purple">Next Page</button>
+                            <button type="submit" className="button-purple button2-purple">View Registration status</button>
                         </Link>
                     </div>
                 </form>
+                </div>
             </div>
                 </div>
             </div>

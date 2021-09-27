@@ -42,7 +42,8 @@ class ViewUploadedMaterials extends Component {
                 <div className="card shadow p-3 mb-4 bg-body rounded">
                     <div className="search-wrapper">
                         <div className="p-3">
-                            <h2>Lesson Materials</h2>
+                            <p3>Lesson Materials</p3>
+                            <br/><br/>
                             <header className="jumbotron">
                                 <div className="table-responsive">
                                     <table className="table table-striped table-hover">

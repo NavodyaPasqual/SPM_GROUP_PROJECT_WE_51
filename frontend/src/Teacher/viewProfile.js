@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import axios from 'axios';
+import './styles/viewProfile.css';
 import {Link} from "react-router-dom";
-import './styles/viewPendingTeachers.css';
-import my from "./image/Teacherprofile.png";
+import my from "./image/MyApril8.jpg";
 
 
 class ViewProfile extends Component {
@@ -39,26 +39,28 @@ class ViewProfile extends Component {
                     <div>
                         <br/><br/>
             <div className="container">
-                    <h2>Teacher Profiles</h2>
+                    <p3>Teacher Profiles</p3>
                 <br/><br/>
                     {/* Check whether array have any value */}
                     {this.state.profile.length > 0 && this.state.profile.map((item,index) => (
                         <div key={index} className="card mb-3">
+                            <br/><br/>
                             <div className="p-3">
                                 <img src={my}/>
-                                <h5>Registration Number &nbsp;&nbsp; : &nbsp;&nbsp; {item.registrationNumber}</h5>
-                                <h5>Applicant Name &nbsp;&nbsp; : &nbsp;&nbsp; {item.fName}</h5>
-                                <h5>Last Name &nbsp;&nbsp; : &nbsp;&nbsp; {item.lName}</h5>
-                                <h5>National Identity Card &nbsp;&nbsp; : &nbsp;&nbsp; {item.NIC}</h5>
-                                <h5>Passport Number &nbsp;&nbsp; : &nbsp;&nbsp; {item.passportNumber}</h5>
-                                <h5>Address &nbsp;&nbsp; : &nbsp;&nbsp; {item.address}</h5>
-                                <h5>Contact Number &nbsp;&nbsp; : &nbsp;&nbsp; {item.contactNumber}</h5>
-                                <h5>Email &nbsp;&nbsp; : &nbsp;&nbsp; {item.email}</h5>
-                                <h5>Last Edit &nbsp;&nbsp; : &nbsp;&nbsp; {item.editedDate}</h5>
+                                <p4>Registration Number &nbsp;&nbsp; : &nbsp;&nbsp; {item.registrationNumber}</p4><br/>
+                                <p4>First Name &nbsp;&nbsp; : &nbsp;&nbsp; {item.fName}</p4><br/>
+                                <p4>Last Name &nbsp;&nbsp; : &nbsp;&nbsp; {item.lName}</p4><br/>
+                                <p4>NIC &nbsp;&nbsp; : &nbsp;&nbsp; {item.NIC}</p4><br/>
+                                <p4>Passport Number &nbsp;&nbsp; : &nbsp;&nbsp; {item.passportNumber}</p4><br/>
+                                <p4>Address &nbsp;&nbsp; : &nbsp;&nbsp; {item.address}</p4><br/>
+                                <p4>Contact Number &nbsp;&nbsp; : &nbsp;&nbsp; {item.contactNumber}</p4><br/>
+                                <p4>Email &nbsp;&nbsp; : &nbsp;&nbsp; {item.email}</p4><br/>
+                                <p4>Last Edit &nbsp;&nbsp; : &nbsp;&nbsp; {item.editedDate}</p4><br/>
+                                <br/><br/>
 
                                 <div className="col-12">
                                 <div className="row">
-                                    <div className="d-grid gap-2 d-md-flex justify-content-md-end">
+                                    <div className="d-grid gap-2 d-md-flex justify-content-md-center">
                                 <Link to={`/teacher/profile/update/${item._id}`}>
                                     <button className="btn btn-outline-warning me-md-2"><i className="fas fa-edit">&nbsp;&nbsp;UPDATE</i></button>
                                 </Link>

@@ -1,7 +1,7 @@
 import React, { Component} from 'react';
 import axios from 'axios';
 import './styles/teacherProfile.css';
-import my from "../Teacher/image/profile.png";
+import my from "../Teacher/image/download.jpg";
 
 //Initial states of input fields
 const initialState = {
@@ -67,11 +67,11 @@ class TeacherProfile extends Component {
                 <img src={my}/>
                 <div className="container mt-4 shadow p-3 mb-5 bg-body rounded">
                     <div>
-                        <h2>Create Teacher Profile</h2>
-                        <br/><br/>
+                        <p3>Create Teacher Profile</p3>
+                        <br/><br/><br/><br/>
+                        <div className="container mt-4 p-3 mb-5 bg-body rounded">
                         <form onSubmit={this.onSubmit}
                               className="row g-3">
-
                             <div className="col-md-6">
                                 <label htmlFor="registrationNumber" className="form-label">Registration Number</label>
                                 <div className="input-group mb-3">
@@ -232,6 +232,7 @@ class TeacherProfile extends Component {
                                 <button type="submit" className="button-purple button2-purple">Cancel Profile</button>
                             </div>
                         </form>
+                        </div>
                     </div>
                 </div>
             </div>

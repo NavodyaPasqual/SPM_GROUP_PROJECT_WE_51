@@ -39,7 +39,7 @@ import ViewTeacherRegistration from "../Supervisor/viewTeacherRegistration";
 import ViewProfile from "../Teacher/viewProfile";
 import ViewApprovedTeachers from "../Teacher/viewApprovedTeachers";
 import RegistrationCompletion from "../Teacher/registrationCompletion";
-import ViewPendingTeachers from "../Teacher/viewPendingTeachers";
+import ViewPendingTeachers from "../Supervisor/viewPendingTeachers";
 import CreateMaterial from "../Teacher/createMaterial";
 import ViewUploadedMaterials from "../Teacher/viewUploadedMaterials";
 import supervisorDashboard from "../Supervisor/supervisorDashboard";
@@ -81,13 +81,13 @@ function PageRoutes() {
                         <Route path="/accountant/report" component={ReactPDF}/>
                         <Route path="/accountant/" component={AccountantDashboard}/>
 
-                        <Route path="/teacher/registration-form-one" component={TeacherRegistration}/>
+                        <Route path="/teacher/registration" component={TeacherRegistration}/>
                         <Route path="/teacher/profile" component={TeacherProfile}/>
                         <Route path="/teacher/view-registration" component={ViewTeacherRegistration}/>
                         <Route path="/teacher/view-profile" component={ViewProfile}/>
                         <Route path="/teacher/view-approved-registration" component={ViewApprovedTeachers}/>
                         <Route path="/teacher/complete-registration" component={RegistrationCompletion}/>
-                        <Route path="/teacher/view-pending-teachers" component={ViewPendingTeachers}/>
+                        <Route path="/supervisor/view-pending-teachers" component={ViewPendingTeachers}/>
                         <Route path="/teacher/add-course-materials" component={CreateMaterial}/>
                         <Route path="/teacher/view-lesson-materials" component={ViewUploadedMaterials}/>
                         <Route path="/supervisor/" component={supervisorDashboard}/>

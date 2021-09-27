@@ -1,38 +1,35 @@
-h2 {
+p3{
+    font-size: xxx-large;
+    padding-left: 10px;
+    color: #793179;
     font-family: bold;
-    font-weight: bold;
-    text-align: center;
-    font-size: 40px;
-    padding-top: 5px;
-    color: black;
 }
 
-h5{
-    font-family: bold;
-    font-weight: bold;
-    padding-top: 10px;
-}
-
-h6{
+.h6{
     font-family: bold;
     font-weight: bold;
     padding-top: 10px;
 }
 
-label{
-    color: black;
+.label{
+    color: #793179;
 }
 
-form{
+.form{
     padding-top: 10px;
     padding-left: 50px;
     padding-right: 50px;
 }
 
-card-body{
+.card-body{
     color: #3F71AE;
 }
 
-button{
-    align-items: center;
+li {
+    font-weight: bold;
+    font-family: inter;
+}
+
+.button {
+    background-color: #7a067a;
 }

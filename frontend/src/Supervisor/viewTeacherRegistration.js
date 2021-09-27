@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import axios from "axios";
+import './style/viewTeacherRegistration.css';
 
 class ViewTeacherRegistration extends Component {
     constructor(props) {
@@ -42,7 +43,8 @@ class ViewTeacherRegistration extends Component {
                 <div className="card shadow p-3 mb-4 bg-body rounded">
                     <div className="search-wrapper">
             <div className="p-3">
-                <h2>Pending Teachers</h2>
+                <p3>Registered Teachers</p3>
+                <br/><br/>
                 <header className="jumbotron">
                     <div className="table-responsive">
                         <table className="table table-striped table-hover">

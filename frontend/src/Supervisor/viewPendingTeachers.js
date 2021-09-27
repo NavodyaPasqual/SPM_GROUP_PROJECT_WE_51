@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
 import axios from "axios";
+import './style/viewPendingTeachers.css';
 import my from "./image/pendingTeacher.png";
 import {Link} from "react-router-dom";
 
-class ViewApprovedTeachers extends Component {
+class ViewPendingTeachers extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -24,7 +25,7 @@ class ViewApprovedTeachers extends Component {
     deleteTeacher(e, id){
         axios.delete(`http://localhost:8081/teacher/delete/${id}`)
             .then(response => {
-                alert('Permanent Registration Deleted')
+                alert('Application Declined')
                 this.componentDidMount()
             })
     }
@@ -44,7 +45,7 @@ class ViewApprovedTeachers extends Component {
                 <div className="card shadow p-3 mb-4 bg-body rounded">
                     <div className="search-wrapper">
                         <div className="p-3">
-                            <p3>Permanent Teachers</p3>
+                            <p3>Pending Teachers</p3>
                             <br/><br/>
                             <header className="jumbotron">
                                 <div className="table-responsive">
@@ -60,14 +61,14 @@ class ViewApprovedTeachers extends Component {
                                             <th>Contact Number</th>
                                             <th>Email</th>
                                             <th>Current Status</th>
-                                            <th>Update</th>
+                                            <th>Update to Permanent</th>
                                             <th>Delete</th>
                                         </tr>
                                         </thead>
                                         <tbody>
                                         {this.state.teacher.length > 0 && this.state.teacher.map((item,index) => (
                                             <tr key={index} className="align-top">
-                                                {item.status === "approved" &&
+                                                {item.status === "not approved" &&
                                                 <>
                                                     <td>{item.firstName}</td>
                                                     <td>{item.lastName}</td>
@@ -77,7 +78,7 @@ class ViewApprovedTeachers extends Component {
                                                     <td>{item.address}</td>
                                                     <td>{item.contactNumber}</td>
                                                     <td>{item.email}</td>
-                                                    <td><span className="badge bg-success">{item.status}</span></td>
+                                                    <td><span className="badge bg-danger">{item.status}</span></td>
                                                     <td>
                                                         <button className="update"
                                                                 onClick={e => this.updateStatus(e, item._id)}>
@@ -106,4 +107,4 @@ class ViewApprovedTeachers extends Component {
     }
 }
 
-export default ViewApprovedTeachers;
+export default ViewPendingTeachers;

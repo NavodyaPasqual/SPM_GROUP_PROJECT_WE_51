@@ -3,7 +3,7 @@ import axios from "axios";
 import my from "./image/pendingTeacher.png";
 import {Link} from "react-router-dom";
 
-class ViewApprovedTeachers extends Component {
+class ViewApprovedMaterials extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -106,4 +106,4 @@ class ViewApprovedTeachers extends Component {
     }
 }
 
-export default ViewApprovedTeachers;
+export default ViewApprovedMaterials;

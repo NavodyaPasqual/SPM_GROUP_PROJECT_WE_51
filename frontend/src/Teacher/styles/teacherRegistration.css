@@ -1,14 +1,8 @@
-.h2 {
+p3{
+    font-size: xx-large;
+    padding-left: 10px;
+    color: #793179;
     font-family: bold;
-    font-weight: normal;
-    text-align: left;
-    padding-top: 5px;
-}
-
-.h5{
-    font-family: bold;
-    font-weight: bold;
-    padding-top: 10px;
 }
 
 .h6{
@@ -17,14 +11,12 @@
     padding-top: 10px;
 }
 
-
-
 .label{
-    color: black;
+    color: #793179;
 }
 
 .form{
-    padding-top: px;
+    padding-top: 10px;
     padding-left: 50px;
     padding-right: 50px;
 }
@@ -38,6 +30,3 @@ li {
     font-family: inter;
 }
 
-.button {
-    background-color: #7a067a;
-}
