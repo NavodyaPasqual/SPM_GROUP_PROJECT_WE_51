@@ -150,7 +150,7 @@ const Register = (props) => {
             <img src={img} height="320px" alt="" className="mt-5"/>
           </div>
           <div className="col-md-6">
-            <h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sign Up</h1>
+            <h1>Sign Up</h1>
             <div className="p-3">
           <Form onSubmit={handleRegister} ref={form} data-testid='from-tag'>
             {!successful && (

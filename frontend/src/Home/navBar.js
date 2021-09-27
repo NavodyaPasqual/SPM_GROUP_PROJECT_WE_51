@@ -175,7 +175,7 @@ const Navbar = () =>{
                             </li>
                             <li className="nav-item">
                                 <a href="/login"  style={isActive(history, '/login')} className="nav-link" onClick={logOut}>
-                                    <button className="button-submit button2-submit">
+                                    <button className="button-signUp button2-signup">
                                         LogOut
                                     </button>
                                 </a>
@@ -220,7 +220,7 @@ const Navbar = () =>{
 
                             <li className="nav-item">
                                 <Link to={"/register"} style={isActive(history, '/register')} className="nav-link">
-                                    <button class="button-submit button2-submit">Sign Up</button>
+                                    <button class="button-signUp button2-signup">Sign Up</button>
                                 </Link>
                             </li>
                         </div>
