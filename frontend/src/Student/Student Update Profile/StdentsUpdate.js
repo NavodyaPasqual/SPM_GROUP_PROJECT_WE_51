@@ -72,9 +72,10 @@ class updateStudent extends Component {
             <div className="student-update">
             <div className="container">
                 <br/>
+                <br/>
                 <form onSubmit={this.onSubmit}data-testid ="form-tag" className="container">
                     <br/>
-                    <h2><b><center>Student Profile</center></b></h2>
+                    <h3><b><center>Student Profile</center></b></h3>
 
                     <div className="banner8" Style = " Left:82%" >
                         <h4>Student No: TAP3456</h4>
@@ -218,23 +219,17 @@ class updateStudent extends Component {
                     </div>
 
                     <br/>
-                    <br/>
-                    <div className="btn btn-primary">
 
+
+                    <br/>
                         <button type="submit" className="btn btn-primary" data-testid ="submit-btn">Update My Details</button>
-
-                    </div>
                     <br/>
-
 
                     <br/>
                     <td><button className="delete" >
                         <i className="fas fa-trash"> Remove Me Out</i>
                     </button></td>
                     <br/>
-
-
-
 
                     <br/>
                     <br/>

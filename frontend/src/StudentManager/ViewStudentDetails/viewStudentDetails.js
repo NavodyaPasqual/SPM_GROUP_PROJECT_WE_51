@@ -45,7 +45,7 @@ class ViewStudents extends Component {
                         <form className="container">
                             <br/>
                             <div className="banner2">
-                                <h2 className="RKH1" >Existing Students of the System</h2>
+                                <h2 className="RKH1" >Existing Students of Taprobane</h2>
                             </div>
                             <br/>
 

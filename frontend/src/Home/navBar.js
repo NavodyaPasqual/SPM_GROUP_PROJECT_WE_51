@@ -116,6 +116,9 @@ const Navbar = () =>{
                                         <li className="nav-item">
                                             <Link className="nav-link" style={isActive(history, '/student/student-update')} to="/student/student-update">Student Profile update</Link>
                                         </li>
+                                        <li className="nav-item">
+                                            <Link className="nav-link" style={isActive(history, '/student/TakeClassMaterials')} to="/student/TakeClassMaterials">My Class Materials</Link>
+                                        </li>
                                     </>
                                 )}
 
@@ -150,10 +153,10 @@ const Navbar = () =>{
                                     {/* link */}
                                     </li>
                                     <li className="nav-item">
-                                      <Link className="nav-link" style={isActive(history, '/studentManager/view-feedback')} to="/studentManager/view-feedback">View/Reply Student Feedbacks</Link>
+                                      <Link className="nav-link" style={isActive(history, '/studentManager/view-feedback')} to="/studentManager/view-feedback">Manage Feedbacks</Link>
                                     </li>
                                     <li className="nav-item">
-                                    <Link className="nav-link" style={isActive(history, '/studentManager/Enter-Notices')} to="/studentManager/Enter-Notices">Enter Notices</Link>
+                                    <Link className="nav-link" style={isActive(history, '/studentManager/Enter-Notices')} to="/studentManager/Enter-Notices">Manage Notices</Link>
                                     </li>
                                     <li className="nav-item">
                                         <Link className="nav-link" style={isActive(history, '/studentManager/View-Students-Details')} to="/studentManager/View-Students-Details">Current Student Report</Link>

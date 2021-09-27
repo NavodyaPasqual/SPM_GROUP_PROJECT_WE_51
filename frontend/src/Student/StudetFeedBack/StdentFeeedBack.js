@@ -66,7 +66,6 @@ class studentFeedBack extends Component {
             <div className="container">
                 <br/>
                 <br/>
-                <br/>
 
                 <form onSubmit={this.onSubmit}data-testid ="form-tag" className="container">
                     <br/>
@@ -153,7 +152,7 @@ class studentFeedBack extends Component {
                             <form className="container">
                                 <br/>
                                 <br/>
-                                <center><h3>Received Responses</h3></center>
+                                <center><h3><b>Received Responses</b></h3></center>
                                 <br/>
                                 <br/>
 
@@ -192,7 +191,7 @@ class studentFeedBack extends Component {
 
                                         <br/>
                                         <td><button className="delete" onClick={e => this.deleteFeedback(e,item._id)}>
-                                            <i className="fas fa-trash">Manager Reply </i>
+                                            <i className="fas fa-trash"> Reply </i>
                                         </button></td>
                                         <br/>
 

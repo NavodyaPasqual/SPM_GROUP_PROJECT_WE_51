@@ -75,7 +75,7 @@ class ViewFeedBacks extends Component {
                         <form className="container">
                             <br/>
                             <br/>
-                            <center><h3> Feedback Management Patrol </h3></center>
+                            <center><h3> <b>Feedback Management Patrol </b></h3></center>
                             <br/>
                             <br/>
 

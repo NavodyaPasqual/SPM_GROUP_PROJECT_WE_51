@@ -22,6 +22,8 @@ import ViewStudentNotices from "../Student/Students Notices/StudentNotices";
 import StudentFeedback from "../Student/StudetFeedBack/StdentFeeedBack";
 import StudentUpdate from "../Student/Student Update Profile/StdentsUpdate";
 import StudentRegistration from "../Student/Student Registation/student";
+import TakeClassMaterials from "../Student/TakeClassMaterials/TakeClassMaterials";
+
 
 //Students' Manager
 import ViewFeedbacks from "../StudentManager/ViewFeedBack/ViewFeedBacks";
@@ -74,6 +76,8 @@ function PageRoutes() {
                         <Route path="/student/student-update" component={StudentUpdate}/>
                         <Route path="/student/notices" component={ViewStudentNotices}/>
                         <Route path="/student/feedback" component={StudentFeedback}/>
+                        <Route path="/student/TakeClassMaterials" component={TakeClassMaterials}/>
+
                         <Route path="/student/payment/update/:id" component={UpdateStudentPayment}/>
                         <Route path="/student/add-payment" component={AddStudentPayment}/>
                         <Route path="/student/payment" component={ViewStudentPayments}/>
