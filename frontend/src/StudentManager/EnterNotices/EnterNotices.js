@@ -44,10 +44,21 @@ class EnterNotices extends Component {
         axios.post('http://localhost:8081/StudentNotices/createStudentNotices', notice)
             .then(response => {
                 alert('Event Data successfully inserted')
+                this.componentDidMount()
             })
             .catch(error => {
                 console.log(error.message);
                 alert(error.message)
+            })
+    }
+
+
+    //to call the end point and delete a value using axios
+    deleteNotice(e, id){
+        axios.delete(`http://localhost:8081/StudentNotices/deleteNotice/${id}`)
+            .then(response => {
+                alert('Application Declined')
+                this.componentDidMount()
             })
     }
 
@@ -191,6 +202,12 @@ class EnterNotices extends Component {
                                     <h6>Link Entered : </h6>
                                     <label>{item.link}</label>
                                     <br/>
+                                    <br/>
+                                    <td><button className="delete" onClick={e => this.deleteNotice(e,item._id)}>
+                                        <i className="fas fa-trash">     Remove Notice </i>
+                                    </button></td>
+                                    <br/>
+
                                     <br/>
                                     <div className="item">
                                         <div className="banner98" >

@@ -19,6 +19,14 @@ class ViewStudents extends Component {
             })
     }
 
+    //to call the end point and delete a value using axios
+    deleteStudent(e, id){
+        axios.delete(`http://localhost:8081/MainStudent/deleteStudent/${id}`)
+            .then(response => {
+                alert('Application Declined')
+                this.componentDidMount()
+            })
+    }
 
 
     render() {
@@ -98,8 +106,11 @@ class ViewStudents extends Component {
                                     <div className="item">
                                         <label htmlFor="ttype"> {item.AddressLineTwo} </label>
                                     </div>
-
-
+                                    <br/>
+                                    <td><button className="delete" onClick={e => this.deleteStudent(e,item._id)}>
+                                        <i className="fas fa-trash">     Remove student </i>
+                                    </button></td>
+                                    <br/>
 
                                     <br/>
                                     <div className="item">

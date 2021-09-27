@@ -125,12 +125,21 @@ const getDetailsForStudent = async (req, res) => {
 
 
 
+const deleteById = async (req, res) => {
+    const id = req.params.id
+    await Student.findByIdAndRemove(id).exec()
+    res.send('Student Successfully removed from the system');
+}
+
+
+
 module.exports = {
     createStudent,
     getAllStudents,
     getReferancesForStudent,
     getPerticulerStudent,
     updateStudentDetails,
-    getDetailsForStudent
+    getDetailsForStudent,
+    deleteById
 };
 

@@ -50,6 +50,16 @@ class studentFeedBack extends Component {
     }
 
 
+    //to call the end point and delete a value using axios
+    deleteFeedback(e, id){
+        axios.delete(`http://localhost:8081/StudentFeedbacks/deleteFeedback/${id}`)
+            .then(response => {
+                alert('Application Declined')
+                this.componentDidMount()
+            })
+    }
+
+
     render() {
         return (
             <div className="student-feedback">
@@ -179,6 +189,16 @@ class studentFeedBack extends Component {
                                 <br/>
                                 <p>This Response is for the Feedback you sent, by Students Manager of Taprobane <a href="https://www.w3docs.com/privacy-policy">Taprobane Students Management (pvt)LTD</a>.</p>
                                 <br/>
+
+                                        <br/>
+                                        <td><button className="delete" onClick={e => this.deleteFeedback(e,item._id)}>
+                                            <i className="fas fa-trash">Manager Reply </i>
+                                        </button></td>
+                                        <br/>
+
+
+
+
                                         <br/>
                                     </div>
                                 ))}

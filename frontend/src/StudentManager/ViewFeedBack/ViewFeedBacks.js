@@ -49,6 +49,15 @@ class ViewFeedBacks extends Component {
             })
     }
 
+    //to call the end point and delete a value using axios
+    deleteFeedback(e, id){
+        axios.delete(`http://localhost:8081/StudentFeedbacks/deleteFeedback/${id}`)
+            .then(response => {
+                alert('Application Declined')
+                this.componentDidMount()
+            })
+    }
+
 
     render() {
         return (
@@ -102,7 +111,11 @@ class ViewFeedBacks extends Component {
                                             <label htmlFor="lname"><h6><t> Received you responsibly as :</t></h6> <label>{item.receivers}</label></label>
                                         </div>
                                     </div>
-
+                                    <br/>
+                                    <td><button className="delete" onClick={e => this.deleteFeedback(e,item._id)}>
+                                        <i className="fas fa-trash">  Feedback </i>
+                                    </button></td>
+                                    <br/>
                                 </div>
                             ))}
                         </form>

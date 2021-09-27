@@ -9,6 +9,7 @@ module.exports = function () {
     router.get('/getParticularStudent', controller.getPerticulerStudent);
     router.put('/UpdateParticularStudent/:id', controller.updateStudentDetails);
     router.get('/getDetailsForStudent/:id', controller.getDetailsForStudent);
+    router.delete('/deleteStudent/:id', controller.deleteById);
     return router;
 }
 

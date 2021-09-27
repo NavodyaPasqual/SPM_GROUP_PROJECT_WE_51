@@ -27,7 +27,6 @@ const getAllStudentNotices = async (req, res) => {
 
 
 
-
 const getSpecificNotices = async (req, res) => {
     const item2 = await Notices.findById(req.params.id)
 
@@ -39,11 +38,16 @@ const getSpecificNotices = async (req, res) => {
 
 }
 
+const deleteById = async (req, res) => {
+    const id = req.params.id
+    await Notices.findByIdAndRemove(id).exec()
+    res.send('Notice Successfully removed from the system');
+}
 
 module.exports = {
     CreateStudentNotices,
     getAllStudentNotices,
-
+    deleteById,
     getSpecificNotices
 };
 

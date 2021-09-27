@@ -225,6 +225,17 @@ class updateStudent extends Component {
 
                     </div>
                     <br/>
+
+
+                    <br/>
+                    <td><button className="delete" >
+                        <i className="fas fa-trash"> Remove Me Out</i>
+                    </button></td>
+                    <br/>
+
+
+
+
                     <br/>
                     <br/>
 
