@@ -114,7 +114,7 @@ const ViewStudentPayment = () => {
     }, [])
 
     const showLoading = () =>
-        loading && (<div className="overlay">
+        loading && (<div className="overlay-top">
             <h1 className="txt-main">Please wait....</h1>
             <img className="loadingImg" src={spinner} alt="inner" />
         </div>);

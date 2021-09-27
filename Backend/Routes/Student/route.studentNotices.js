@@ -7,5 +7,6 @@ module.exports = function () {
     router.get('/GetAllStudentNotices', controller.getAllStudentNotices);
 
     router.get('/GetSpecificNotices/:id', controller.getSpecificNotices);
+    router.delete('/deleteNotice/:id', controller.deleteById);
     return router;
 }

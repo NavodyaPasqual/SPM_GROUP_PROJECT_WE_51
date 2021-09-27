@@ -1,5 +1,5 @@
 
-.student-feedback h1 {
+.student-view-feedback h1 {
     position: absolute;
     margin: 0;
     font-size: 40px;
@@ -7,142 +7,144 @@
     z-index: 2;
     line-height: 83px;
 }
-.student-feedback textarea {
-    width: calc(100% - 10px);
-    padding: 50px;
+
+
+.student-view-feedback h4 {
+    position: center;
+    margin: 0;
+    font-size: 15px;
+    color: #fff;
+    z-index: 2;
+    line-height: 83px;
+    left: 50%;
 }
-.student-feedback .testbox {
+
+.student-view-feedback textarea {
+    width: calc(100% - 10px);
+    padding: 30px;
+}
+.student-view-feedback .testbox {
     display: flex;
     justify-content: center;
     align-items: center;
     height: inherit;
     padding: 20px;
 }
-.student-feedback form {
+.student-view-feedback form {
     width: 100%;
     padding: 20px;
     border-radius: 6px;
     background: #fff;
     box-shadow: 0 0 8px  #669999;
 }
-.student-feedback .banner {
-    position: relative;
-    height: 200px;
-    background-image: url("./3dstar.jpg");
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-.student-feedback .banner::after {
-    content: "";
-    background-color: rgba(0, 0, 0, 0.2);
-    position: absolute;
-    width: 100%;
-    height: 100%;
-}
 
-.student-feedback .banner2 {
-    position: center;
-    height: 100px;
-    background-image: url("./3dstar.jpg");
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-.student-feedback .banner2::after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-}
 
-.student-feedback .banner3 {
+.student-view-feedback .banner97 {
     position: center;
-    height: 100px;
-    width: 300px;
-    background-image: url("./newR.jpg");
+    height: 30px;
+    width: 1200px;
+    background:#ff69b4;
     background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
 }
-.student-feedback .banner3::after {
+.student-view-feedback .banner97::after {
     content: "";
     position: absolute;
     width: 300%;
     height: 150%;
 }
 
-.student-feedback input, select {
+
+.student-view-feedback .banner98 {
+    position: center;
+    height: 5px;
+    width: 1200px;
+    background-image: url("./black-wallpapers-7.jpg");
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.student-view-feedback .banner98::after {
+    content: "";
+    position: absolute;
+    width: 300%;
+    height: 150%;
+}
+
+
+
+
+
+.student-view-feedback input, select {
     border: 1px solid #ccc;
     border-radius: 3px;
 }
-.student-feedback input,select {
+.student-view-feedback input,select {
     width: calc(100% - 10px);
     padding: 5px;
 }
-.student-feedback input[type="date"] {
+.student-view-feedback input[type="date"] {
     padding: 4px 5px;
 }
 
-.student-feedback .item:hover p, .item:hover i, .question:hover p, .question label:hover, input:hover::placeholder {
+.student-view-feedback .item:hover p, .item:hover i, .question:hover p, .question label:hover, input:hover::placeholder {
     color:  #669999;
 }
-.student-feedback .item input:hover, .item select:hover, .item textarea:hover {
+.student-view-feedback .item input:hover, .item select:hover, .item textarea:hover {
     border: 1px solid transparent;
     box-shadow: 0 0 3px 0  #669999;
     color: #669999;
 }
-.student-feedback .item {
+.student-view-feedback .item {
     position: relative;
     margin: 10px 0;
 }
-.student-feedback .item span {
+.student-view-feedback .item span {
     color: red;
 }
-.student-feedback .week {
+.student-view-feedback .week {
     display:flex;
     justfiy-content:space-between;
 }
-.student-feedback .colums {
+.student-view-feedback .colums {
     display:flex;
     justify-content:space-between;
     flex-direction:row;
     flex-wrap:wrap;
 }
-.student-feedback .colums div {
+.student-view-feedback .colums div {
     width:48%;
 }
-.student-feedback input[type="date"]::-webkit-inner-spin-button {
+.student-view-feedback input[type="date"]::-webkit-inner-spin-button {
     display: none;
 }
 
-.student-feedback .item i {
+.student-view-feedback .item i {
     right: 1%;
     top: 30px;
     z-index: 1;
 }
-.student-feedback input[type=radio], input[type=checkbox]  {
+.student-view-feedback input[type=radio], input[type=checkbox]  {
     display: none;
 }
-.student-feedback label.radio {
+.student-view-feedback label.radio {
     position: relative;
     display: inline-block;
     margin: 5px 20px 15px 0;
     cursor: pointer;
 }
-.student-feedback .question span {
+.student-view-feedback .question span {
     margin-left: 30px;
 }
-.student-feedback .question-answer label {
+.student-view-feedback .question-answer label {
     display: block;
 }
-.student-feedback label.radio:before {
+.student-view-feedback label.radio:before {
     content: "";
     position: absolute;
     left: 0;
@@ -151,10 +153,10 @@
     border-radius: 50%;
     border: 2px solid #ccc;
 }
-.student-feedback input[type=radio]:checked + label:before, label.radio:hover:before {
+.student-view-feedback input[type=radio]:checked + label:before, label.radio:hover:before {
     border: 2px solid  #669999;
 }
-.student-feedback label.radio:after {
+.student-view-feedback label.radio:after {
     content: "";
     position: absolute;
     top: 6px;
@@ -167,18 +169,18 @@
     transform: rotate(-45deg);
     opacity: 0;
 }
-.student-feedback input[type=radio]:checked + label:after {
+.student-view-feedback input[type=radio]:checked + label:after {
     opacity: 1;
 }
-.student-feedback .flax {
+.student-view-feedback .flax {
     display:flex;
     justify-content:space-around;
 }
-.student-feedback .btn-block {
+.student-view-feedback .btn-block {
     margin-top: 10px;
     text-align: center;
 }
-.student-feedback button {
+.student-view-feedback button {
     width: 150px;
     padding: 10px;
     border: none;
@@ -188,7 +190,7 @@
     color: #fff;
     cursor: pointer;
 }
-.student-feedback button:hover {
+.student-view-feedback button:hover {
     background:  #a3c2c2;
 }
 @media (min-width: 568px) {

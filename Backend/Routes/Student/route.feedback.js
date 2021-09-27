@@ -7,5 +7,6 @@ module.exports = function () {
     router.get('/GetAllFeedBack', controller.getAllFeedBack);
     router.get('/GetSpecificFeedBack/:id', controller.getSpecificFeedBack);
     router.get('/GetAllFeedBackForParticularUser/:receivers', controller.getTestAllFeedBack);
+    router.delete('/deleteFeedback/:id', controller.deleteById);
     return router;
 }

@@ -53,11 +53,17 @@ const getSpecificFeedBack = async (req, res) => {
 
 }
 
+const deleteById = async (req, res) => {
+    const id = req.params.id
+    await Feedback.findByIdAndRemove(id).exec()
+    res.send('Feedback Successfully removed from the system');
+}
 
 module.exports = {
     CreateFeedBack,
     getAllFeedBack,
     getSpecificFeedBack,
-    getTestAllFeedBack
+    getTestAllFeedBack,
+    deleteById
 };
 

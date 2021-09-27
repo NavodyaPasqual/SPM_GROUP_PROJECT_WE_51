@@ -2,7 +2,6 @@ import React, { Component} from 'react';
 import axios from 'axios';
 import './StudentFeedBack.css';
 let n = "not selected";
-//import styles from './studentfeedbacktry.module.css'; // Import css modules stylesheet as styles
 
 const initialState = {
     title: '',
@@ -51,11 +50,20 @@ class studentFeedBack extends Component {
     }
 
 
+    //to call the end point and delete a value using axios
+    deleteFeedback(e, id){
+        axios.delete(`http://localhost:8081/StudentFeedbacks/deleteFeedback/${id}`)
+            .then(response => {
+                alert('Application Declined')
+                this.componentDidMount()
+            })
+    }
+
+
     render() {
         return (
             <div className="student-feedback">
             <div className="container">
-                <br/>
                 <br/>
                 <br/>
 
@@ -144,7 +152,7 @@ class studentFeedBack extends Component {
                             <form className="container">
                                 <br/>
                                 <br/>
-                                <center><h3>Received Responses</h3></center>
+                                <center><h3><b>Received Responses</b></h3></center>
                                 <br/>
                                 <br/>
 
@@ -180,6 +188,16 @@ class studentFeedBack extends Component {
                                 <br/>
                                 <p>This Response is for the Feedback you sent, by Students Manager of Taprobane <a href="https://www.w3docs.com/privacy-policy">Taprobane Students Management (pvt)LTD</a>.</p>
                                 <br/>
+
+                                        <br/>
+                                        <td><button className="delete" onClick={e => this.deleteFeedback(e,item._id)}>
+                                            <i className="fas fa-trash"> Reply </i>
+                                        </button></td>
+                                        <br/>
+
+
+
+
                                         <br/>
                                     </div>
                                 ))}

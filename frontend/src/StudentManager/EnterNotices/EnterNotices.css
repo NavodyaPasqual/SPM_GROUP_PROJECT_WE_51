@@ -1,4 +1,25 @@
-.student-feedback .RKH1 {
+.Notice-Enter .banner98 {
+    position: center;
+    height: 5px;
+    width: 1200px;
+    background-image: url("./black-wallpapers-7.jpg");
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.Notice-Enter .banner98::after {
+    content: "";
+    position: absolute;
+    width: 300%;
+    height: 150%;
+}
+
+
+
+
+.Notice-Enter h1 {
     position: absolute;
     margin: 0;
     font-size: 40px;
@@ -6,18 +27,18 @@
     z-index: 2;
     line-height: 83px;
 }
-.student-feedback .RKTArea1 {
+.Notice-Enter textarea {
     width: calc(100% - 10px);
     padding: 50px;
 }
-.student-feedback .testbox {
+.Notice-Enter .testbox {
     display: flex;
     justify-content: center;
     align-items: center;
     height: inherit;
     padding: 20px;
 }
-.student-feedback .container {
+.Notice-Enter form {
     width: 100%;
     padding: 20px;
     border-radius: 6px;
@@ -25,110 +46,89 @@
     box-shadow: 0 0 8px  #669999;
 }
 
-.student-feedback .banner2 {
+
+.Notice-Enter .banner2 {
     position: center;
-    height: 100px;
-    background-image: url("./3dstar.jpg");
+    height: 210px;
+    background-image: url("./ffg.jpg");
     background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
 }
-.student-feedback .banner2::after {
+.Notice-Enter .banner2::after {
     content: "";
     position: absolute;
     width: 100%;
     height: 100%;
 }
 
-.student-feedback .banner3 {
-    position: center;
-    height: 100px;
-    width: 300px;
-    background-image: url("./Ruv_5.png");
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-.student-feedback .banner3::after {
-    content: "";
-    position: absolute;
-    width: 300%;
-    height: 150%;
-}
-
-.student-feedback input, select {
+.Notice-Enter input, select {
     border: 1px solid #ccc;
     border-radius: 3px;
 }
-.student-feedback input,select {
+.Notice-Enter input,select {
     width: calc(100% - 10px);
     padding: 5px;
 }
-.student-feedback input[type="date"] {
+.Notice-Enter input[type="date"] {
     padding: 4px 5px;
 }
 
-.student-feedback .item:hover p, .item:hover i, .question:hover p, .question label:hover, input:hover::placeholder {
+.Notice-Enter .item:hover p, .item:hover i, .question:hover p, .question label:hover, input:hover::placeholder {
     color:  #669999;
 }
-.student-feedback .item input:hover, .item select:hover, .item textarea:hover {
+.Notice-Enter .item input:hover, .item select:hover, .item textarea:hover {
     border: 1px solid transparent;
     box-shadow: 0 0 3px 0  #669999;
     color: #669999;
 }
-.student-feedback .item {
+.Notice-Enter .item {
     position: relative;
     margin: 10px 0;
 }
-.student-feedback .item span {
+.Notice-Enter .item span {
     color: red;
 }
-.student-feedback .week {
+.Notice-Enter .week {
     display:flex;
     justfiy-content:space-between;
 }
-.student-feedback .colums {
+.Notice-Enter .colums {
     display:flex;
     justify-content:space-between;
     flex-direction:row;
     flex-wrap:wrap;
 }
-.student-feedback .colums div {
+.Notice-Enter .colums div {
     width:48%;
 }
-.student-feedback input[type="date"]::-webkit-inner-spin-button {
+.Notice-Enter input[type="date"]::-webkit-inner-spin-button {
     display: none;
 }
-.student-feedback .item i, input[type="date"]::-webkit-calendar-picker-indicator {
-    position: absolute;
-    font-size: 20px;
-    color:  #a3c2c2;
-}
-.student-feedback .item i {
+
+.Notice-Enter .item i {
     right: 1%;
     top: 30px;
     z-index: 1;
 }
-.student-feedback input[type=radio], input[type=checkbox]  {
+.Notice-Enter input[type=radio], input[type=checkbox]  {
     display: none;
 }
-.student-feedback label.radio {
+.Notice-Enter label.radio {
     position: relative;
     display: inline-block;
     margin: 5px 20px 15px 0;
     cursor: pointer;
 }
-.student-feedback .question span {
+.Notice-Enter .question span {
     margin-left: 30px;
 }
-.student-feedback .question-answer label {
+.Notice-Enter .question-answer label {
     display: block;
 }
-.student-feedback label.radio:before {
+.Notice-Enter label.radio:before {
     content: "";
     position: absolute;
     left: 0;
@@ -137,10 +137,10 @@
     border-radius: 50%;
     border: 2px solid #ccc;
 }
-.student-feedback input[type=radio]:checked + label:before, label.radio:hover:before {
+.Notice-Enter input[type=radio]:checked + label:before, label.radio:hover:before {
     border: 2px solid  #669999;
 }
-.student-feedback label.radio:after {
+.Notice-Enter label.radio:after {
     content: "";
     position: absolute;
     top: 6px;
@@ -153,18 +153,18 @@
     transform: rotate(-45deg);
     opacity: 0;
 }
-.student-feedback input[type=radio]:checked + label:after {
+.Notice-Enter input[type=radio]:checked + label:after {
     opacity: 1;
 }
-.student-feedback .flax {
+.Notice-Enter .flax {
     display:flex;
     justify-content:space-around;
 }
-.student-feedback .btn-block {
+.Notice-Enter .btn-block {
     margin-top: 10px;
     text-align: center;
 }
-.student-feedback button {
+.Notice-Enter button {
     width: 150px;
     padding: 10px;
     border: none;
@@ -174,7 +174,7 @@
     color: #fff;
     cursor: pointer;
 }
-.student-feedback button:hover {
+.Notice-Enter button:hover {
     background:  #a3c2c2;
 }
 @media (min-width: 568px) {

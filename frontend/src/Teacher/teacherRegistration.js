@@ -87,7 +87,7 @@ class TeacherRegistration extends Component {
 
     render() {
         return (
-            <div className="background">
+            <div className="background-teacher">
                 <img src={my}/>
                 <div className="container mt-4 shadow p-3 mb-5 bg-body rounded">
             <div>

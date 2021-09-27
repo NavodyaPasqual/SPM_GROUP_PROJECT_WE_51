@@ -78,7 +78,7 @@ const ViewStudentPayments = (props) => {
     }, [])
 
     const showLoading = () =>
-        loading && (<div className="overlay">
+        loading && (<div className="overlay-top">
             <h1 className="txt-main">Please wait....</h1>
             <img className="loadingImg" src={spinner} alt="inner" />
         </div>);
@@ -166,7 +166,6 @@ const ViewStudentPayments = (props) => {
                                 </div><br/>
                                 <div className="row">
                                     <dd className="col-sm-10">
-                                        <br/><img  height="250px" src={`http://localhost:8081/student-payment/photo/${c._id}`} alt={c.name} className="mb-3"/>
                                         <div className="img-magnifier-container">
                                             <GlassMagnifier
                                                 imageSrc={`http://localhost:8081/student-payment/photo/${c._id}`}

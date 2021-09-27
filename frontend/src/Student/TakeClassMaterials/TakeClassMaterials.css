@@ -1,148 +1,171 @@
 
-.student-feedback h1 {
+.take-class-materials h1 {
     position: absolute;
     margin: 0;
     font-size: 40px;
-    color: #fff;
+    color: #FFFFFF;
     z-index: 2;
     line-height: 83px;
 }
-.student-feedback textarea {
+.take-class-materials textarea {
     width: calc(100% - 10px);
     padding: 50px;
 }
-.student-feedback .testbox {
+.take-class-materials .testbox {
     display: flex;
     justify-content: center;
     align-items: center;
     height: inherit;
     padding: 20px;
 }
-.student-feedback form {
+.take-class-materials form {
     width: 100%;
     padding: 20px;
     border-radius: 6px;
     background: #fff;
     box-shadow: 0 0 8px  #669999;
 }
-.student-feedback .banner {
-    position: relative;
-    height: 200px;
-    background-image: url("./3dstar.jpg");
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-.student-feedback .banner::after {
-    content: "";
-    background-color: rgba(0, 0, 0, 0.2);
-    position: absolute;
-    width: 100%;
-    height: 100%;
-}
-
-.student-feedback .banner2 {
+.take-class-materials .banner3 {
     position: center;
-    height: 100px;
-    background-image: url("./3dstar.jpg");
+    height: 20px;
+    background: #ffe4e1;
     background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
 }
-.student-feedback .banner2::after {
+.take-class-materials .banner3::after {
     content: "";
     position: absolute;
     width: 100%;
     height: 100%;
 }
 
-.student-feedback .banner3 {
+
+
+.take-class-materials .banner85 {
     position: center;
-    height: 100px;
-    width: 300px;
-    background-image: url("./newR.jpg");
+    height: 30px;
+    background: #ffb6c1;
     background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
 }
-.student-feedback .banner3::after {
+.take-class-materials .banner85::after {
     content: "";
     position: absolute;
-    width: 300%;
+    width: 100%;
+    height: 100%;
+}
+
+
+.take-class-materials .banner28 {
+    position: center;
+    height: 80px;
+    width: 120px;
+    background-image: url("./download-icon.gif");
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.take-class-materials .banner28::after {
+    content: "";
+    position: absolute;
+    width: 100%;
     height: 150%;
 }
 
-.student-feedback input, select {
+
+.take-class-materials .banner2 {
+    position: center;
+    height: 80px;
+    background-image: url("./rty.jpg");
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.take-class-materials .banner2::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+
+.take-class-materials input, select {
     border: 1px solid #ccc;
     border-radius: 3px;
 }
-.student-feedback input,select {
+.take-class-materials input,select {
     width: calc(100% - 10px);
     padding: 5px;
 }
-.student-feedback input[type="date"] {
+.take-class-materials input[type="date"] {
     padding: 4px 5px;
 }
 
-.student-feedback .item:hover p, .item:hover i, .question:hover p, .question label:hover, input:hover::placeholder {
+.take-class-materials .item:hover p, .item:hover i, .question:hover p, .question label:hover, input:hover::placeholder {
     color:  #669999;
 }
-.student-feedback .item input:hover, .item select:hover, .item textarea:hover {
+.take-class-materials .item input:hover, .item select:hover, .item textarea:hover {
     border: 1px solid transparent;
     box-shadow: 0 0 3px 0  #669999;
     color: #669999;
 }
-.student-feedback .item {
+.take-class-materials .item {
     position: relative;
     margin: 10px 0;
 }
-.student-feedback .item span {
+.take-class-materials .item span {
     color: red;
 }
-.student-feedback .week {
+.take-class-materials .week {
     display:flex;
     justfiy-content:space-between;
 }
-.student-feedback .colums {
+.take-class-materials .colums {
     display:flex;
     justify-content:space-between;
     flex-direction:row;
     flex-wrap:wrap;
 }
-.student-feedback .colums div {
+.take-class-materials .colums div {
     width:48%;
 }
-.student-feedback input[type="date"]::-webkit-inner-spin-button {
+.take-class-materials input[type="date"]::-webkit-inner-spin-button {
     display: none;
 }
 
-.student-feedback .item i {
+.take-class-materials .item i {
     right: 1%;
     top: 30px;
     z-index: 1;
 }
-.student-feedback input[type=radio], input[type=checkbox]  {
+.take-class-materials input[type=radio], input[type=checkbox]  {
     display: none;
 }
-.student-feedback label.radio {
+.take-class-materials label.radio {
     position: relative;
     display: inline-block;
     margin: 5px 20px 15px 0;
     cursor: pointer;
 }
-.student-feedback .question span {
+.take-class-materials .question span {
     margin-left: 30px;
 }
-.student-feedback .question-answer label {
+.take-class-materials .question-answer label {
     display: block;
 }
-.student-feedback label.radio:before {
+.take-class-materials label.radio:before {
     content: "";
     position: absolute;
     left: 0;
@@ -151,10 +174,10 @@
     border-radius: 50%;
     border: 2px solid #ccc;
 }
-.student-feedback input[type=radio]:checked + label:before, label.radio:hover:before {
+.take-class-materials input[type=radio]:checked + label:before, label.radio:hover:before {
     border: 2px solid  #669999;
 }
-.student-feedback label.radio:after {
+.take-class-materials label.radio:after {
     content: "";
     position: absolute;
     top: 6px;
@@ -167,18 +190,18 @@
     transform: rotate(-45deg);
     opacity: 0;
 }
-.student-feedback input[type=radio]:checked + label:after {
+.take-class-materials input[type=radio]:checked + label:after {
     opacity: 1;
 }
-.student-feedback .flax {
+.take-class-materials .flax {
     display:flex;
     justify-content:space-around;
 }
-.student-feedback .btn-block {
+.take-class-materials .btn-block {
     margin-top: 10px;
     text-align: center;
 }
-.student-feedback button {
+.take-class-materials button {
     width: 150px;
     padding: 10px;
     border: none;
@@ -188,7 +211,7 @@
     color: #fff;
     cursor: pointer;
 }
-.student-feedback button:hover {
+.take-class-materials button:hover {
     background:  #a3c2c2;
 }
 @media (min-width: 568px) {
