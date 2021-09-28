@@ -1,5 +1,10 @@
 import React, {Component} from 'react';
 import axios from "axios";
+import Typed from "react-typed";
+import { Link } from "react-router-dom";
+import spinner from "../Student/Payments/image/spinner.gif";
+//import '../Student/Payments/style/loading.css';
+//import './style/viewStudentPayment.css';
 
 class ViewUploadedMaterials extends Component {
     constructor(props) {
@@ -54,7 +59,8 @@ class ViewUploadedMaterials extends Component {
                                             <th>Lesson</th>
                                             <th>Description</th>
                                             <th>Current Status</th>
-                                            <th>Update to Permanent</th>
+                                            <th>Change Status</th>
+                                            <th>Update</th>
                                             <th>Delete</th>
                                         </tr>
                                         </thead>
@@ -74,7 +80,14 @@ class ViewUploadedMaterials extends Component {
                                                 <td><button className="update" onClick={e => this.updateStatus(e,item._id)}>
                                                     <i className="far fa-edit"></i>
                                                 </button></td>
-                                                <td><button className="delete" onClick={e => this.deleteTeacher(e,item._id)}>
+                                                <td>
+                                                    <Link to={`/teacher/update-lesson-materials/${item._id}`}>
+                                                        <button className="btn btn-outline-warning me-md-2">
+                                                            <i className="fas fa-edit"></i>
+                                                        </button>
+                                                    </Link>
+                                                </td>
+                                                <td><button className="btn btn-outline-danger" onClick={e => this.deleteTeacher(e,item._id)}>
                                                     <i className="fas fa-trash"></i>
                                                 </button></td>
                                             </tr>

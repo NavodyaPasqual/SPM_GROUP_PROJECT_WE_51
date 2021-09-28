@@ -1,24 +1,24 @@
-p3 {
+.p3 {
     font-size: xx-large;
     padding-left: 10px;
     color: #793179;
     font-family: bold;
 }
 
-.background-material .h2 {
+.background-teacher .h2 {
     font-family: bold;
     font-weight: normal;
     text-align: left;
     padding-top: 5px;
 }
 
-.background-material .h5{
+.background-teacher .h5{
     font-family: bold;
     font-weight: bold;
     padding-top: 10px;
 }
 
-.background-material .h6{
+.background-teacher .h6{
     font-family: bold;
     font-weight: bold;
     padding-top: 10px;
@@ -32,40 +32,35 @@ p3 {
     padding-top: 10px;
 }
 
-.background-material .label{
+.background-teacher .label{
     color: black;
 }
 
-.background-material .form{
+.background-teacher .form{
     padding-top: 0px;
     padding-left: 50px;
     padding-right: 50px;
 }
 
-.background-material .card-body{
+.background-teacher .card-body{
     color: #3F71AE;
 }
 
-.background-material li {
+.background-teacher li {
     font-weight: bold;
     font-family: inter;
 }
 
-.background-material .button {
+.background-teacher .button {
     background-color: #7a067a;
 }
 
-.background-material img{
+.background-teacher img{
     position: absolute;
     right: 100px;
     width: 180px;
 }
-
-.background-material card{
-    color: #8f9296;
-}
-
-.background-view--material .top{
+.background-view--teacher .top{
     position: absolute;
     right: 0px;
     width: 190px;

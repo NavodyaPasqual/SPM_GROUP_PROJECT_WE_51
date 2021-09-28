@@ -53,7 +53,7 @@ class CreateMaterial extends Component {
 
     render() {
         return (
-            <div className="background-teacher">
+            <div className="background-material">
                 <img src={my}/>
                 <div className="container mt-4 shadow p-3 mb-5 bg-body rounded">
                     <div>
@@ -142,7 +142,7 @@ class CreateMaterial extends Component {
                                 </div>
                             </div>
 
-                            <div class="card indigo text-center z-depth-2 light-version py-4 px-5">
+                            <div class="card indigo text-center z-depth-2 light-version py-4 px-4">
 
                                 <div className="col-md-12">
                                     <label htmlFor="lessonURL" className="form-label">Upload Files Here</label>

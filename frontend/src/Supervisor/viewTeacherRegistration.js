@@ -72,10 +72,10 @@ class ViewTeacherRegistration extends Component {
                                     {item.status === "approved" &&
                                     <td><span className="badge bg-success">{item.status}</span></td>
                                     }
-                                    <td><button className="update" onClick={e => this.updateStatus(e,item._id)}>
+                                    <td><button className="btn btn-outline-warning me-md-2" onClick={e => this.updateStatus(e,item._id)}>
                                         <i className="far fa-edit"></i>
                                     </button></td>
-                                    <td><button className="delete" onClick={e => this.deleteTeacher(e,item._id)}>
+                                    <td><button className="btn btn-outline-danger" onClick={e => this.deleteTeacher(e,item._id)}>
                                         <i className="fas fa-trash"></i>
                                     </button></td>
                                 </tr>

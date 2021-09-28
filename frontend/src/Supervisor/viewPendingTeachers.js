@@ -80,13 +80,13 @@ class ViewPendingTeachers extends Component {
                                                     <td>{item.email}</td>
                                                     <td><span className="badge bg-danger">{item.status}</span></td>
                                                     <td>
-                                                        <button className="update"
+                                                        <button className="btn btn-outline-warning me-md-2"
                                                                 onClick={e => this.updateStatus(e, item._id)}>
                                                             <i className="far fa-edit"></i>
                                                         </button>
                                                     </td>
                                                     <td>
-                                                        <button className="delete"
+                                                        <button className="btn btn-outline-danger"
                                                                 onClick={e => this.deleteTeacher(e, item._id)}>
                                                             <i className="fas fa-trash"></i>
                                                         </button>

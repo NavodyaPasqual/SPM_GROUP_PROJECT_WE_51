@@ -56,6 +56,7 @@ import supervisorDashboard from "../Supervisor/supervisorDashboard";
 import teacherTaskUpdate from "../Class/teacherUpdate";
 import teacherTask from "../Class/teacher";
 import teacherTaskList from "../Class/teacherTask";
+import UpdateTeacherMaterial from "../Teacher/updateTeacherMaterial";
 
 
 function PageRoutes() {
@@ -106,6 +107,7 @@ function PageRoutes() {
                         <Route path="/supervisor/view-pending-teachers" component={ViewPendingTeachers}/>
                         <Route path="/teacher/add-course-materials" component={CreateMaterial}/>
                         <Route path="/teacher/view-lesson-materials" component={ViewUploadedMaterials}/>
+                        <Route path="/teacher/update-lesson-materials" component={UpdateTeacherMaterial}/>
                         <Route path="/supervisor/" component={supervisorDashboard}/>
 
 
