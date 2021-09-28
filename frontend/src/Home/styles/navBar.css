@@ -22,6 +22,11 @@ font-weight: bold;
 font-family: "Algerian";
 }
 
+.navbar-nav li {
+    font-size: medium;
+    font-weight: normal;
+}
+
 .custom-toggler .navbar-toggler-icon {
 background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,102,203, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
@@ -30,28 +35,27 @@ background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32
 border-color: rgb(255,102,203);
 }
 
-.button-submit{
-border: none;
-padding: 6px 30px;
-text-align: center;
-display: inline-block;
-font-size: 16px;
--webkit-transition-duration: 0.4s;
-transition-duration: 0.4s;
-cursor: pointer;
-font-size: 17px;
+.button-signUp{
+    border: none;
+    padding: 5px 30px;
+    font-size: medium;
+    font-weight: bold;
+    text-align: center;
+    display: inline-block;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    cursor: pointer;
 }
 
-.button2-submit {
-background-color: #ffffff;
-color: #6b556b;
-font-weight: bold;
-border: 2px solid #ffffff;
+.button2-signup {
+    background-color: #ffffff;
+    color: #6b556b;
+    border: 2px solid #ffffff;
 }
 
-.button2-submit:hover {
-background-color: #882e88;
-color: #ffffff;
-border: 2px solid #882e88;
-transform: scale(1.01);
+.button2-signup:hover {
+    background-color: #882e88;
+    color: #ffffff;
+    border: 2px solid #882e88;
+    transform: scale(1.01);
 }

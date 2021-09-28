@@ -73,7 +73,7 @@ const Login = (props) => {
             <img src={img} height="320px" alt="" className="mt-5"/>
           </div>
           <div className="col-md-6">
-            <h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sign In</h1>
+            <h1>Sign In</h1>
             <div className="p-3">
           <Form className="row g-3" onSubmit={handleLogin} ref={form}>
             <div className="col-md-12">
