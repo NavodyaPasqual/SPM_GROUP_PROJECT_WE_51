@@ -37,6 +37,7 @@ class ViewProfile extends Component {
 
                 <div className="container p-3">
                     <p3>Teacher Profiles</p3>
+                    <br/><br/>
             <div className="container">
                     {this.state.profile.length > 0 && this.state.profile.map((item,index) => (
                         <div key={index} className="body">

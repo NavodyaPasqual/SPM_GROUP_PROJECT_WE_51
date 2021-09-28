@@ -2,9 +2,7 @@ import React, {Component} from 'react';
 import axios from "axios";
 import Typed from "react-typed";
 import { Link } from "react-router-dom";
-import spinner from "../Student/Payments/image/spinner.gif";
-//import '../Student/Payments/style/loading.css';
-//import './style/viewStudentPayment.css';
+import './styles/viewUploadedMaterials.css';
 
 class ViewUploadedMaterials extends Component {
     constructor(props) {
@@ -43,25 +41,26 @@ class ViewUploadedMaterials extends Component {
 
     render() {
         return (
+            <div className="background-teacher">
             <div className="p-3">
                 <div className="card shadow p-3 mb-4 bg-body rounded">
                     <div className="search-wrapper">
                         <div className="p-3">
-                            <p3>Lesson Materials</p3>
+                            <p3>LESSON MATERIALS</p3>
                             <br/><br/>
                             <header className="jumbotron">
                                 <div className="table-responsive">
                                     <table className="table table-striped table-hover">
                                         <thead>
                                         <tr>
-                                            <th>Subject Name</th>
-                                            <th>Subject Code</th>
-                                            <th>Lesson</th>
-                                            <th>Description</th>
-                                            <th>Current Status</th>
-                                            <th>Change Status</th>
-                                            <th>Update</th>
-                                            <th>Delete</th>
+                                            <th>SUBJECT NAME</th>
+                                            <th>SUBJECT CODE</th>
+                                            <th>LESSON</th>
+                                            <th>DESCRIPTION</th>
+                                            <th>CURRENT STATUS</th>
+                                            <th>CHANGE STATUS</th>
+                                            <th>EDIT</th>
+                                            <th>DELETE</th>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -77,7 +76,7 @@ class ViewUploadedMaterials extends Component {
                                                 {item.status === "approved" &&
                                                 <td><span className="badge bg-success">{item.status}</span></td>
                                                 }
-                                                <td><button className="update" onClick={e => this.updateStatus(e,item._id)}>
+                                                <td><button className="btn btn-outline-primary" onClick={e => this.updateStatus(e,item._id)}>
                                                     <i className="far fa-edit"></i>
                                                 </button></td>
                                                 <td>
@@ -99,6 +98,7 @@ class ViewUploadedMaterials extends Component {
                         </div>
                     </div>
                 </div>
+            </div>
             </div>
         )
     }
