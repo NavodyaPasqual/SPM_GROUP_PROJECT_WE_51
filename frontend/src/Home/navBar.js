@@ -159,7 +159,13 @@ const Navbar = () =>{
                                     <Link className="nav-link" style={isActive(history, '/studentManager/Enter-Notices')} to="/studentManager/Enter-Notices">Manage Notices</Link>
                                     </li>
                                     <li className="nav-item">
-                                        <Link className="nav-link" style={isActive(history, '/studentManager/View-Students-Details')} to="/studentManager/View-Students-Details">Current Student Report</Link>
+                                        <Link className="nav-link" style={isActive(history, '/studentManager/View-Students-Details')} to="/studentManager/View-Students-Details">Current Students</Link>
+                                    </li>
+                                    <li className="nav-item">
+                                        <Link className="nav-link" style={isActive(history, '/studentManager/Take-Students-Details')} to="/studentManager/Take-Students-Details">Student Report</Link>
+                                    </li>
+                                    <li className="nav-item">
+                                        <Link className="nav-link" style={isActive(history, '/studentManager/Print-Notices')} to="/studentManager/Print-Notices">Print Notices</Link>
                                     </li>
                                 </>
                             )}

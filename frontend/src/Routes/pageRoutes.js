@@ -29,6 +29,8 @@ import TakeClassMaterials from "../Student/TakeClassMaterials/TakeClassMaterials
 import ViewFeedbacks from "../StudentManager/ViewFeedBack/ViewFeedBacks";
 import EnterNotices from "../StudentManager/EnterNotices/EnterNotices";
 import ViewStudents from "../StudentManager/ViewStudentDetails/viewStudentDetails";
+import TakeStudents from "../StudentManager/Student Report Generation/RStudentReport";
+import PrintNotices from "../StudentManager/Student Report Generation/RNoticePrint";
 
 
 //Manager
@@ -87,6 +89,8 @@ function PageRoutes() {
                         <Route path="/studentManager/view-feedback" component={ViewFeedbacks}/>
                         <Route path="/studentManager/Enter-Notices" component={EnterNotices}/>
                         <Route path="/studentManager/View-Students-Details" component={ViewStudents}/>
+                        <Route path="/studentManager/Take-Students-Details" component={TakeStudents}/>
+                        <Route path="/studentManager/Print-Notices" component={PrintNotices}/>
 
                         <Route path="/accountant/company-payment-incomes" component={ViewIncomeTransaction}/>
                         <Route path="/accountant/company-payment-expenses" component={ViewOutcomeTransaction}/>
