@@ -99,9 +99,9 @@ const AddStudentPayment = () => {
         <div className="background">
             <img src={my}/>
             {showLoading()}
-            <div className="container mt-4 shadow p-3 mb-5 bg-body rounded">
+            <div className="container mt-4 shadow p-3 mb-5 bg-body rounded needs-validation" novalidate>
                 <div >
-                    <h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Student Payment Submission</h1>
+                    <h1>&nbsp;&nbsp;Student Payment Submission</h1>
                     <div className="p-3">
                         <form className="row g-3" onSubmit={clickSubmit}>
                             <h5>Student Details</h5>
@@ -116,6 +116,7 @@ const AddStudentPayment = () => {
                                         name="name"
                                         value={name}
                                         onChange={handleChange('name')}
+                                        required
                                     />
                                 </div>
                             </div>
@@ -130,6 +131,7 @@ const AddStudentPayment = () => {
                                         name="contactNo"
                                         value={contactNo}
                                         onChange={handleChange('contactNo')}
+                                        required
                                     />
                                 </div>
                             </div>
@@ -144,6 +146,7 @@ const AddStudentPayment = () => {
                                         name="studentID"
                                         value={studentID}
                                         onChange={handleChange('studentID')}
+                                        required
                                     />
                                 </div>
                             </div>
@@ -158,6 +161,7 @@ const AddStudentPayment = () => {
                                         name="classes"
                                         value={classes}
                                         onChange={handleChange('classes')}
+                                        required
                                     />
                                 </div>
                             </div>
@@ -172,24 +176,28 @@ const AddStudentPayment = () => {
                                         name="teacher"
                                         value={teacher}
                                         onChange={handleChange('teacher')}
+                                        required
                                     />
                                 </div>
                             </div>
                             <h5>Payment Details</h5>
                             <div className="col-md-6">
                                 <label htmlFor="type" className="form-label">Payment type</label>
-                                <select
-                                    className="form-select"
-                                    onChange={handleChange('type')}
-                                    id='type'
-                                    required="true"
-                                    value={type}
-                                    name="type"
-                                >
-                                    <option value="select">---Select a Payment Type---</option>
-                                    <option value="Registration payment">Registration payment</option>
-                                    <option value="Monthly Fee">Monthly Fee</option>
-                                </select>
+                                <div className="input-group mb-3">
+                                    <span className="input-group-text"><i className="fas fa-grip-horizontal"></i></span>
+                                    <select
+                                        className="form-select"
+                                        onChange={handleChange('type')}
+                                        id='type'
+                                        required="true"
+                                        value={type}
+                                        name="type"
+                                    >
+                                        <option value="select">---Select a Payment Type---</option>
+                                        <option value="Registration payment">Registration payment</option>
+                                        <option value="Monthly Fee">Monthly Fee</option>
+                                    </select>
+                                </div>
                             </div>
                             <div className="col-md-6">
                                 <label htmlFor="depositedAmount" className="form-label">Deposited Amount (Rs.)</label>
@@ -202,6 +210,7 @@ const AddStudentPayment = () => {
                                         name="depositedAmount"
                                         value={depositedAmount}
                                         onChange={handleChange('depositedAmount')}
+                                        required
                                     />
                                 </div>
                             </div>
@@ -216,25 +225,29 @@ const AddStudentPayment = () => {
                                         name="depositedDate"
                                         value={depositedDate}
                                         onChange={handleChange('depositedDate')}
+                                        required
                                     />
                                 </div>
                             </div>
                             <div className="col-md-6">
                                 <label htmlFor="bank" className="form-label">Bank</label>
-                                <select
-                                    className="form-select"
-                                    onChange={handleChange('bank')}
-                                    id='bank'
-                                    required="true"
-                                    value={bank}
-                                    name="bank"
-                                >
-                                    <option value="select">---Select the bank---</option>
-                                    <option value="BOC">BOC</option>
-                                    <option value="People's bank">People's bank</option>
-                                    <option value="Commercial bank">Commercial bank</option>
-                                    <option value="NDB">NDB</option>
-                                </select>
+                                <div className="input-group mb-3">
+                                    <span className="input-group-text"><i className="fas fa-money-check-alt"></i></span>
+                                    <select
+                                        className="form-select"
+                                        onChange={handleChange('bank')}
+                                        id='bank'
+                                        required="true"
+                                        value={bank}
+                                        name="bank"
+                                    >
+                                        <option value="select">---Select the bank---</option>
+                                        <option value="BOC">BOC</option>
+                                        <option value="People's bank">People's bank</option>
+                                        <option value="Commercial bank">Commercial bank</option>
+                                        <option value="NDB">NDB</option>
+                                    </select>
+                                </div>
                             </div>
                             <div className="col-md-6 mb-3">
                                 <label htmlFor="branch" className="form-label">Branch</label>
@@ -247,6 +260,7 @@ const AddStudentPayment = () => {
                                         name="branch"
                                         value={branch}
                                         onChange={handleChange('branch')}
+                                        required
                                     />
                                 </div>
                             </div>

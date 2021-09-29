@@ -1,0 +1,63 @@
+.contactus h2{
+    color: #793179;
+    font-weight:  bold;
+}
+
+.contactus label{
+    color: #805a80;
+}
+
+.contactus i{
+    background-color:  #805a80;
+    color: #ffffff;
+    font-size: 25px;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 42px;
+    margin: 10px 15px;
+    vertical-align: middle;
+}
+
+.contactus i.fa-envelope{
+    font-size: 17px;
+    line-height: 38px;
+}
+
+.contactus p{
+    display: inline-block;
+    vertical-align: middle;
+    margin:0;
+}
+
+.contactus p a{
+    color: #724672;
+    text-decoration: none;;
+}
+
+.contactus .button-submit{
+    border: none;
+    padding: 6px 30px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    font-size: 17px;
+}
+
+.contactus .button2-submit {
+    background-color: #ffffff;
+    color: #6b556b;
+    font-weight: bold;
+    border: 2px solid #ffffff;
+}
+
+.contactus .button2-submit:hover {
+    background-color: #882e88;
+    color: #ffffff;
+    border: 2px solid #882e88;
+    transform: scale(1.01);
+}

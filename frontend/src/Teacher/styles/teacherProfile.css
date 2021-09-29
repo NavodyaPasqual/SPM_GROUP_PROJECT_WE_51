@@ -1,0 +1,36 @@
+.p3{
+    font-size: xxx-large;
+    padding-left: 10px;
+    color: #793179;
+    font-family: bold;
+    font-family: inter;
+}
+
+.h6{
+    font-family: bold;
+    font-weight: bold;
+    padding-top: 10px;
+}
+
+.label{
+    color: #793179;
+}
+
+.form{
+    padding-top: 10px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.card-body{
+    color: #3F71AE;
+}
+
+li {
+    font-weight: bold;
+    font-family: inter;
+}
+
+.button {
+    background-color: #7a067a;
+}

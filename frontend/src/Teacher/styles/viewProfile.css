@@ -1,0 +1,16 @@
+.card{
+    background-color: #FFFFFF;
+}
+
+p4{
+    padding-left: 50px;
+    text-align: left;
+    font-weight:  bold;
+    font-size: large;
+    font-family: inter;
+    color: black;
+}
+
+dd {
+    color: slategrey;
+}

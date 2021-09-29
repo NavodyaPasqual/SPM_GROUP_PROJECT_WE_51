@@ -114,6 +114,12 @@ const TeacherSchema = new mongoose.Schema({
         min: 2,
         max: 1050
     },
+    dateFrom: {
+        type: Date,
+    },
+    dateTo: {
+        type: Date,
+    },
     status: {
         type: String,
         default: "not approved"
