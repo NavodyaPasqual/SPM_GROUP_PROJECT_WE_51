@@ -142,24 +142,18 @@ class CreateMaterial extends Component {
                                 </div>
                             </div>
 
-                            <div class="card indigo text-center z-depth-2 light-version py-4 px-4">
-
-                                <div className="col-md-12">
-                                    <label htmlFor="lessonURL" className="form-label">Upload Files Here</label>
-                                    <div className="input-group mb-3">
-                                        <span className="input-group-text"><i className="fa fa-calendar"></i></span>
-                                        <input
+                            <div className="form-group files">
+                                <label>Upload Your File </label>
+                            <input
                                             type="file"
                                             className="form-control"
                                             id="lessonURL"
                                             name="lessonURL"
                                             value={this.state.lessonURL}
                                             onChange={this.onChange}
+                                            multiple=""
                                             required
                                         />
-                                    </div>
-                                </div>
-
                             </div>
 
                             <div className="col-12">

@@ -67,7 +67,7 @@ class TeacherProfile extends Component {
                 <img src={my}/>
                 <div className="container mt-4 shadow p-3 mb-5 bg-body rounded">
                     <div>
-                        <p3>Create Teacher Profile</p3>
+                        <p3>CREATE NEW PROFILE</p3>
                         <br/><br/><br/><br/>
                         <div className="container mt-4 p-3 mb-5 bg-body rounded">
                         <form onSubmit={this.onSubmit}

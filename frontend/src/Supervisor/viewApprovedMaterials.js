@@ -44,7 +44,7 @@ class ViewApprovedMaterials extends Component {
                 <div className="card shadow p-3 mb-4 bg-body rounded">
                     <div className="search-wrapper">
                         <div className="p-3">
-                            <p3>Permanent Teachers</p3>
+                            <p3>PERMANENT TEACHERS</p3>
                             <br/><br/>
                             <header className="jumbotron">
                                 <div className="table-responsive">

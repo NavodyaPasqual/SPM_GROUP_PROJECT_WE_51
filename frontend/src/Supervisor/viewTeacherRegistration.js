@@ -43,20 +43,20 @@ class ViewTeacherRegistration extends Component {
                 <div className="card shadow p-3 mb-4 bg-body rounded">
                     <div className="search-wrapper">
             <div className="p-3">
-                <p3>Registered Teachers</p3>
+                <p3>REGISTERED TEACHERS</p3>
                 <br/><br/>
                 <header className="jumbotron">
                     <div className="table-responsive">
                         <table className="table table-striped table-hover">
                             <thead>
                             <tr>
-                                <th>Teacher Name</th>
+                                <th>TEACHER NAME</th>
                                 <th>NIC</th>
-                                <th>Address</th>
-                                <th>Email</th>
-                                <th>Current Status</th>
-                                <th>Update to Permanent</th>
-                                <th>Delete</th>
+                                <th>ADDRESS</th>
+                                <th>EMAIL</th>
+                                <th>CURRENT STATUS</th>
+                                <th>UPDATE TO PERMANENT</th>
+                                <th>DELETE</th>
                             </tr>
                             </thead>
                             <tbody>

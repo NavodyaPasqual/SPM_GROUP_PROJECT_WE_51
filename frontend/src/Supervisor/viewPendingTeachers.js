@@ -45,24 +45,24 @@ class ViewPendingTeachers extends Component {
                 <div className="card shadow p-3 mb-4 bg-body rounded">
                     <div className="search-wrapper">
                         <div className="p-3">
-                            <p3>Pending Teachers</p3>
+                            <p3>PENDING TEACHERS</p3>
                             <br/><br/>
                             <header className="jumbotron">
                                 <div className="table-responsive">
                                     <table className="table table-striped table-hover">
                                         <thead>
                                         <tr>
-                                            <th>First Name</th>
-                                            <th>Last Name</th>
-                                            <th>Gender</th>
+                                            <th>FIRST NAME</th>
+                                            <th>LAST NAME</th>
+                                            <th>GENDER</th>
                                             <th>NIC</th>
-                                            <th>Passport Number</th>
-                                            <th>Address</th>
-                                            <th>Contact Number</th>
-                                            <th>Email</th>
-                                            <th>Current Status</th>
-                                            <th>Update to Permanent</th>
-                                            <th>Delete</th>
+                                            <th>PASSPORT ID</th>
+                                            <th>ADDRESS</th>
+                                            <th>PHONE</th>
+                                            <th>EMAIL</th>
+                                            <th>CURRENT STATUS</th>
+                                            <th>UPDATE TO PERMANENT</th>
+                                            <th>DELETE</th>
                                         </tr>
                                         </thead>
                                         <tbody>
