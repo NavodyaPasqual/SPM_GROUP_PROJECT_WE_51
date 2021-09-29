@@ -6,7 +6,6 @@ import spinner from "../Student/Payments/image/spinner.gif";
 import '../Student/Payments/style/loading.css';
 import './style/viewStudentPayment.css';
 
-
 const ViewIncomeTransaction = () => {
     const [payment, setPayment] = useState([]);
     const [setError] = useState([]);
@@ -119,7 +118,8 @@ const ViewIncomeTransaction = () => {
                                         <Typed
                                             strings={[
                                                 'Search by name',
-                                                'Search by type']}
+                                                'Search by type',
+                                                'Search by name',]}
                                             typeSpeed={40}
                                             backSpeed={50}
                                             attr="placeholder"

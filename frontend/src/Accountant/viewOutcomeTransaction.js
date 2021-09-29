@@ -118,7 +118,8 @@ const ViewOutcomeTransaction = () => {
                                         <Typed
                                             strings={[
                                                 'Search by name',
-                                                'Search by type']}
+                                                'Search by type',
+                                                'Search by name',]}
                                             typeSpeed={40}
                                             backSpeed={50}
                                             attr="placeholder"

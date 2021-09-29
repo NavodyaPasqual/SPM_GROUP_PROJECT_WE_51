@@ -109,6 +109,30 @@ const ViewStudentPayment = () => {
             })
     }
 
+    const approve = (id) =>{
+        axios.put(`http://localhost:8081/student-payment/update-status/${id}`, {status: "valid", id:id})
+            .then(response => {
+                alert('Status updated')
+                loadPayment()
+            })
+    }
+
+    const decline =(id)=>{
+        axios.put(`http://localhost:8081/student-payment/update-status/${id}`, {status: "invalid", id:id})
+            .then(response => {
+                alert('Status updated')
+                loadPayment()
+            })
+    }
+
+    const notDecided =(id)=>{
+        axios.put(`http://localhost:8081/student-payment/update-status/${id}`, {status: "not decided", id:id})
+            .then(response => {
+                alert('Status updated')
+                loadPayment()
+            })
+    }
+
     useEffect(() => {
         loadPayment()
     }, [])
@@ -172,7 +196,7 @@ const ViewStudentPayment = () => {
                                 <th>Branch</th>
                                 <th>Payment Slip</th>
                                 <th>Status</th>
-                                <th>Update</th>
+                                <th>Update Status</th>
                                 <th>Delete</th>
                             </tr>
                             </thead>
@@ -213,8 +237,14 @@ const ViewStudentPayment = () => {
                                     <td><span className="badge bg-danger">{c.status}</span></td>
                                     }
                                     <td>
-                                        <button className="btn btn-outline-warning me-md-2"
-                                                onClick={() => updateStatus(c._id)}><i className="fas fa-edit"></i>
+                                        <button className="btn btn-outline-success mr-5" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Update Status to Valid" onClick={() => approve(c._id)}>
+                                            <i className="fa fa-check"></i>
+                                        </button>&nbsp;
+                                        <button className="btn btn-outline-danger mr-5" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Update Status to Invalid" onClick={() => decline(c._id)}>
+                                            <i className="fas fa-times"></i>
+                                        </button>&nbsp;
+                                        <button className="btn btn-outline-secondary ml-4" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Status not decided"  onClick={() => notDecided(c._id)}>
+                                            <i className="fas fa-question"></i>
                                         </button>
                                     </td>
                                     <td>
