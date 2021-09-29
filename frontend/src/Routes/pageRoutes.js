@@ -88,7 +88,6 @@ function PageRoutes() {
                         <Route path="/studentManager/Enter-Notices" component={EnterNotices}/>
                         <Route path="/studentManager/View-Students-Details" component={ViewStudents}/>
 
-
                         <Route path="/accountant/company-payment-incomes" component={ViewIncomeTransaction}/>
                         <Route path="/accountant/company-payment-expenses" component={ViewOutcomeTransaction}/>
                         <Route path="/accountant/update-payment/:id" component={UpdateCompanyPayment}/>
@@ -109,8 +108,6 @@ function PageRoutes() {
                         <Route path="/teacher/view-lesson-materials" component={ViewUploadedMaterials}/>
                         <Route path="/teacher/update-lesson-materials" component={UpdateTeacherMaterial}/>
                         <Route path="/supervisor/" component={supervisorDashboard}/>
-
-
 
                         <Route path="/teacherTaskUpdate/" component={teacherTaskUpdate}/>
                         <Route path="/teacherTask/" component={teacherTask}/>

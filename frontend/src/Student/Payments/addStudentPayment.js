@@ -99,9 +99,9 @@ const AddStudentPayment = () => {
         <div className="background">
             <img src={my}/>
             {showLoading()}
-            <div className="container mt-4 shadow p-3 mb-5 bg-body rounded">
+            <div className="container mt-4 shadow p-3 mb-5 bg-body rounded needs-validation" novalidate>
                 <div >
-                    <h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Student Payment Submission</h1>
+                    <h1>&nbsp;&nbsp;Student Payment Submission</h1>
                     <div className="p-3">
                         <form className="row g-3" onSubmit={clickSubmit}>
                             <h5>Student Details</h5>
@@ -116,6 +116,7 @@ const AddStudentPayment = () => {
                                         name="name"
                                         value={name}
                                         onChange={handleChange('name')}
+                                        required
                                     />
                                 </div>
                             </div>
@@ -130,6 +131,7 @@ const AddStudentPayment = () => {
                                         name="contactNo"
                                         value={contactNo}
                                         onChange={handleChange('contactNo')}
+                                        required
                                     />
                                 </div>
                             </div>
@@ -144,6 +146,7 @@ const AddStudentPayment = () => {
                                         name="studentID"
                                         value={studentID}
                                         onChange={handleChange('studentID')}
+                                        required
                                     />
                                 </div>
                             </div>
@@ -158,6 +161,7 @@ const AddStudentPayment = () => {
                                         name="classes"
                                         value={classes}
                                         onChange={handleChange('classes')}
+                                        required
                                     />
                                 </div>
                             </div>
@@ -172,6 +176,7 @@ const AddStudentPayment = () => {
                                         name="teacher"
                                         value={teacher}
                                         onChange={handleChange('teacher')}
+                                        required
                                     />
                                 </div>
                             </div>
@@ -205,6 +210,7 @@ const AddStudentPayment = () => {
                                         name="depositedAmount"
                                         value={depositedAmount}
                                         onChange={handleChange('depositedAmount')}
+                                        required
                                     />
                                 </div>
                             </div>
@@ -219,6 +225,7 @@ const AddStudentPayment = () => {
                                         name="depositedDate"
                                         value={depositedDate}
                                         onChange={handleChange('depositedDate')}
+                                        required
                                     />
                                 </div>
                             </div>
@@ -253,6 +260,7 @@ const AddStudentPayment = () => {
                                         name="branch"
                                         value={branch}
                                         onChange={handleChange('branch')}
+                                        required
                                     />
                                 </div>
                             </div>

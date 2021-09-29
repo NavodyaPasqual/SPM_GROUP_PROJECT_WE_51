@@ -6,7 +6,6 @@ import spinner from "../Student/Payments/image/spinner.gif";
 import '../Student/Payments/style/loading.css';
 import './style/viewStudentPayment.css';
 
-
 const ViewIncomeTransaction = () => {
     const [payment, setPayment] = useState([]);
     const [setError] = useState([]);
