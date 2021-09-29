@@ -22,7 +22,7 @@ const ClassSchema = new mongoose.Schema({
     implevel: {
         type: String,
         trim: true
-    },
+    },  
     validtill: {
         type: String,
         trim: true
