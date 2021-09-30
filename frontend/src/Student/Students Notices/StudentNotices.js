@@ -17,12 +17,28 @@ class StudentNotices extends Component {
             })
     }
 
-
-
-
     render() {
         return (
         <div className="student-notices">
+
+
+
+
+            <div className="topnav">
+
+                <div className="search-container">
+                    <form>
+                        <input type="text" placeholder="Search.." name="search"/>
+                            <button type="submit"><i className="fa fa-search"></i></button>
+                    </form>
+                </div>
+
+            </div>
+
+
+
+
+
             <div className="container">
                 <br/>
                 {this.state.courses.length > 0 && this.state.courses.map((item, index) => (

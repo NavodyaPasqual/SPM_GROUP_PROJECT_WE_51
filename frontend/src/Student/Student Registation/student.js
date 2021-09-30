@@ -44,7 +44,7 @@ class addStudent extends Component {
         console.log('DATA TO SEND', student)
         axios.post('http://localhost:8081/MainStudent/createStudent', student)
             .then(response => {
-                alert('Event Data successfully inserted')
+                alert('Student Data successfully Recorded to the Taprobane Systems')
             })
             .catch(error => {
                 console.log(error.message);
