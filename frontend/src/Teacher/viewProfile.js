@@ -86,7 +86,7 @@ class ViewProfile extends Component {
                                 <div className="col-12">
                                 <div className="row">
                                     <div className="d-grid gap-2 d-md-flex justify-content-md-end">
-                                <Link to={`/teacher/profile/update/${item._id}`}>
+                                <Link to={`/teacher/edit-profile`}>
                                     <button className="btn btn-outline-warning me-md-2"><i className="fas fa-edit">&nbsp;&nbsp;UPDATE</i></button>
                                 </Link>
                                 <button className="btn btn-outline-danger" onClick={e => this.deleteProfile(e,item._id)}><i className="fas fa-trash">&nbsp;&nbsp;DELETE</i></button>

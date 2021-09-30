@@ -26,7 +26,7 @@ const getAllTeachers = async (req, res) => {
 const viewTeacherById = async (req, res) => {
     if (req.params && req.params.id) {
         await Teacher.findById(req.params.id)
-            .populate('teachers', '_id firstName lastName nic contactNumber email qualificationType')
+            .populate('teachers', '_id firstName lastName nic contactNumber email regDate qualificationType')
             .then(response => {
                 res.status(200).send({ data: response });
             })

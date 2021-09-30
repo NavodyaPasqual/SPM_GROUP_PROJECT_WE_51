@@ -27,6 +27,9 @@ const TeacherSchema = new mongoose.Schema({
         type: String,
         trim: true
     },
+    regDate: {
+        type: Date,
+    },
     address : {
         type: String,
         required: true,
@@ -84,8 +87,6 @@ const TeacherSchema = new mongoose.Schema({
         min: 2,
         max: 1050
     },
-
-
     associationName : {
         type: String,
         required: true,

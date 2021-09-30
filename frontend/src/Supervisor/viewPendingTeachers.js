@@ -56,7 +56,7 @@ class ViewPendingTeachers extends Component {
                                             <th>LAST NAME</th>
                                             <th>GENDER</th>
                                             <th>NIC</th>
-                                            <th>PASSPORT ID</th>
+                                            <th>Registered Date</th>
                                             <th>ADDRESS</th>
                                             <th>PHONE</th>
                                             <th>EMAIL</th>
@@ -74,7 +74,7 @@ class ViewPendingTeachers extends Component {
                                                     <td>{item.lastName}</td>
                                                     <td>{item.gender}</td>
                                                     <td>{item.nic}</td>
-                                                    <td>{item.passportNumber}</td>
+                                                    <td>{item.regDate}</td>
                                                     <td>{item.address}</td>
                                                     <td>{item.contactNumber}</td>
                                                     <td>{item.email}</td>

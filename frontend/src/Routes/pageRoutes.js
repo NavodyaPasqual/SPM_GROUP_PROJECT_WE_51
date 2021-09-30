@@ -51,12 +51,15 @@ import RegistrationCompletion from "../Teacher/registrationCompletion";
 import ViewPendingTeachers from "../Supervisor/viewPendingTeachers";
 import CreateMaterial from "../Teacher/createMaterial";
 import ViewUploadedMaterials from "../Teacher/viewUploadedMaterials";
+import UpdateTeacherMaterial from "../Teacher/updateTeacherMaterial";
 import supervisorDashboard from "../Supervisor/supervisorDashboard";
+import UpdateTeacherProfile from "../Teacher/updateTeacherProfile"
+import NewPDF from "../Supervisor/basePDF";
 
 import teacherTaskUpdate from "../Class/teacherUpdate";
 import teacherTask from "../Class/teacher";
 import teacherTaskList from "../Class/teacherTask";
-import UpdateTeacherMaterial from "../Teacher/updateTeacherMaterial";
+
 
 
 function PageRoutes() {
@@ -99,6 +102,7 @@ function PageRoutes() {
 
                         <Route path="/teacher/registration" component={TeacherRegistration}/>
                         <Route path="/teacher/profile" component={TeacherProfile}/>
+                        <Route path="/teacher/edit-profile" component={UpdateTeacherProfile}/>
                         <Route path="/teacher/view-registration" component={ViewTeacherRegistration}/>
                         <Route path="/teacher/view-profile" component={ViewProfile}/>
                         <Route path="/teacher/view-approved-registration" component={ViewApprovedTeachers}/>
@@ -107,6 +111,7 @@ function PageRoutes() {
                         <Route path="/teacher/add-course-materials" component={CreateMaterial}/>
                         <Route path="/teacher/view-lesson-materials" component={ViewUploadedMaterials}/>
                         <Route path="/teacher/update-lesson-materials" component={UpdateTeacherMaterial}/>
+                        <Route path="/supervisor/report" component={NewPDF}/>
                         <Route path="/supervisor/" component={supervisorDashboard}/>
 
                         <Route path="/teacherTaskUpdate/" component={teacherTaskUpdate}/>

@@ -55,10 +55,10 @@ class ViewApprovedTeachers extends Component {
                                             <th>Last Name</th>
                                             <th>Gender</th>
                                             <th>NIC</th>
-                                            <th>Passport Number</th>
                                             <th>Address</th>
                                             <th>Contact Number</th>
                                             <th>Email</th>
+                                            <th>Registered Date</th>
                                             <th>Current Status</th>
                                             <th>Update</th>
                                             <th>Delete</th>
@@ -73,10 +73,10 @@ class ViewApprovedTeachers extends Component {
                                                     <td>{item.lastName}</td>
                                                     <td>{item.gender}</td>
                                                     <td>{item.nic}</td>
-                                                    <td>{item.passportNumber}</td>
                                                     <td>{item.address}</td>
                                                     <td>{item.contactNumber}</td>
                                                     <td>{item.email}</td>
+                                                    <td>{item.regDate}</td>
                                                     <td><span className="badge bg-success">{item.status}</span></td>
                                                     <td>
                                                         <button className="btn btn-outline-warning me-md-2"

@@ -1,7 +1,7 @@
 import React, { Component} from 'react';
 import axios from 'axios';
 import './styles/teacherRegistration.css';
-import my from "../Teacher/image/teacherReg.png";
+import my from "../Teacher/image/reg1.jpg";
 import {Link} from "react-router-dom";
 
 //Initial states of input fields
@@ -14,6 +14,7 @@ const initialState = {
     address: '',
     contactNumber: '',
     email: '',
+    regDate: '',
     qualificationType: '',
     academicInstitute: '',
     academicYear: '',
@@ -57,6 +58,7 @@ class TeacherRegistration extends Component {
             address: this.state.address,
             contactNumber: this.state.contactNumber,
             email: this.state.email,
+            regDate: this.state.regDate,
             qualificationType: this.state.qualificationType,
             academicInstitute: this.state.academicInstitute,
             academicYear: this.state.academicYear,
@@ -176,6 +178,20 @@ class TeacherRegistration extends Component {
                             onChange={this.onChange}
                         />
                     </div>
+                    </div>
+                    <div className="col-md-6">
+                        <label htmlFor="regDate" className="form-label">Registered Date</label>
+                        <div className="input-group mb-3">
+                            <span className="input-group-text"><i className="fa fa-calendar"></i></span>
+                            <input
+                                type="date"
+                                className="form-control"
+                                id="regDate"
+                                name="regDate"
+                                value={this.state.regDate}
+                                onChange={this.onChange}
+                            />
+                        </div>
                     </div>
                     <h5>Contact Details</h5>
                     <div className="col-md-12">
@@ -472,11 +488,6 @@ class TeacherRegistration extends Component {
 
                     <div className="col-12">
                         <button type="submit" className="button-purple button2-purple">Submit Your Application</button>
-                    </div>
-                    <div className="col-12">
-                        <Link to={`/teacher/complete-registration`}>
-                            <button type="submit" className="button-purple button2-purple">View Registration status</button>
-                        </Link>
                     </div>
                 </form>
                 </div>

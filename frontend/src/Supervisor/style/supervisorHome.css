@@ -1,0 +1,37 @@
+.supervisor-container {
+    width: 80%;
+    margin: auto;
+    padding: 10px;
+}
+.supervisor-container h2 {
+    font-family: "Century Schoolbook";
+    color: #8a1a8a;
+    font-weight: bold;
+    padding-left: 20px;
+}
+
+.supervisor-container a {
+    color: #986c98;
+    text-decoration: none;
+    font-weight: bold;
+}
+.supervisor-image img{
+    position: absolute;
+    right: 5px;
+    margin-top: 400px;
+    width: 290px;
+}
+
+.card-d:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+}
+
+.card-d:hover img{
+    opacity: 0.7;
+    -webkit-transform:scale(1.15);
+    -moz-transform:scale(1.15);
+    -ms-transform:scale(1.15);
+    -o-transform:scale(1.15);
+    transform:scale(1.15);
+}

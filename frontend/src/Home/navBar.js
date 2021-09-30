@@ -93,7 +93,7 @@ const Navbar = () =>{
                                         </li>
 
                                         <li className="nav-item">
-                                            <Link className="nav-link" style={isActive(history, '/supervisor/')} to="/supervisor/">Supervisor Dashboard</Link>
+                                            <Link className="nav-link" style={isActive(history, '/supervisor/')} to="/supervisor/">My Dashboard</Link>
                                         </li>
                                     </>
                                 )}

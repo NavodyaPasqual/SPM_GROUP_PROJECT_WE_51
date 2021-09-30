@@ -1,21 +1,16 @@
-.p3{
-    font-size: xx-large;
-    padding-left: 10px;
-    color: #793179;
-    font-family: bold;
+.card{
+    background-color: #FFFFFF;
 }
 
-th{
+p4{
+    padding-left: 50px;
     text-align: left;
-    color: #793179;
     font-weight:  bold;
     font-size: large;
+    font-family: inter;
+    color: black;
 }
 
-td{
-    text-align: left;
-    font-weight:  normal;
-    font-size: medium;
+dd {
+    color: slategrey;
 }
-
-
