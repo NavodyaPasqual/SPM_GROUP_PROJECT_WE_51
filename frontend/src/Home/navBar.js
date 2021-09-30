@@ -207,7 +207,7 @@ const Navbar = () =>{
                             </li>
                             <li className="nav-item">
                                 <Link className="nav-link" style={isActive(history, '/Student/Registration')} to={"/Student/Registration"}  >
-                                    Student Registration Portal
+                                    Student Registration
                                 </Link>
                             </li>
                                 <li className="nav-item">

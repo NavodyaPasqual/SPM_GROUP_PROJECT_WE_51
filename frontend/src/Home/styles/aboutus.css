@@ -1,0 +1,31 @@
+
+.aboutus_image {
+  width: 90%;
+  height: 90%;
+  margin: auto;
+}
+.profilepic {
+  margin: auto;
+  text-align: center;
+}
+
+.profile_image {
+  width: 60%;
+}
+
+.about_content {
+  text-align: center;
+}
+.aboutus_titles {
+  text-align: center;
+  font-weight: bolder;
+  justify-content: center;
+}
+hr {
+  border: 0;
+  clear: both;
+  display: block;
+  width: 96%;
+  background-color: black;
+  height: 1px;
+}

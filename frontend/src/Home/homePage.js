@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import MenuCard from "./menuCard";
-import img from "../components/images/home.png";
-import img1 from "../components/images/text1.gif";
+import img1 from "../components/images/text2.gif";
 
 import ParalaxContainer from "./paralaxContainer";
 
@@ -13,7 +12,7 @@ class HomePage extends Component {
             <div className="p-1 row">
                 <center>
                 <div className="col-md-6 mt-3">
-                        <h1><img src={img1} height="300px" alt="company text img" className="mt-5"/></h1>
+                        <h1><img src={img1} height="300px" alt="company text img" className="mt-0"/></h1>
                 </div>
                 </center>
             </div>
