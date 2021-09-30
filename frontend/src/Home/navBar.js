@@ -176,11 +176,12 @@ const Navbar = () =>{
                     {currentUser ? (
                         <div className="navbar-nav ml-auto">
                             <li className="nav-item">
-                                <Link to={"/profile"} className="nav-link">
+                                <center>
+                                    <Link to={"/profile"} style={isActive(history, '/profile')} className="nav-link mt-2">
                                     <b>{currentUser.username}</b>
-                                </Link>
-                            </li>
-                            <li className="nav-item">
+                                    </Link>
+                                </center>
+
                                 <a href="/login"  style={isActive(history, '/login')} className="nav-link" onClick={logOut}>
                                     <button className="button-signUp button2-signup">
                                         LogOut
@@ -215,6 +216,10 @@ const Navbar = () =>{
                             <li className="nav-item">
                                 <Link to={"/contactUs"} style={isActive(history, '/contactUs')} className="nav-link">
                                     Contact Us &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
                                     &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
                                 </Link>
                             </li>
@@ -227,8 +232,8 @@ const Navbar = () =>{
 
                             <li className="nav-item">
                                 <Link to={"/register"} style={isActive(history, '/register')} className="nav-link">
-                                    <button class="button-signUp button2-signup">Sign Up</button>
-                                </Link>
+                                    Sign Up
+                                </Link> 
                             </li>
                         </div>
                     )}
