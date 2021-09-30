@@ -48,7 +48,6 @@ const updateById = async (req, res) => {
     const updateTask = {
         status
     }
-    console.log(updateTask.status);
     const update = await teacherTask.findByIdAndUpdate(id, updateTask.status)
         .then(() => {
             res.status(200).send({status: "teacher task Updated"})
