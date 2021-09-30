@@ -95,6 +95,10 @@ const Navbar = () =>{
                                         <li className="nav-item">
                                             <Link className="nav-link" style={isActive(history, '/supervisor/')} to="/supervisor/">Supervisor Dashboard</Link>
                                         </li>
+
+                                        <li className="nav-item">
+                                            <Link className="nav-link" style={isActive(history, '/teacherTaskListteacher/')} to="/teacherTaskListteacher/">Task</Link>
+                                        </li>
                                     </>
                                 )}
 
@@ -138,10 +142,7 @@ const Navbar = () =>{
                                             <Link className="nav-link" style={isActive(history, '/accountant/company-payment-expenses')} to="/accountant/company-payment-expenses">Company Expenses</Link>
                                         </li>
                                         <li className="nav-item">
-                                            <Link className="nav-link" style={isActive(history, '/teacherTask/')} to="/teacherTask/">Add Teacher Task</Link>
-                                        </li>
-                                        <li className="nav-item">
-                                            <Link className="nav-link" style={isActive(history, '/teacherTaskList/')} to="/teacherTaskList/">Add Teacher Task List</Link>
+                                            <Link className="nav-link" style={isActive(history, '/teacherTaskList/')} to="/teacherTaskList/">Teacher Task List</Link>
                                         </li>
                                     </>
                                 )}

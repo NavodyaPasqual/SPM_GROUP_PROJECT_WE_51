@@ -58,6 +58,8 @@ import supervisorDashboard from "../Supervisor/supervisorDashboard";
 import teacherTaskUpdate from "../Class/teacherUpdate";
 import teacherTask from "../Class/teacher";
 import teacherTaskList from "../Class/teacherTask";
+import teachertaskteacher from "../Teacher/teacherTask";
+
 import UpdateTeacherMaterial from "../Teacher/updateTeacherMaterial";
 
 
@@ -116,6 +118,7 @@ function PageRoutes() {
                         <Route path="/teacherTaskUpdate/" component={teacherTaskUpdate}/>
                         <Route path="/teacherTask/" component={teacherTask}/>
                         <Route path="/teacherTaskList/" component={teacherTaskList}/>
+                        <Route path="/teacherTaskListteacher/" component={teachertaskteacher}/>
                     </Switch>
                 </section>
             </Router>

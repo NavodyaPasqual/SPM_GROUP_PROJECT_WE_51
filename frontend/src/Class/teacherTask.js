@@ -7,7 +7,7 @@ import '../Student/Payments/style/loading.css';
 import '../Accountant/style/viewStudentPayment.css';
 
 const TeacherTaskList = () => {
-    const [payment, setPayment] = useState([]);
+    const [tasklist, settasklist] = useState([]);
     const [setError] = useState([]);
     const [q, setQ] = useState("");
     const [searchParam] = useState(["date", "name", "type"]);
@@ -20,7 +20,7 @@ const TeacherTaskList = () => {
     } = values;
 
     const search = () => {
-        return payment.filter((item) => {
+        return tasklist.filter((item) => {
             if (item.region === filterParam) {
                 return searchParam.some((newItem) => {
                     return (
@@ -43,43 +43,6 @@ const TeacherTaskList = () => {
         });
     }
 
-    const getPayments = () => {
-        setValues({...values,loading: true})
-        return fetch(`http://localhost:8081/teacher-task/TeacherTask`, {
-            method: "GET"
-        })
-            .then(response => {
-                return response.json();
-            })
-            .catch(err => console.log(err));
-    };
-
-    const loadPayment = () => {
-        getPayments()
-            .then(data => {
-                if(data.error) {
-                    setError(data.error)
-                } else {
-                    setValues({...values,loading: false})
-                }
-            })
-    };
-
-    const deletePayment = (e, id) => {
-        const r = window.confirm("Do you really want to delete company payment ?");
-        if(r == true) {
-            axios.delete(`http://localhost:8081/teacher-task/TeacherTask/${id}`)
-                .then(response => {
-                    loadPayment()
-                })
-        }
-
-    };
-
-
-    useEffect(() => {
-        loadPayment()
-    }, [])
 
     const showLoading = () =>
         loading && (<div className="overlay-top">
@@ -93,7 +56,7 @@ const TeacherTaskList = () => {
             <div className="card shadow p-3 mb-4 bg-body rounded">
                 <div className="row g-2">
                     <div className="col-md">
-                        <h1>Teacher Task Incomes</h1><br/>
+                        <h1>Teacher Task List</h1><br/>
                     </div>
                     <div className="col-md">
                         <div className="mb-3 mt-2 d-md-flex justify-content-md-end">
@@ -150,38 +113,7 @@ const TeacherTaskList = () => {
                             </tr>
                             </thead>
                             <tbody>
-                            {search(payment).map((c, i) => (
-                                <tr key={i} className="align-top">
-                                    {c.type === "Incomes" &&
-                                        <td>{c.name}</td>
-                                    }
-                                    {c.type === "Incomes" &&
-                                        <td>{new Date(c.date).toLocaleDateString(undefined)}</td>
-                                    }
-                                    {c.type === "Incomes" &&
-                                        <td>{c.amount}</td>
-                                    }
-                                    {c.type === "Incomes" &&
-                                    <td><span className="text-primary">{c.type}</span></td>
-                                    }
-                                    {c.type === "Incomes" &&
-                                        <td>
-                                            <Link to={`/accountant/update-payment/${c._id}`}>
-                                                <button className="btn btn-outline-warning me-md-2">
-                                                    <i className="fas fa-edit"></i>
-                                                </button>
-                                            </Link>
-                                        </td>
-                                    }
-                                    {c.type === "Incomes" &&
-                                        <td>
-                                            <button className="btn btn-outline-danger" onClick={e => deletePayment(e, c._id)}>
-                                                <i className="fas fa-trash"></i>
-                                            </button>
-                                        </td>
-                                    }
-                                </tr>
-                            ))}
+                            
                             </tbody>
                         </table>
                     </div>
