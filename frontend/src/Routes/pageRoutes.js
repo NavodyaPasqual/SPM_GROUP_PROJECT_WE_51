@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import HomePage from "../Home/homePage";
 import Navbar from "../Home/navBar";
-//import Footer from "../Home/footer";
+import Footer from "../Home/footer";
 
 import Login from "../components/Login";
 import Register from "../components/Register";
@@ -122,7 +122,7 @@ function PageRoutes() {
                     </Switch>
                 </section>
             </Router>
-            {/* <Footer />*/}
+            <Footer />
         </div>
     );
 }
