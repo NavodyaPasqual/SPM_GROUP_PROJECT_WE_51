@@ -54,12 +54,12 @@
     align-items: center;
     text-align: center;
 }
-.student-registration .banner4::after {
+/* .student-registration .banner4::after {
     content: "";
     position: absolute;
     width: 100%;
     height: 100%;
-}
+} */
 
 .student-registration input, select, textarea {
     border: 1px solid #ccc;

@@ -65,42 +65,34 @@ const Navbar = () =>{
                                     <>
                                         <li className="nav-item">
                                             <Link className="nav-link" style={isActive(history, '/teacher/registration')} to="/teacher/registration">Teacher Registration</Link>
-                                        </li>
 
-                                        <li className="nav-item">
                                             <Link className="nav-link" style={isActive(history, '/teacher/view-registration')} to="/teacher/view-registration">Registered Teachers</Link>
                                         </li>
 
                                         <li className="nav-item">
                                             <Link className="nav-link" style={isActive(history, '/supervisor/view-pending-teachers')} to="/supervisor/view-pending-teachers">Pending Teachers</Link>
-                                        </li>
 
-                                        <li className="nav-item">
                                             <Link className="nav-link" style={isActive(history, '/teacher/view-approved-registration')} to="/teacher/view-approved-registration">Permanent Teachers</Link>
                                         </li>
 
                                         <li className="nav-item">
                                             <Link className="nav-link" style={isActive(history, '/teacher/profile')} to="/teacher/profile">Create Profile</Link>
-                                        </li>
-
-                                        <li className="nav-item">
+                                        
                                             <Link className="nav-link" style={isActive(history, '/teacher/view-profile')} to="/teacher/view-profile">All Profiles</Link>
                                         </li>
 
                                         <li className="nav-item">
                                             <Link className="nav-link" style={isActive(history, '/teacher/add-course-materials')} to="/teacher/add-course-materials">Upload Materials</Link>
-                                        </li>
 
-                                        <li className="nav-item">
                                             <Link className="nav-link" style={isActive(history, '/teacher/view-lesson-materials')} to="/teacher/view-lesson-materials">Lesson Materials</Link>
                                         </li>
 
-                                        <li className="nav-item">
-                                            <Link className="nav-link" style={isActive(history, '/supervisor/')} to="/supervisor/">Supervisor Dashboard</Link>
+                                        <li className="nav-item"><br/>
+                                            <Link className="nav-link" style={isActive(history, '/supervisor/')} to="/supervisor/"> &nbsp; Supervisor Dashboard</Link>
                                         </li>
 
-                                        <li className="nav-item">
-                                            <Link className="nav-link" style={isActive(history, '/teacherTaskListteacher/')} to="/teacherTaskListteacher/">Task</Link>
+                                        <li className="nav-item"><br/>
+                                            <Link className="nav-link" style={isActive(history, '/teacherTaskListteacher/')} to="/teacherTaskListteacher/"> &nbsp; Task</Link>
                                         </li>
                                     </>
                                 )}

@@ -36,16 +36,7 @@
     background: #fff;
     box-shadow: 0 0 8px  #669999;
 }
-.student-notices .banner {
-    position: relative;
-    height: 200px;
-    background-image: url("./gggg.jpg");
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
+
 .student-notices .banner::after {
     content: "";
     background-color: rgba(0, 0, 0, 0.2);
@@ -65,12 +56,12 @@
     align-items: center;
     text-align: center;
 }
-.student-notices .banner22::after {
+/* .student-notices .banner22::after {
     content: "";
     position: absolute;
     width: 100%;
     height: 100%;
-}
+} */
 
 
 .student-notices input, select, textarea {

@@ -119,9 +119,8 @@ const TeacherTaskLISt = () => {
                                     <div className="input-group justify-content-md-end">
                                         <Typed
                                             strings={[
-                                                'Search by task tile',
-                                                'Search by impotent level',
-                                                'Search by teacher ID',]}
+                                                'Search by Task Title',
+                                                'Search by Teacher ID',]}
                                             typeSpeed={40}
                                             backSpeed={50}
                                             attr="placeholder"
