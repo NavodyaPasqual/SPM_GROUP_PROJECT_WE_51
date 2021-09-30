@@ -147,9 +147,6 @@ const Navbar = () =>{
                                         <li className="nav-item">
                                             <Link className="nav-link" style={isActive(history, '/teacherTaskList/')} to="/teacherTaskList/">Teacher Task List</Link>
                                         </li>
-                                        <li className="nav-item">
-                                            <Link className="nav-link" style={isActive(history, '/teacherTask/report')} to="/teacherTask/report">Teacher Task Report</Link>
-                                        </li>
                                     </>
                                 )}
 

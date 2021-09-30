@@ -99,7 +99,11 @@ const TeacherTaskList = () => {
                     </div>
                     <div className="col-md">
                         <div className="mb-3 mt-2 d-md-flex justify-content-md-end">
-                            <button className="btn btn-outline-success"><i className="fas fa-download">&nbsp;&nbsp;DOWNLOAD</i></button>
+                            
+                            <Link to={`/teacherTask/report`}>
+                                <button className="btn btn-outline-success"><b>Report</b></button>
+                            </Link>
+
                         </div>
                     </div>
                 </div>

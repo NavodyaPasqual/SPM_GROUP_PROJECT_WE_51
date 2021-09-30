@@ -151,7 +151,6 @@ const TeacherTaskLISt = () => {
                                 <th>Valid Till</th>
                                 <th>Status</th>
                                 <th>Update Status</th>
-                                <th>Delete</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -175,11 +174,6 @@ const TeacherTaskLISt = () => {
                                         <button className="btn btn-outline-warning mr-5" onClick={() => statusNotDone(c._id)}>
                                             <i className="fas fa-times"></i>
                                         </button>&nbsp;
-                                    </td>
-                                    <td>
-                                        <button className="btn btn-outline-danger" onClick={e => deleteTask(e, c._id)}>
-                                            <i className="fas fa-trash"></i>
-                                        </button>
                                     </td>
                                 </tr>
                             ))}
