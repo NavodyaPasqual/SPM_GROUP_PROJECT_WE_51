@@ -9,14 +9,13 @@ class HomePage extends Component {
     render() {
         return (
             <div>
-            <div className="container mt-4 shadow p-3 mb-5 bg-body rounded">
+            <div className="container mt-4 shadow p-1 bg-body rounded">
             <div className="p-1 row">
-                <div className="col-md-6">
-                    <img src={img} height="320px" alt="home img" className="mt-4"/>
-                </div> 
+                <center>
                 <div className="col-md-6 mt-3">
-                        <h1>Welcome to <img src={img1} height="300px" alt="company text img" className="mt-5"/></h1>
+                        <h1><img src={img1} height="300px" alt="company text img" className="mt-5"/></h1>
                 </div>
+                </center>
             </div>
             </div>
             <br/><br/><br/><br/>
