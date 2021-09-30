@@ -1,10 +1,8 @@
 const formidable = require("formidable");
 const _ = require("lodash");
 const fs = require("fs");
+const {next} = require("lodash");
 const teacherTask = require('../../Modules/Class/module.class');
-
-
-
 
 const createteacherTask = async (req, res) => {
     if(req.body) {
@@ -19,49 +17,47 @@ const createteacherTask = async (req, res) => {
     }
 }
 const getAllteacherTask = async (req, res) => {
-    await teacherTask.find({})
-        .then(data=>{
-            res.status(200).send({data: data});
-        })
-        .catch(error =>{
-            res.status(500).send({error: error.message});
+    let order = req.query.order ? req.query.order : 'asc'
+    let sortBy = req.query.sortBy ? req.query.sortBy : '_id'
+
+    teacherTask.find()
+        .sort([[sortBy, order]])
+        .exec((err, teacherTask) => {
+            if(err) {
+                return res.status(400).json ({
+                    error: 'No task Found'
+                });
+            }
+            res.json(teacherTask);
         });
 }
 
 const viewteacherTaskById = async (req, res) => {
-    if (req.params && req.params.id) {
-        await teacherTask.findById(req.params.id)
-            .populate('classess', '_id tasktitle taskdescription teacherid implevel validtill')
-            .then(response => {
-                res.status(200).send({ data: response });
-            })
-            .catch(error => {
-                res.status(500).send({ error: error.message });
-            });
-    }
+    teacherTask.findById(req.params.id, (error, data) =>{
+        if (error) {
+            return next(error)
+        } else {
+            res.json(data)
+        }
+    })
 }
 
 
 const updateById = async (req, res) => {
-    const id = req.params.id;
-    const status = req.body;
-    const updateTask = {
-        status
-    }
-    const update = await teacherTask.findByIdAndUpdate(id, updateTask.status)
-        .then(() => {
-            res.status(200).send({status: "teacher task Updated"})
-        }).catch((err) => {
-            console.log(err);
-            res.status(500).send({status: " Error", error:err.message});
+    const { slug } = req.params
+    const {tasktitle,taskdescription,teacherid,implevel,validtill,status} = req.body
+    teacherTask.findOneAndUpdate({slug}, {tasktitle,taskdescription,teacherid,implevel,validtill,status}, {new: true})
+        .exec((err,topic) => {
+            if(err) console.log(err)
+            res.json(topic);
         })
 }
 
 const deleteById = async (req, res) => {
-    const id = req.params.id
+    const id  = req.params.id
     await teacherTask.findByIdAndRemove(id).exec()
-    res.send('Couldnt delete');
-}
+    res.send("Deleted successfully");
+};
 
 
 

@@ -115,7 +115,7 @@ function PageRoutes() {
                         <Route path="/teacher/update-lesson-materials" component={UpdateTeacherMaterial}/>
                         <Route path="/supervisor/" component={supervisorDashboard}/>
 
-                        <Route path="/teacherTaskUpdate/" component={teacherTaskUpdate}/>
+                        <Route path="/teacherTaskUpdate/:id" component={teacherTaskUpdate}/>
                         <Route path="/teacherTask/" component={teacherTask}/>
                         <Route path="/teacherTaskList/" component={teacherTaskList}/>
                         <Route path="/teacherTaskListteacher/" component={teachertaskteacher}/>

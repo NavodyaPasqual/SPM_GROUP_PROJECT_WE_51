@@ -7,10 +7,10 @@ import '../Student/Payments/style/loading.css';
 import '../Accountant/style/viewStudentPayment.css';
 
 const TeacherTaskList = () => {
-    const [tasklist, settasklist] = useState([]);
+    const [taskList, setTaskList] = useState([]);
     const [setError] = useState([]);
     const [q, setQ] = useState("");
-    const [searchParam] = useState(["date", "name", "type"]);
+    const [searchParam] = useState(["tasktitle", "implevel", "teacherid"]);
     const [filterParam] = useState(["All"]);
     const [values, setValues] = useState({
         loading: false,
@@ -20,7 +20,7 @@ const TeacherTaskList = () => {
     } = values;
 
     const search = () => {
-        return tasklist.filter((item) => {
+        return taskList.filter((item) => {
             if (item.region === filterParam) {
                 return searchParam.some((newItem) => {
                     return (
@@ -43,6 +43,45 @@ const TeacherTaskList = () => {
         });
     }
 
+    const getTasks = () => {
+        setValues({...values,loading: true})
+        return fetch(`http://localhost:8081/teacher-task/TeacherTask`, {
+            method: "GET"
+        })
+            .then(response => {
+                return response.json();
+            })
+            .catch(err => console.log(err));
+    };
+
+    const loadTask = () => {
+        getTasks()
+            .then(data => {
+                if(data.error) {
+                    setError(data.error)
+                } else {
+                    setValues({...values,loading: false})
+                    console.log(data[0].date)
+                    setTaskList(data)
+                }
+            })
+    };
+
+    const deleteTask = (e, id) => {
+        const r = window.confirm("Do you really want to delete this task ?");
+        if(r == true) {
+            axios.delete(`http://localhost:8081/teacher-task/TeacherTask/${id}`)
+                .then(response => {
+                    loadTask()
+                })
+        }
+
+    };
+
+
+    useEffect(() => {
+        loadTask()
+    }, [])
 
     const showLoading = () =>
         loading && (<div className="overlay-top">
@@ -68,7 +107,7 @@ const TeacherTaskList = () => {
                     <div className="row g-2">
                         <div className="col-md">
                             <Link to={`/teacherTask/`}>
-                                <button className="button-purple button2-purple">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i className="fas fa-plus-circle">&nbsp;&nbsp;&nbsp;&nbsp;Add New Task</i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+                                <button className="button-purple button2-purple">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i className="fas fa-plus-circle">&nbsp;&nbsp;&nbsp;&nbsp;Add New Record</i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
                             </Link>
 
                         </div>
@@ -78,9 +117,9 @@ const TeacherTaskList = () => {
                                     <div className="input-group justify-content-md-end">
                                         <Typed
                                             strings={[
-                                                'Search by name',
-                                                'Search by type',
-                                                'Search by name',]}
+                                                'Search by task tile',
+                                                'Search by impotent level',
+                                                'Search by teacher ID',]}
                                             typeSpeed={40}
                                             backSpeed={50}
                                             attr="placeholder"
@@ -108,12 +147,39 @@ const TeacherTaskList = () => {
                                 <th>Teacher ID</th>
                                 <th>Importance Level</th>
                                 <th>Valid Till</th>
+                                <th>Status</th>
                                 <th>Update</th>
                                 <th>Delete</th>
                             </tr>
                             </thead>
                             <tbody>
-                            
+                            {search(taskList).map((c, i) => (
+                                <tr key={i} className="align-top">
+                                    <td>{c.tasktitle}</td>
+                                    <td>{c.taskdescription}</td>
+                                    <td>{c.teacherid}</td>
+                                    <td>{c.implevel}</td>
+                                    <td>{c.validtill}</td>
+                                    {c.status === "done" &&
+                                    <td><span className="badge bg-success">{c.status}</span></td>
+                                    }
+                                    {c.status === "not done" &&
+                                    <td><span className="badge bg-warning">{c.status}</span></td>
+                                    }
+                                    <td>
+                                        <Link to={`/teacherTaskUpdate/${c._id}`}>
+                                            <button className="btn btn-outline-warning me-md-2">
+                                                <i className="fas fa-edit"></i>
+                                            </button>
+                                        </Link>
+                                    </td>
+                                    <td>
+                                        <button className="btn btn-outline-danger" onClick={e => deleteTask(e, c._id)}>
+                                            <i className="fas fa-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            ))}
                             </tbody>
                         </table>
                     </div>

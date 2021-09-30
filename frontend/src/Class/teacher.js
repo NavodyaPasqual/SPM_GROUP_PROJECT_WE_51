@@ -3,19 +3,17 @@ import '../Student/Payments/style/button.css';
 import my from "../Student/Payments/image/paymentForm.png";
 import '../Student/Payments/style/forms.css'
 import '../Student/Payments/style/alert.css'
- 
+import axios from "axios";
 
 const TaskTeacher = () => {
-    const [values, setValues] = useState({
+    const [state, setState] = useState({
         tasktitle: '',
         taskdescription: '',
         teacherid: '',
-        implevel: 0,
+        implevel: '',
         validtill: '',
-        status: 'not done',
         loading: false,
         error: '',
-        formData: ''
     });
 
     const {
@@ -23,66 +21,57 @@ const TaskTeacher = () => {
         taskdescription,
         teacherid,
         implevel,
-        loading,
         validtill,
-        formData
-    } = values;
+        loading
+    } = state;
 
-    useEffect(() => {
-        setValues({...values, formData: new FormData()})
-    }, [])
+    const [content, setContent] = useState('')
 
-    const handleChange = name => event => {
-        const value = name === 'TeacherTask' ? event.target.files[0] : event.target.value
-        formData.set(name,value)
-        setValues({...values, [name]: value})
+    const handleContent = (event) => {
+        console.log(event);
+        setContent(event);
+    }
+
+    const handleChange = (name) => (event) => {
+        setState({...state, [name]:event.target.value})
     };
 
-    const createTeacherTask = (data) => {
-        return fetch(`http://localhost:8081/teacher-task/create`, {
-            method: "POST",
-            headers: {
-                Accept: "application/json"
-            },
-            body: data
-        })
-            .then(response => {
-                return response.json();
-            })
-            .catch(err => {
-                console.log(err);
-            });
-    };
-
-    const clickSubmit = (event) => {
-        event.preventDefault();
-        setValues({...values, error: "", loading: true})
-        createTeacherTask(formData)
-            .then(data => {
-                if (data.error) {
-                    setValues({...values, error: data.error})
-                } else {
-                    window.location.href = "/teacherTaskList/";
+    const clickSubmit = payment => {
+        payment.preventDefault();
+        axios
+            .post(`http://localhost:8081/teacher-task/createTeacherTask`, {tasktitle, taskdescription, teacherid, implevel,validtill}, {
+                headers: {
                 }
+            })
+            .then(response => {
+                //empty the state
+                setState({...state, tasktitle: '',taskdescription:'', teacherid: '', implevel: '', validtill:'',loading: true, error: ''})
+                setContent('');
+                window.location.href = "/teacherTaskList/";
+            })
+            .catch(error => {
+                console.log(error.response);
+                alert(error.response.data.error);
             });
     };
 
     const showLoading = () =>
-    loading && (<div aria-live="polite" aria-atomic="true" className="position-relative">
-        <div className="toast-container position-absolute top-0 end-0 p-3">
-            <div className="toast" role="alert" aria-live="assertive" aria-atomic="true">
-                <div className="toast-header">
-                    <div className="spinner-border text-warning" role="status">
-                        <span className="visually-hidden">Loading...</span>
+        loading && (<div aria-live="polite" aria-atomic="true" className="position-relative">
+            <div className="toast-container position-absolute top-0 end-0 p-3">
+                <div className="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                    <div className="toast-header">
+                        <div className="spinner-border text-warning" role="status">
+                            <span className="visually-hidden">Loading...</span>
+                        </div>
+                        <strong className="me-auto">&nbsp;&nbsp;Loading</strong>
+                        <small className="text-muted">just now</small>
+                        <button type="button" className="btn-close" data-bs-dismiss="toast"
+                                aria-label="Close"></button>
                     </div>
-                    <strong className="me-auto">&nbsp;&nbsp;Loading</strong>
-                    <small className="text-muted">just now</small>
-                    <button type="button" className="btn-close" data-bs-dismiss="toast"
-                            aria-label="Close"></button>
                 </div>
             </div>
         </div>
-    </div>);
+        );
 
     return (
         <div className="background">
@@ -172,7 +161,7 @@ const TaskTeacher = () => {
                                     />
                                 </div>
                             </div>
-                            <button className="button-purple button2-purple">Submit Payment</button>
+                            <button className="button-purple button2-purple">Submit Task</button>
                         </form>
                     </div>
                 </div>
