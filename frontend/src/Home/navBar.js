@@ -3,6 +3,8 @@ import {useHistory,useLocation ,Link} from "react-router-dom";
 import AuthService from "../services/auth.service";
 import "./styles/navBar.css";
 
+import img1 from "../components/images/text.gif";
+
 const Navbar = () =>{
     const history = useHistory();
     const location = useLocation();
@@ -44,7 +46,8 @@ const Navbar = () =>{
                 <div className="container-fluid">
                     <div className="navbar-brand">
                         <a className="navbar-brand" href="/">
-                            &nbsp;<span>TAPROBANE</span>
+                            &nbsp;
+                            <img src={img1} height="40px" alt="company text img" className="m-0"/>
                         </a>
                     </div>
 
@@ -180,12 +183,12 @@ const Navbar = () =>{
                         <div className="navbar-nav ml-auto">
                             <li className="nav-item">
                                 <center>
-                                    <Link to={"/profile"} style={isActive(history, '/profile')} className="nav-link mt-2">
+                                    <Link to={"/profile"} style={isActive(history, '/profile')} className="nav-link mt-1 ">
                                     <b>{currentUser.username}</b>
                                     </Link>
                                 </center>
 
-                                <a href="/login"  style={isActive(history, '/login')} className="nav-link" onClick={logOut}>
+                                <a href="/login"  style={isActive(history, '/login')} className="nav-link mt-0" onClick={logOut}>
                                     <button className="button-signUp button2-signup">
                                         LogOut
                                     </button>
