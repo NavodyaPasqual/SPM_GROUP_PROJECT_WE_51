@@ -55,6 +55,7 @@ import ViewPendingTeachers from "../Supervisor/viewPendingTeachers";
 import CreateMaterial from "../Teacher/createMaterial";
 import ViewUploadedMaterials from "../Teacher/viewUploadedMaterials";
 import supervisorDashboard from "../Supervisor/supervisorDashboard";
+import UpdateTeacherProfile from "../Teacher/updateTeacherProfile";
 
 import teacherTaskUpdate from "../Class/teacherUpdate";
 import teacherTask from "../Class/teacher";
@@ -104,6 +105,7 @@ function PageRoutes() {
                         <Route path="/accountant/report" component={ReactPDF}/>
                         <Route path="/accountant/" component={AccountantDashboard}/>
 
+                        <Route path="/teacher/profile/update/:id" component={UpdateTeacherProfile}/>
                         <Route path="/teacher/registration" component={TeacherRegistration}/>
                         <Route path="/teacher/profile" component={TeacherProfile}/>
                         <Route path="/teacher/view-registration" component={ViewTeacherRegistration}/>

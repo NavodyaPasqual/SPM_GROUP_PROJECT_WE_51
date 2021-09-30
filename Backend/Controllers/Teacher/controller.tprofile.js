@@ -45,7 +45,7 @@ const updateProfileById = async (req, res) => {
     }
     const update = await Profile.findByIdAndUpdate(id, updateProfile)
         .then(() => {
-            res.status(200).send({status: "Teacher Profile Updated"})
+            res.status(200).send({status: "Teacher Profile status Updated"})
         }).catch((err) => {
             console.log(err);
             res.status(500).send({status: " Error", error:err.message});
@@ -58,10 +58,21 @@ const deleteProfileById = async (req, res) => {
     res.send('Teacher Profile Deleted');
 }
 
+const updateById = async(req, res) => {
+    const { slug } = req.params
+    const {registrationNumber, fName, lName, nic, passportNumber, address, contactNumber, email, password, editedDate} = req.body
+    Profile.findOneAndUpdate({slug}, {registrationNumber, fName, lName, nic, passportNumber, address, contactNumber, email, password, editedDate}, {new: true})
+        .exec((err,topic) => {
+            if(err) console.log(err)
+            res.json(topic);
+        })
+};
+
 module.exports = {
     createProfile,
     getAllProfiles,
     viewProfileById,
     updateProfileById,
-    deleteProfileById
+    deleteProfileById,
+    updateById
 }
