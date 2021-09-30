@@ -22,19 +22,18 @@ const ClassSchema = new mongoose.Schema({
     implevel: {
         type: String,
         trim: true
-    },
+    },  
     validtill: {
         type: String,
         trim: true
     },
-    extrainfo : {
-
-    },
     status: {
         type: String,
-        default: "not approved"
-    },
-});
+        default: "not done"
+    }
+},
+{ timestamps: true}
+);
 
-const Class = mongoose.model('class', ClassSchema);
+const Class = mongoose.model('classess', ClassSchema);
 module.exports = Class;

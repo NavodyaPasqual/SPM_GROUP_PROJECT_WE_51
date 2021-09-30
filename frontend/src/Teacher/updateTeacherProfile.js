@@ -1,59 +1,100 @@
-import React, { Component} from 'react';
-import axios from 'axios';
+import React, {Component} from 'react';
+import axios from "axios";
 import './styles/teacherProfile.css';
 import my from "../Teacher/image/download.jpg";
 
-const initialState = {
-    registrationNumber: '',
-    fName: '',
-    lName: '',
-    NIC: '',
-    passportNumber: '',
-    address: '',
-    contactNumber: '',
-    email: '',
-    password: '',
-    editedDate: ''
-}
-
-class updateTeacherProfile extends Component {
+class UpdateTeacherProfile extends Component{
     constructor(props) {
-        super(props);
-        this.onChange = this.onChange.bind(this);
+        super(props)
+        this.onChangeRegistrationNumber = this.onChangeRegistrationNumber.bind(this);
+        this.onChangeFName = this.onChangeFName.bind(this);
+        this.onChangeLName = this.onChangeLName.bind(this);
+        this.onChangeNIC = this.onChangeNIC.bind(this);
+        this.onChangePassportNumber = this.onChangePassportNumber.bind(this);
+        this.onChangeAddress = this.onChangeAddress.bind(this);
+        this.onChangeContactNumber = this.onChangeContactNumber.bind(this);
+        this.onChangeEmail = this.onChangeEmail.bind(this);
+        this.onChangePassword = this.onChangePassword.bind(this);
+        this.onChangeEditedDate = this.onChangeEditedDate.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
-        this.state = initialState;
+
+        // State
+        this.state = {
+            registrationNumber: '',
+            fName: '',
+            lName: '',
+            NIC: '',
+            passportNumber: '',
+            address: '',
+            contactNumber: '',
+            email: '',
+            password: '',
+            editedDate: '',
+            loading: false
+        }
     }
 
     componentDidMount() {
-
-        axios.get('http://localhost:8081/profile/viewbyid/6148055b715fcd10a079ab63')
-            .then(response => {
+        axios.get('http://localhost:8081/profile/viewbyid/' + this.props.match.params.id)
+            .then(res => {
                 this.setState({
-                    registrationNumber: response.data.registrationNumber,
-                    fName: response.data.fName,
-                    lName: response.data.lName,
-                    NIC: response.data.NIC,
-                    passportNumber: response.data.passportNumber,
-                    address: response.data.address,
-                    contactNumber: response.data.contactNumber,
-                    email: response.data.email,
-                    password: response.data.password,
-                    editedDate: response.data.editedDate,
-                })
-            })
-            .catch(error => {
-                alert(error.message)
-            })
+                    registrationNumber: res.data.data.registrationNumber,
+                    fName: res.data.data.fName,
+                    lName: res.data.data.lName,
+                    passportNumber: res.data.data.passportNumber,
+                    address: res.data.data.address,
+                    NIC: res.data.data.NIC,
+                    contactNumber: res.data.data.contactNumber,
+                    email: res.data.data.email,
+                    password: res.data.data.password,
+                    editedDate: res.data.data.editedDate
+                });
 
+            })
+            .catch((error) => {
+                console.log(error);
+            })
     }
 
-    onChange(e) {
-        this.setState({ [e.target.name]: e.target.value })
+    onChangeRegistrationNumber(e) {
+        this.setState({ registrationNumber: e.target.value })
+    }
+
+    onChangeFName(e) {
+        this.setState({ fName: e.target.value })
+    }
+
+    onChangeLName(e) {
+        this.setState({ lName: e.target.value })
+    }
+
+    onChangeNIC(e) {
+        this.setState({ NIC: e.target.value })
+    }
+
+    onChangePassportNumber(e) {
+        this.setState({ passportNumber: e.target.value })
+    }
+    onChangeAddress(e) {
+        this.setState({ address: e.target.value })
+    }
+    onChangeContactNumber(e) {
+        this.setState({ contactNumber: e.target.value })
+    }
+    onChangeEmail(e) {
+        this.setState({ email: e.target.value })
+    }
+    onChangePassword(e) {
+        this.setState({ password: e.target.value })
+    }
+    onChangeEditedDate(e) {
+        this.setState({ editedDate: e.target.value })
     }
 
     onSubmit(e) {
-        e.preventDefault();
-        let profile = {
+        e.preventDefault()
+
+        const profileObject = {
             registrationNumber: this.state.registrationNumber,
             fName: this.state.fName,
             lName: this.state.lName,
@@ -63,17 +104,19 @@ class updateTeacherProfile extends Component {
             contactNumber: this.state.contactNumber,
             email: this.state.email,
             password: this.state.password,
-            editedDate: this.state.editedDate,
+            editedDate: this.state.editedDate
         };
-        console.log('DATA TO UPDATE', profile)
-        axios.put('http://localhost:8081/profile/update/6148055b715fcd10a079ab63', profile)
-            .then(response => {
-                alert('Profile successfully Updated')
-            })
-            .catch(error => {
-                console.log(error.message);
-                alert(error.message)
-            })
+
+        axios.put('http://localhost:8081/profile/update-all/' + this.props.match.params.id, profileObject)
+            .then((res) => {
+                console.log(res.data)
+                console.log('Profile Successfully Updated')
+            }).catch((error) => {
+            console.log(error)
+        })
+
+        // Redirect to Student List
+        this.props.history.push('/teacher/view-profile')
     }
 
     render() {
@@ -82,7 +125,7 @@ class updateTeacherProfile extends Component {
                 <img src={my}/>
                 <div className="container mt-4 shadow p-3 mb-5 bg-body rounded">
                     <div>
-                            <p3>UPDATE PROFILE</p3>
+                        <p3>UPDATE PROFILE</p3>
                         <br/><br/><br/><br/>
                         <div className="container mt-4 p-3 mb-5 bg-body rounded">
                             <form onSubmit={this.onSubmit}
@@ -97,8 +140,7 @@ class updateTeacherProfile extends Component {
                                             id="registrationNumber"
                                             name="registrationNumber"
                                             value={this.state.registrationNumber}
-                                            onChange={this.onChange}
-                                            required
+                                            onChange={this.onChangeRegistrationNumber}
                                         />
                                     </div>
                                 </div>
@@ -112,8 +154,7 @@ class updateTeacherProfile extends Component {
                                             id="fName"
                                             name="fName"
                                             value={this.state.fName}
-                                            onChange={this.onChange}
-                                            required
+                                            onChange={this.onChangeFName}
                                         />
                                     </div>
                                 </div>
@@ -127,8 +168,7 @@ class updateTeacherProfile extends Component {
                                             id="lName"
                                             name="lName"
                                             value={this.state.lName}
-                                            onChange={this.onChange}
-                                            required
+                                            onChange={this.onChangeLName}
                                         />
                                     </div>
                                 </div>
@@ -143,8 +183,7 @@ class updateTeacherProfile extends Component {
                                             name="NIC"
                                             placeholder="1234 Main St"
                                             value={this.state.NIC}
-                                            onChange={this.onChange}
-                                            required
+                                            onChange={this.onChangeNIC}
                                         />
                                     </div>
                                 </div>
@@ -158,7 +197,7 @@ class updateTeacherProfile extends Component {
                                             id="passportNumber"
                                             name="passportNumber"
                                             value={this.state.passportNumber}
-                                            onChange={this.onChange}
+                                            onChange={this.onChangePassportNumber}
                                         />
                                     </div>
                                 </div>
@@ -173,8 +212,7 @@ class updateTeacherProfile extends Component {
                                             name="address"
                                             placeholder="Apartment, studio, or floor"
                                             value={this.state.address}
-                                            onChange={this.onChange}
-                                            required
+                                            onChange={this.onChangeAddress}
                                         />
                                     </div>
                                 </div>
@@ -188,8 +226,7 @@ class updateTeacherProfile extends Component {
                                             id="contactNumber"
                                             name="contactNumber"
                                             value={this.state.contactNumber}
-                                            onChange={this.onChange}
-                                            required
+                                            onChange={this.onChangeContactNumber}
                                         />
                                     </div>
                                 </div>
@@ -204,8 +241,7 @@ class updateTeacherProfile extends Component {
                                             name="email"
                                             placeholder="name@example.com"
                                             value={this.state.email}
-                                            onChange={this.onChange}
-                                            required
+                                            onChange={this.onChangeEmail}
                                         />
                                     </div>
                                 </div>
@@ -220,7 +256,7 @@ class updateTeacherProfile extends Component {
                                             id="password"
                                             name="password"
                                             value={this.state.password}
-                                            onChange={this.onChange}
+                                            onChange={this.onChangePassword}
                                         />
                                     </div>
                                 </div>
@@ -235,16 +271,13 @@ class updateTeacherProfile extends Component {
                                             id="editedDate"
                                             name="editedDate"
                                             value={this.state.editedDate}
-                                            onChange={this.onChange}
+                                            onChange={this.onChangeEditedDate}
                                         />
                                     </div>
                                 </div>
 
                                 <div className="col-12">
-                                    <button type="submit" className="button-purple button2-purple">Create Profile</button>
-                                </div>
-                                <div className="col-12">
-                                    <button type="submit" className="button-purple button2-purple">Cancel Profile</button>
+                                    <button type="submit" className="button-purple button2-purple">Update Profile</button>
                                 </div>
                             </form>
                         </div>
@@ -253,6 +286,6 @@ class updateTeacherProfile extends Component {
             </div>
         );
     }
-}
+};
 
-export default updateTeacherProfile;
+export default UpdateTeacherProfile;

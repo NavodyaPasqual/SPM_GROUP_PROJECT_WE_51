@@ -23,7 +23,7 @@ class TeacherReport extends Component {
             <table className="table table-bordered table-hover">
                 <thead>
                 <tr>
-                    <th className="mb-3 table-secondary" colspan="3"><span className="text-success">Permanent</span></th>
+                    <th className="mb-3 table-secondary" colspan="3"><span className="text-success">PERMANENT TEACHERS</span></th>
                 </tr>
                 </thead>
                 <tbody>
@@ -46,7 +46,7 @@ class TeacherReport extends Component {
                 </tbody>
                 <thead>
                 <tr>
-                    <th className="mb-3 table-secondary" colspan="3"><span className="text-success">Pending</span></th>
+                    <th className="mb-3 table-secondary" colspan="3"><span className="text-success">PENDING TEACHERS</span></th>
                 </tr>
                 </thead>
                 <tbody>
@@ -69,8 +69,19 @@ class TeacherReport extends Component {
                 </tbody>
                 <thead>
                 <tr class="table-success">
-                    <th><span className="text-dark">Total no of registrations</span></th>
+                    <th><span className="text-dark">No of Registrations</span></th>
+                    <th><span className="text-primary">Permanent</span></th>
+                    <th><span className="text-primary">3</span></th>
+                </tr>
+                <tr className="table-success">
+                    <th><span className="text-dark">No of Registrations</span></th>
+                    <th><span className="text-primary">Pending</span></th>
                     <th><span className="text-primary">2</span></th>
+                </tr>
+                <tr className="table-success">
+                    <th><span className="text-dark">Total No of Registrations</span></th>
+                    <th><span className="text-primary">All</span></th>
+                    <th><span className="text-primary">5</span></th>
                 </tr>
                 </thead>
             </table>

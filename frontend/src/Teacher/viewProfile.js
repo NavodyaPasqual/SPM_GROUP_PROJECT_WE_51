@@ -25,7 +25,7 @@ class ViewProfile extends Component {
     deleteProfile(e, id){
         axios.delete(`http://localhost:8081/profile/delete/${id}`)
             .then(response => {
-                alert('Permanent Teacher Profile Deleted Successfully')
+                alert('Are you sure you want to delete this permanent account ?')
                 this.componentDidMount()
             })
     }
@@ -47,15 +47,15 @@ class ViewProfile extends Component {
                             <dt className="col-sm-7">
                                 <div className="row">
                                     <div className="row">
-                                        <dt className="col-sm-4">REGISTRATION NUMBER</dt>
+                                        <dt className="col-sm-4">Registration Number</dt>
                                         <dd className="col-sm-8">{item.registrationNumber}</dd>
                                     </div>
                                     <div className="row">
-                                        <dt className="col-sm-4">FIRST NAME</dt>
+                                        <dt className="col-sm-4">First Name</dt>
                                         <dd className="col-sm-8">{item.fName}</dd>
                                     </div>
                                     <div className="row">
-                                        <dt className="col-sm-4">LAST NAME</dt>
+                                        <dt className="col-sm-4">Last Name</dt>
                                         <dd className="col-sm-8">{item.lName}</dd>
                                     </div>
                                     <div className="row">
@@ -63,30 +63,30 @@ class ViewProfile extends Component {
                                         <dd className="col-sm-8">{item.NIC}</dd>
                                     </div>
                                     <div className="row">
-                                        <dt className="col-sm-4">PASSPORT ID</dt>
+                                        <dt className="col-sm-4">Passport ID</dt>
                                         <dd className="col-sm-8">{item.passportNumber}</dd>
                                     </div>
                                     <div className="row">
-                                        <dt className="col-sm-4">ADDRESS</dt>
+                                        <dt className="col-sm-4">Address</dt>
                                         <dd className="col-sm-8">{item.address}</dd>
                                     </div>
                                     <div className="row">
-                                        <dt className="col-sm-4">CONTACT NUMBER</dt>
+                                        <dt className="col-sm-4">Contact Number</dt>
                                         <dd className="col-sm-8">{item.contactNumber}</dd>
                                     </div>
                                     <div className="row">
-                                        <dt className="col-sm-4">EMAIL</dt>
+                                        <dt className="col-sm-4">Email</dt>
                                         <dd className="col-sm-8">{item.email}</dd>
                                     </div>
                                     <div className="row">
-                                        <dt className="col-sm-4">LAST EDIT</dt>
+                                        <dt className="col-sm-4">Last Edit</dt>
                                         <dd className="col-sm-8">{item.editedDate}</dd>
                                     </div>
                                     <br/><br/>
                                 <div className="col-12">
                                 <div className="row">
                                     <div className="d-grid gap-2 d-md-flex justify-content-md-end">
-                                <Link to={`/teacher/edit-profile`}>
+                                        <Link to={`/teacher/profile/update/${item._id}`}>
                                     <button className="btn btn-outline-warning me-md-2"><i className="fas fa-edit">&nbsp;&nbsp;UPDATE</i></button>
                                 </Link>
                                 <button className="btn btn-outline-danger" onClick={e => this.deleteProfile(e,item._id)}><i className="fas fa-trash">&nbsp;&nbsp;DELETE</i></button>

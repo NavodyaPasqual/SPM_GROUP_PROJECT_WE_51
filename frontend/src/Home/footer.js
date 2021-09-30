@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import './styles/footer.css'
 import './styles/footer-distribution.css'
 
+import img1 from "../components/images/text.gif";
+
 class Footer extends Component {
     constructor(props) {
         super(props);
@@ -13,7 +15,7 @@ class Footer extends Component {
                 <br/><br/><br/><br/><br/>
                 <footer className="footer-distributed">
                     <div className="footer-left">
-                        <h3>TAP<span>ROBANE</span></h3>
+                    <img src={img1} height="40px" alt="company text img" className="ml-0"/>
                         <p className="footer-links">
                             <a  href="/">Home</a>&nbsp;
                             ·&nbsp;

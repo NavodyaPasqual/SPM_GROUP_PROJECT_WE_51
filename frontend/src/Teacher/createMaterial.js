@@ -42,7 +42,7 @@ class CreateMaterial extends Component {
         console.log('data to send', material);
         axios.post('http://localhost:8081/material/createMaterial', material )
             .then(response => {
-                alert('Your Registration Form has been Submitted successfully')
+                alert('Upload Successful')
                 //this.props.history.push('/workshop-attendee');
             })
             .catch(error => {

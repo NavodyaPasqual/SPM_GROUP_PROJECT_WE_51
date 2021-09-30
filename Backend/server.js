@@ -8,6 +8,7 @@ const ProfileAPI = require('./Routes/Teacher/route.tprofile');
 const MaterialAPI = require('./Routes/Teacher/route.material');
 const studentPaymentRoute = require('./Routes/Accountant/route.student.payment');
 const companyPaymentRoute = require('./Routes/Accountant/route.company.payment');
+const teacherTaskRoute = require('./Routes/Class/route.class');
 
 //R.K Added:-
 const studentNoticesRoute = require('./Routes/Student/route.studentNotices');
@@ -71,6 +72,7 @@ app.use('/profile', ProfileAPI());
 app.use('/material', MaterialAPI());
 app.use('/student-payment', studentPaymentRoute());
 app.use('/company-payment', companyPaymentRoute());
+app.use('/teacher-task', teacherTaskRoute());
 
 //R.K Added:-
 app.use('/StudentNotices', studentNoticesRoute());

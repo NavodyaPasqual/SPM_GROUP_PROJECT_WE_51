@@ -3,6 +3,8 @@ import {useHistory,useLocation ,Link} from "react-router-dom";
 import AuthService from "../services/auth.service";
 import "./styles/navBar.css";
 
+import img1 from "../components/images/text.gif";
+
 const Navbar = () =>{
     const history = useHistory();
     const location = useLocation();
@@ -44,7 +46,8 @@ const Navbar = () =>{
                 <div className="container-fluid">
                     <div className="navbar-brand">
                         <a className="navbar-brand" href="/">
-                            &nbsp;<span>TAPROBANE</span>
+                            &nbsp;
+                            <img src={img1} height="40px" alt="company text img" className="m-0"/>
                         </a>
                     </div>
 
@@ -61,43 +64,16 @@ const Navbar = () =>{
                                 {showTeacherBoard && (
                                     <>
                                         <li className="nav-item">
-                                            <Link className="nav-link" style={isActive(history, '/teacher/registration')} to="/teacher/registration">Teacher Registration</Link>
+                                            <Link className="nav-link" style={isActive(history, '/teacher/my/profile')} to="/teacher/my/profile">My Profile</Link>
                                         </li>
-
                                         <li className="nav-item">
-                                            <Link className="nav-link" style={isActive(history, '/teacher/view-registration')} to="/teacher/view-registration">Registered Teachers</Link>
+                                            <Link className="nav-link" style={isActive(history, '/teacher/add-course-materials')} to="/teacher/add-course-materials">Upload Lessons</Link>
                                         </li>
-
                                         <li className="nav-item">
-                                            <Link className="nav-link" style={isActive(history, '/supervisor/view-pending-teachers')} to="/supervisor/view-pending-teachers">Pending Teachers</Link>
-                                        </li>
-
-                                        <li className="nav-item">
-                                            <Link className="nav-link" style={isActive(history, '/teacher/view-approved-registration')} to="/teacher/view-approved-registration">Permanent Teachers</Link>
-                                        </li>
-
-                                        <li className="nav-item">
-                                            <Link className="nav-link" style={isActive(history, '/teacher/profile')} to="/teacher/profile">Create Profile</Link>
-                                        </li>
-
-                                        <li className="nav-item">
-                                            <Link className="nav-link" style={isActive(history, '/teacher/view-profile')} to="/teacher/view-profile">All Profiles</Link>
-                                        </li>
-
-                                        <li className="nav-item">
-                                            <Link className="nav-link" style={isActive(history, '/teacher/add-course-materials')} to="/teacher/add-course-materials">Upload Materials</Link>
-                                        </li>
-
-                                        <li className="nav-item">
-                                            <Link className="nav-link" style={isActive(history, '/teacher/view-lesson-materials')} to="/teacher/view-lesson-materials">Lesson Materials</Link>
-                                        </li>
-
-                                        <li className="nav-item">
-                                            <Link className="nav-link" style={isActive(history, '/supervisor/')} to="/supervisor/">My Dashboard</Link>
+                                            <Link className="nav-link" style={isActive(history, '/teacher/view-approved-materials')} to="/teacher/view-approved-materials">Lesson Upload Status</Link>
                                         </li>
                                     </>
                                 )}
-
                                 {/* Student nav */}
                                 {showStudentBoard && (
                                     <>
@@ -138,43 +114,50 @@ const Navbar = () =>{
                                             <Link className="nav-link" style={isActive(history, '/accountant/company-payment-expenses')} to="/accountant/company-payment-expenses">Company Expenses</Link>
                                         </li>
                                         <li className="nav-item">
-                                            <Link className="nav-link" style={isActive(history, '/teacherTask/')} to="/teacherTask/">Add Teacher Task</Link>
-                                        </li>
-                                        <li className="nav-item">
-                                            <Link className="nav-link" style={isActive(history, '/teacherTaskList/')} to="/teacherTaskList/">Add Teacher Task List</Link>
+                                            <Link className="nav-link" style={isActive(history, '/teacherTaskList/')} to="/teacherTaskList/">Teacher Task List</Link>
                                         </li>
                                     </>
                                 )}
 
-                            {/* Admin nav */}
-                            {showAdminBoard && (
-                                <>
-                                    <li className="nav-item">
-                                    {/* link */}
-                                    </li>
-                                    <li className="nav-item">
-                                      <Link className="nav-link" style={isActive(history, '/studentManager/view-feedback')} to="/studentManager/view-feedback">Manage Feedbacks</Link>
-                                    </li>
-                                    <li className="nav-item">
-                                    <Link className="nav-link" style={isActive(history, '/studentManager/Enter-Notices')} to="/studentManager/Enter-Notices">Manage Notices</Link>
-                                    </li>
-                                    <li className="nav-item">
-                                        <Link className="nav-link" style={isActive(history, '/studentManager/View-Students-Details')} to="/studentManager/View-Students-Details">Current Student Report</Link>
-                                    </li>
-                                </>
-                            )}
-                        </div>
+                                {/* Admin nav */}
+                                {showAdminBoard && (
+                                    <>
+                                        <li className="nav-item">
+                                            <Link className="nav-link" style={isActive(history, '/supervisor/')} to="/supervisor/">My Dashboard</Link>
+                                        </li>
+                                        <li className="nav-item">
+                                            {/* link */}
+                                        </li>
+                                        <li className="nav-item">
+                                            <Link className="nav-link" style={isActive(history, '/studentManager/view-feedback')} to="/studentManager/view-feedback">Manage Feedbacks</Link>
+                                        </li>
+                                        <li className="nav-item">
+                                            <Link className="nav-link" style={isActive(history, '/studentManager/Enter-Notices')} to="/studentManager/Enter-Notices">Manage Notices</Link>
+                                        </li>
+                                        <li className="nav-item">
+                                            <Link className="nav-link" style={isActive(history, '/studentManager/View-Students-Details')} to="/studentManager/View-Students-Details">Current Students</Link>
+                                        </li>
+                                        <li className="nav-item">
+                                            <Link className="nav-link" style={isActive(history, '/studentManager/Take-Students-Details')} to="/studentManager/Take-Students-Details">Student Report</Link>
+                                        </li>
+                                        <li className="nav-item">
+                                            <Link className="nav-link" style={isActive(history, '/studentManager/Print-Notices')} to="/studentManager/Print-Notices">Print Notices</Link>
+                                        </li>
+                                    </>
+                                )}
+                            </div>
                         </ul>
                     </div>
                     {currentUser ? (
                         <div className="navbar-nav ml-auto">
                             <li className="nav-item">
-                                <Link to={"/profile"} className="nav-link">
-                                    <b>{currentUser.username}</b>
-                                </Link>
-                            </li>
-                            <li className="nav-item">
-                                <a href="/login"  style={isActive(history, '/login')} className="nav-link" onClick={logOut}>
+                                <center>
+                                    <Link to={"/profile"} style={isActive(history, '/profile')} className="nav-link mt-1 ">
+                                        <b>{currentUser.username}</b>
+                                    </Link>
+                                </center>
+
+                                <a href="/login"  style={isActive(history, '/login')} className="nav-link mt-0" onClick={logOut}>
                                     <button className="button-signUp button2-signup">
                                         LogOut
                                     </button>
@@ -196,18 +179,28 @@ const Navbar = () =>{
                             </li>
                             <li className="nav-item">
                                 <Link className="nav-link" style={isActive(history, '/Student/Registration')} to={"/Student/Registration"}  >
-                                    Student Registration Portal
+                                    Student Registration
                                 </Link>
                             </li>
-                                <li className="nav-item">
-                                    <Link className="nav-link" style={isActive(history, '/student/notices')} to={"/student/notices"}  >
-                                        Taprobane Notices
-                                    </Link>
-                                </li>
+                            <li className="nav-item">
+                                <Link className="nav-link" style={isActive(history, '/teacher/registration')} to="/teacher/registration">Teacher Registration</Link>
+                            </li>
+                            <li className="nav-item">
+                                <Link className="nav-link" style={isActive(history, '/teacher/complete-registration')} to="/teacher/complete-registration">Registration Status</Link>
+                            </li>
+                            <li className="nav-item">
+                                <Link className="nav-link" style={isActive(history, '/student/notices')} to={"/student/notices"}  >
+                                    Taprobane Notices
+                                </Link>
+                            </li>
 
                             <li className="nav-item">
                                 <Link to={"/contactUs"} style={isActive(history, '/contactUs')} className="nav-link">
                                     Contact Us &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
                                     &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
                                 </Link>
                             </li>
@@ -220,7 +213,7 @@ const Navbar = () =>{
 
                             <li className="nav-item">
                                 <Link to={"/register"} style={isActive(history, '/register')} className="nav-link">
-                                    <button class="button-signUp button2-signup">Sign Up</button>
+                                    Sign Up
                                 </Link>
                             </li>
                         </div>

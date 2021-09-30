@@ -1,6 +1,6 @@
 .navbar {
     font-family: "Nunito Sans";
-    font-size: 18px;
+    font-size: 20px;
 }
 .navbar-custom {
     background-color: #340634;
@@ -51,6 +51,7 @@ border-color: rgb(255,102,203);
     background-color: #ffffff;
     color: #6b556b;
     border: 2px solid #ffffff;
+    margin-top: -10px;
 }
 
 .button2-signup:hover {

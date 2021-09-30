@@ -3,7 +3,9 @@ import ViewRegistrations from './image/sdimage1.png';
 import pending from './image/img2.png';
 import permanent from './image/img3.png'
 import profile from './image/img6.png'
-import all from './image/img7.jpg'
+import all from './image/rep.png'
+import lesson from './image/lsn.png'
+import pall from './image/img7.jpg'
 //import dashboard from './image/dashboard.png'
 import './style/supervisorHome.css'
 
@@ -60,7 +62,17 @@ class supervisorDashboard extends Component {
                             <div className="card-d shadow p-3 rounded">
                                 <h5>Teacher Profiles</h5>
                                 <div className="d-grid gap-2 d-md-flex justify-content-md-end">
-                                    <img src={all} height="100px"/>
+                                    <img src={pall} height="100px"/>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div className="col">
+                        <a href="/teacher/view-lesson-materials">
+                            <div className="card-d shadow p-3 rounded">
+                                <h5>Lesson Materials</h5>
+                                <div className="d-grid gap-2 d-md-flex justify-content-md-end">
+                                    <img src={lesson} height="100px"/>
                                 </div>
                             </div>
                         </a>
@@ -68,7 +80,7 @@ class supervisorDashboard extends Component {
                     <div className="col">
                         <a href="/supervisor/report">
                             <div className="card-d shadow p-3 rounded">
-                                <h5>Reports</h5>
+                                <h5>Summary Report</h5>
                                 <div className="d-grid gap-2 d-md-flex justify-content-md-end">
                                     <img src={all} height="100px"/>
                                 </div>

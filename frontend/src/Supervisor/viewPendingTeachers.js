@@ -52,17 +52,17 @@ class ViewPendingTeachers extends Component {
                                     <table className="table table-striped table-hover">
                                         <thead>
                                         <tr>
-                                            <th>FIRST NAME</th>
-                                            <th>LAST NAME</th>
-                                            <th>GENDER</th>
+                                            <th>First Name</th>
+                                            <th>Last Name</th>
+                                            <th>Gender</th>
                                             <th>NIC</th>
                                             <th>Registered Date</th>
-                                            <th>ADDRESS</th>
-                                            <th>PHONE</th>
-                                            <th>EMAIL</th>
-                                            <th>CURRENT STATUS</th>
-                                            <th>UPDATE TO PERMANENT</th>
-                                            <th>DELETE</th>
+                                            <th>Address</th>
+                                            <th>Phone</th>
+                                            <th>Email</th>
+                                            <th>Current Status</th>
+                                            <th>Update to Permanent</th>
+                                            <th>Remove</th>
                                         </tr>
                                         </thead>
                                         <tbody>

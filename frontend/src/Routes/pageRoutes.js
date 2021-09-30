@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import HomePage from "../Home/homePage";
 import Navbar from "../Home/navBar";
-//import Footer from "../Home/footer";
+import Footer from "../Home/footer";
 
 import Login from "../components/Login";
 import Register from "../components/Register";
@@ -29,6 +29,9 @@ import TakeClassMaterials from "../Student/TakeClassMaterials/TakeClassMaterials
 import ViewFeedbacks from "../StudentManager/ViewFeedBack/ViewFeedBacks";
 import EnterNotices from "../StudentManager/EnterNotices/EnterNotices";
 import ViewStudents from "../StudentManager/ViewStudentDetails/viewStudentDetails";
+import TakeStudents from "../StudentManager/Student Report Generation/RStudentReport";
+import PrintNotices from "../StudentManager/Student Report Generation/RNoticePrint";
+import TaskReport from "../Class/taskReport";
 
 
 //Manager
@@ -51,14 +54,25 @@ import RegistrationCompletion from "../Teacher/registrationCompletion";
 import ViewPendingTeachers from "../Supervisor/viewPendingTeachers";
 import CreateMaterial from "../Teacher/createMaterial";
 import ViewUploadedMaterials from "../Teacher/viewUploadedMaterials";
-import UpdateTeacherMaterial from "../Teacher/updateTeacherMaterial";
 import supervisorDashboard from "../Supervisor/supervisorDashboard";
-import UpdateTeacherProfile from "../Teacher/updateTeacherProfile"
+
 import NewPDF from "../Supervisor/basePDF";
+
+import UpdateTeacherProfile from "../Teacher/updateTeacherProfile";
+
 
 import teacherTaskUpdate from "../Class/teacherUpdate";
 import teacherTask from "../Class/teacher";
 import teacherTaskList from "../Class/teacherTask";
+
+
+
+import teachertaskteacher from "../Teacher/teacherTask";
+
+
+import MyProfile from "../Teacher/myProfile";
+import UpdatedProfile from "../Teacher/updatedProfile";
+import ViewApprovedMaterials from "../Supervisor/viewApprovedMaterials";
 
 
 
@@ -90,6 +104,8 @@ function PageRoutes() {
                         <Route path="/studentManager/view-feedback" component={ViewFeedbacks}/>
                         <Route path="/studentManager/Enter-Notices" component={EnterNotices}/>
                         <Route path="/studentManager/View-Students-Details" component={ViewStudents}/>
+                        <Route path="/studentManager/Take-Students-Details" component={TakeStudents}/>
+                        <Route path="/studentManager/Print-Notices" component={PrintNotices}/>
 
                         <Route path="/accountant/company-payment-incomes" component={ViewIncomeTransaction}/>
                         <Route path="/accountant/company-payment-expenses" component={ViewOutcomeTransaction}/>
@@ -100,27 +116,32 @@ function PageRoutes() {
                         <Route path="/accountant/report" component={ReactPDF}/>
                         <Route path="/accountant/" component={AccountantDashboard}/>
 
+                        <Route path="/teacher/my/profile" component={MyProfile}/>
+                        <Route path="/teacher/updated-profile" component={UpdatedProfile}/>
+                        <Route path="/teacher/profile/update/:id" component={UpdateTeacherProfile}/>
                         <Route path="/teacher/registration" component={TeacherRegistration}/>
                         <Route path="/teacher/profile" component={TeacherProfile}/>
                         <Route path="/teacher/edit-profile" component={UpdateTeacherProfile}/>
                         <Route path="/teacher/view-registration" component={ViewTeacherRegistration}/>
                         <Route path="/teacher/view-profile" component={ViewProfile}/>
                         <Route path="/teacher/view-approved-registration" component={ViewApprovedTeachers}/>
+                        <Route path="/teacher/view-approved-materials" component={ViewApprovedMaterials}/>
                         <Route path="/teacher/complete-registration" component={RegistrationCompletion}/>
                         <Route path="/supervisor/view-pending-teachers" component={ViewPendingTeachers}/>
                         <Route path="/teacher/add-course-materials" component={CreateMaterial}/>
                         <Route path="/teacher/view-lesson-materials" component={ViewUploadedMaterials}/>
-                        <Route path="/teacher/update-lesson-materials" component={UpdateTeacherMaterial}/>
                         <Route path="/supervisor/report" component={NewPDF}/>
                         <Route path="/supervisor/" component={supervisorDashboard}/>
 
-                        <Route path="/teacherTaskUpdate/" component={teacherTaskUpdate}/>
+                        <Route path="/teacherTask/report" component={TaskReport}/>
+                        <Route path="/teacherTaskUpdate/:id" component={teacherTaskUpdate}/>
                         <Route path="/teacherTask/" component={teacherTask}/>
                         <Route path="/teacherTaskList/" component={teacherTaskList}/>
+                        <Route path="/teacherTaskListteacher/" component={teachertaskteacher}/>
                     </Switch>
                 </section>
             </Router>
-            {/* <Footer />*/}
+            <Footer />
         </div>
     );
 }

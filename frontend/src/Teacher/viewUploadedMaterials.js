@@ -25,7 +25,7 @@ class ViewUploadedMaterials extends Component {
     deleteTeacher(e, id){
         axios.delete(`http://localhost:8081/material/delete/${id}`)
             .then(response => {
-                alert('Application Declined')
+                alert('Material Removed')
                 this.componentDidMount()
             })
     }
@@ -34,7 +34,7 @@ class ViewUploadedMaterials extends Component {
         const status = prompt("Enter the status: ");
         axios.put(`http://localhost:8081/material/update/${id}`, {status: status, id:id})
             .then(response => {
-                alert('Registration Status Changed')
+                alert('Course Material Status Changed')
                 this.componentDidMount()
             })
     }

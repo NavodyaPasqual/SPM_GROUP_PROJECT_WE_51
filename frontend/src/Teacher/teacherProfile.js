@@ -2,6 +2,7 @@ import React, { Component} from 'react';
 import axios from 'axios';
 import './styles/teacherProfile.css';
 import my from "../Teacher/image/download.jpg";
+import {Link} from "react-router-dom";
 
 //Initial states of input fields
 const initialState = {
@@ -226,10 +227,14 @@ class TeacherProfile extends Component {
                             </div>
 
                             <div className="col-12">
-                                <button type="submit" className="button-purple button2-purple">Create Profile</button>
+                                <Link to={`/teacher/view-profile`}>
+                                <button type="submit" className="button-purple button2-purple">CREATE</button>
+                                </Link>
                             </div>
                             <div className="col-12">
-                                <button type="submit" className="button-purple button2-purple">Cancel Profile</button>
+                                <a href="#">
+                                <button type="submit" className="button-purple button2-purple">CANCEL</button>
+                                </a>
                             </div>
                         </form>
                         </div>

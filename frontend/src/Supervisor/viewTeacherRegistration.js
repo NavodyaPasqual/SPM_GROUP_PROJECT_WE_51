@@ -43,8 +43,6 @@ class ViewProfile extends Component {
     render() {
         return (
             <div className="background">
-
-
                 <div className="container p-3">
                     <p3>CURRENT REGISTRATIONS</p3>
                     <br/><br/>
@@ -57,19 +55,23 @@ class ViewProfile extends Component {
                                         <dt className="col-sm-7">
                                             <div className="row">
                                                 <div className="row">
-                                                    <dt className="col-sm-4">REGISTERED DATE</dt>
+                                                    <h5>Personal Details</h5>
+                                                </div>
+                                                <br/><br/>
+                                                <div className="row">
+                                                    <dt className="col-sm-4">Registered Date</dt>
                                                     <dd className="col-sm-8">{item.regDate}</dd>
                                                 </div>
                                                 <div className="row">
-                                                    <dt className="col-sm-4">FIRST NAME</dt>
+                                                    <dt className="col-sm-4">First Name</dt>
                                                     <dd className="col-sm-8">{item.firstName}</dd>
                                                 </div>
                                                 <div className="row">
-                                                    <dt className="col-sm-4">LAST NAME</dt>
+                                                    <dt className="col-sm-4">Last Name</dt>
                                                     <dd className="col-sm-8">{item.lastName}</dd>
                                                 </div>
                                                 <div className="row">
-                                                    <dt className="col-sm-4">GENDER</dt>
+                                                    <dt className="col-sm-4">Gender</dt>
                                                     <dd className="col-sm-8">{item.gender}</dd>
                                                 </div>
                                                 <div className="row">
@@ -77,75 +79,95 @@ class ViewProfile extends Component {
                                                     <dd className="col-sm-8">{item.nic}</dd>
                                                 </div>
                                                 <div className="row">
-                                                    <dt className="col-sm-4">PASSPORT ID</dt>
+                                                    <dt className="col-sm-4">Passport ID</dt>
                                                     <dd className="col-sm-8">{item.passportNumber}</dd>
                                                 </div>
                                                 <div className="row">
-                                                    <dt className="col-sm-4">ADDRESS</dt>
+                                                    <dt className="col-sm-4">Address</dt>
                                                     <dd className="col-sm-8">{item.address}</dd>
                                                 </div>
                                                 <div className="row">
-                                                    <dt className="col-sm-4">CONTACT NUMBER</dt>
+                                                    <dt className="col-sm-4">Phone</dt>
                                                     <dd className="col-sm-8">{item.contactNumber}</dd>
                                                 </div>
                                                 <div className="row">
-                                                    <dt className="col-sm-4">EMAIL</dt>
+                                                    <dt className="col-sm-4">Email</dt>
                                                     <dd className="col-sm-8">{item.email}</dd>
                                                 </div>
+                                                <br/><br/>
                                                 <div className="row">
-                                                    <dt className="col-sm-4">qualificationType</dt>
+                                                    <h5>Highest Academic Qualification</h5>
+                                                </div>
+                                                <br/><br/>
+                                                <div className="row">
+                                                    <dt className="col-sm-4">Qualification Type</dt>
                                                     <dd className="col-sm-8">{item.qualificationType}</dd>
                                                 </div>
                                                 <div className="row">
-                                                    <dt className="col-sm-4">academicInstitute</dt>
+                                                    <dt className="col-sm-4">Institute</dt>
                                                     <dd className="col-sm-8">{item.academicInstitute}</dd>
                                                 </div>
                                                 <div className="row">
-                                                    <dt className="col-sm-4">academicYear</dt>
+                                                    <dt className="col-sm-4">Year</dt>
                                                     <dd className="col-sm-8">{item.academicYear}</dd>
                                                 </div>
                                                 <div className="row">
-                                                    <dt className="col-sm-4">subjects</dt>
+                                                    <dt className="col-sm-4">Specialization</dt>
                                                     <dd className="col-sm-8">{item.subjects}</dd>
                                                 </div>
+                                                <br/><br/>
                                                 <div className="row">
-                                                    <dt className="col-sm-4">teachingInstitute</dt>
+                                                    <h5>Highest Teaching Qualification</h5>
+                                                </div>
+                                                <br/><br/>
+                                                <div className="row">
+                                                    <dt className="col-sm-4">Institute</dt>
                                                     <dd className="col-sm-8">{item.teachingInstitute}</dd>
                                                 </div>
                                                 <div className="row">
-                                                    <dt className="col-sm-4">teachingYear</dt>
+                                                    <dt className="col-sm-4">Year</dt>
                                                     <dd className="col-sm-8">{item.teachingYear}</dd>
                                                 </div>
                                                 <div className="row">
-                                                    <dt className="col-sm-4">majorSubjects</dt>
+                                                    <dt className="col-sm-4">Major Subject</dt>
                                                     <dd className="col-sm-8">{item.majorSubjects}</dd>
                                                 </div>
+                                                <br/><br/>
                                                 <div className="row">
-                                                    <dt className="col-sm-4">associationName</dt>
+                                                    <h5>Latest Professional Registration</h5>
+                                                </div>
+                                                <br/><br/>
+                                                <div className="row">
+                                                    <dt className="col-sm-4">Association Name</dt>
                                                     <dd className="col-sm-8">{item.associationName}</dd>
                                                 </div>
                                                 <div className="row">
-                                                    <dt className="col-sm-4">regNumber</dt>
+                                                    <dt className="col-sm-4">Registration Number</dt>
                                                     <dd className="col-sm-8">{item.regNumber}</dd>
                                                 </div>
                                                 <div className="row">
-                                                    <dt className="col-sm-4">experienceYear</dt>
+                                                    <dt className="col-sm-4">Year</dt>
                                                     <dd className="col-sm-8">{item.experienceYear}</dd>
                                                 </div>
+                                                <br/><br/>
                                                 <div className="row">
-                                                    <dt className="col-sm-4">schoolName</dt>
+                                                    <h5>Teaching Experience</h5>
+                                                </div>
+                                                <br/><br/>
+                                                <div className="row">
+                                                    <dt className="col-sm-4">School Name</dt>
                                                     <dd className="col-sm-8">{item.schoolName}</dd>
                                                 </div>
                                                 <div className="row">
-                                                    <dt className="col-sm-4">taughtSubjects</dt>
+                                                    <dt className="col-sm-4">Taught Subject</dt>
                                                     <dd className="col-sm-8">{item.taughtSubjects}</dd>
                                                 </div>
                                                 <div className="row">
-                                                    <dt className="col-sm-4">dateFrom</dt>
+                                                    <dt className="col-sm-4">Date From</dt>
                                                     <dd className="col-sm-8">{item.dateFrom}</dd>
                                                 </div>
                                                 <div className="row">
-                                                    <dt className="col-sm-4">dateTo</dt>
+                                                    <dt className="col-sm-4">Date To</dt>
                                                     <dd className="col-sm-8">{item.dateTo}</dd>
                                                 </div>
                                                 <div className="row">
@@ -167,10 +189,10 @@ class ViewProfile extends Component {
                                                         <div className="row">
                                                             <div className="d-grid gap-2 d-md-flex justify-content-md-end">
                                                                 <button className="btn btn-outline-warning me-md-2" onClick={e => this.updateStatus(e,item._id)}>
-                                                                    <i className="fas fa-edit">&nbsp;&nbsp;UPDATE</i></button>
+                                                                    <i className="fas fa-edit">&nbsp;&nbsp;ACCEPT</i></button>
 
                                                                 <button className="btn btn-outline-danger" onClick={e => this.deleteTeacher(e,item._id)}>
-                                                                    <i className="fas fa-trash">&nbsp;&nbsp;DELETE</i></button>
+                                                                    <i className="fas fa-trash">&nbsp;&nbsp;DECLINE</i></button>
                                                             </div>
                                                         </div>
                                                     </div>

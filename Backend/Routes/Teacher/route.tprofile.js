@@ -7,6 +7,7 @@ module.exports = function () {
     router.get('/', controller.getAllProfiles);
     router.get('/viewbyid/:id', controller.viewProfileById);
     router.put('/update/:id', controller.updateProfileById);
+    router.put('/update-all/:id', controller.updateById);
     router.delete('/delete/:id', controller.deleteProfileById);
     return router;
 }

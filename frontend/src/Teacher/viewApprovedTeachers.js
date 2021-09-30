@@ -24,7 +24,7 @@ class ViewApprovedTeachers extends Component {
     deleteTeacher(e, id){
         axios.delete(`http://localhost:8081/teacher/delete/${id}`)
             .then(response => {
-                alert('Permanent Registration Deleted')
+                alert('Are you sure you want to delete this registration ?')
                 this.componentDidMount()
             })
     }
@@ -33,7 +33,7 @@ class ViewApprovedTeachers extends Component {
         const status = prompt("Enter the status: ");
         axios.put(`http://localhost:8081/teacher/update/${id}`, {status: status, id:id})
             .then(response => {
-                alert('Registration Status Changed')
+                alert('Registration Status Changed to Pending')
                 this.componentDidMount()
             })
     }

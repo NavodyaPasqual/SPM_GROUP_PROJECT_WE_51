@@ -1,106 +1,78 @@
-import React, {Component} from 'react';
-import axios from "axios";
-import my from "./image/pendingTeacher.png";
-import {Link} from "react-router-dom";
+import React, { Component} from 'react';
+import axios from 'axios';
+import my from "../Supervisor/image/img4.png";
 
 class ViewApprovedMaterials extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            teacher: [],
-            isExpandClick: false
+            material: [],
         }
     }
 
-    //To call the end point and get the values using axios
+    //to call the end point and get the values using axios
     componentDidMount() {
-        axios.get('http://localhost:8081/teacher/')
+        axios.get('http://localhost:8081/material/')
             .then(response => {
-                this.setState({teacher: response.data.data})
+                this.setState({material: response.data.data})
             } )
     }
 
-    //to call the end point and delete a value using axios
-    deleteTeacher(e, id){
-        axios.delete(`http://localhost:8081/teacher/delete/${id}`)
-            .then(response => {
-                alert('Permanent Registration Deleted')
-                this.componentDidMount()
-            })
-    }
-
-    updateStatus(e, id){
-        const status = prompt("Enter the status: ");
-        axios.put(`http://localhost:8081/teacher/update/${id}`, {status: status, id:id})
-            .then(response => {
-                alert('Registration Status Changed')
-                this.componentDidMount()
-            })
-    }
 
     render() {
         return (
-            <div className="p-3">
-                <div className="card shadow p-3 mb-4 bg-body rounded">
-                    <div className="search-wrapper">
-                        <div className="p-3">
-                            <p3>PERMANENT TEACHERS</p3>
-                            <br/><br/>
-                            <header className="jumbotron">
-                                <div className="table-responsive">
-                                    <table className="table table-striped table-hover">
-                                        <thead>
-                                        <tr>
-                                            <th>First Name</th>
-                                            <th>Last Name</th>
-                                            <th>Gender</th>
-                                            <th>NIC</th>
-                                            <th>Passport Number</th>
-                                            <th>Address</th>
-                                            <th>Contact Number</th>
-                                            <th>Email</th>
-                                            <th>Current Status</th>
-                                            <th>Update</th>
-                                            <th>Delete</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        {this.state.teacher.length > 0 && this.state.teacher.map((item,index) => (
-                                            <tr key={index} className="align-top">
-                                                {item.status === "approved" &&
-                                                <>
-                                                    <td>{item.firstName}</td>
-                                                    <td>{item.lastName}</td>
-                                                    <td>{item.gender}</td>
-                                                    <td>{item.nic}</td>
-                                                    <td>{item.passportNumber}</td>
-                                                    <td>{item.address}</td>
-                                                    <td>{item.contactNumber}</td>
-                                                    <td>{item.email}</td>
-                                                    <td><span className="badge bg-success">{item.status}</span></td>
-                                                    <td>
-                                                        <button className="update"
-                                                                onClick={e => this.updateStatus(e, item._id)}>
-                                                            <i className="far fa-edit"></i>
-                                                        </button>
-                                                    </td>
-                                                    <td>
-                                                        <button className="delete"
-                                                                onClick={e => this.deleteTeacher(e, item._id)}>
-                                                            <i className="fas fa-trash"></i>
-                                                        </button>
-                                                    </td>
-                                                </>
-                                                }
-                                            </tr>
-                                        ))}
-                                        </tbody>
-                                    </table>
+            <div className="background">
+                <div className="container p-3">
+                    <p3>UPLOAD STATUS</p3>
+                    <br/><br/>
+                    <div className="container">
+                        {this.state.material.length > 0 && this.state.material.map((item,index) => (
+                            <div key={index} className="body">
+                                <div className="card shadow p-3 mb-5 bg-body rounded">
+                                    <img src={my}/>
+                                    <div className="row">
+                                        <dt className="col-sm-7">
+                                            <div className="row">
+                                                <div className="row">
+                                                    <dt className="col-sm-4">Subject Name</dt>
+                                                    <dd className="col-sm-8">{item.subjectName}</dd>
+                                                </div>
+                                                <div className="row">
+                                                    <dt className="col-sm-4">Subject Code</dt>
+                                                    <dd className="col-sm-8">{item.subjectCode}</dd>
+                                                </div>
+                                                <div className="row">
+                                                    <dt className="col-sm-4">Lesson</dt>
+                                                    <dd className="col-sm-8">{item.lesson}</dd>
+                                                </div>
+                                                <div className="row">
+                                                    <dt className="col-sm-4">Description</dt>
+                                                    <dd className="col-sm-8">{item.description}</dd>
+                                                </div>
+                                                 <br/><br/>
+                                                <div className="row">
+                                                    <dt className="col-sm-4">Current Status</dt>
+                                                    {item.status === "not approved" &&
+                                                    <dd className="col-sm-4 badge bg-danger">{item.status}</dd>
+                                                    }
+                                                    {item.status === "approved" &&
+                                                    <dd className="col-sm-4 badge bg-success">{item.status}</dd>
+                                                    }
+
+                                                    <br/><br/>
+                                                </div>
+                                            </div>
+                                        </dt>
+                                    </div>
+
+
                                 </div>
-                            </header>
-                        </div>
+                            </div>
+                        ))}
+
                     </div>
                 </div>
+
             </div>
         )
     }
