@@ -93,7 +93,6 @@
 }
 .student-registration .week {
     display:flex;
-    justfiy-content:space-between;
 }
 .student-registration .colums {
     display:flex;

@@ -96,7 +96,6 @@
 }
 .student-notices .week {
     display:flex;
-    justfiy-content:space-between;
 }
 .student-notices .colums {
     display:flex;
