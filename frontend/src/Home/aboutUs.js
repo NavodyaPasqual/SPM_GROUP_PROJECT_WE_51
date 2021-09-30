@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import './styles/aboutus.css'
-import profilepic from "./images/profilepic.jpg";
 import img from './images/ab2.png'
 import img1 from './images/ab1.png'
 
@@ -20,7 +19,7 @@ class AboutUs extends Component {
                                     <p className="aboutus_titles"><h1> About us </h1></p>
                                     <p className="about_content">
                                     We are a leading non-state degree awarding institute approved by the University Grants Commission (UGC) under the Universities Act. We are members of the Association of Commonwealth Universities (ACU), as well as the International Association of Universities (IAU). We are also the first Sri Lankan institute to be accredited by the Institution of Engineering & Technology, UK.
-                                    SLIIT was established in 1999. We opened our doors to 400 students in Metro Campus in Colombo. Currently, we offer both undergraduate and postgraduate courses and accommodate over 9000 students, including international students from various regions in the world. More than 9000 alumni have graduated from our faculties. We take great pride in producing graduates who make meaningful contributions to their communities and professions.
+                                    Taprobane was established in 1999. We opened our doors to 400 students in Metro Campus in Colombo. Currently, we offer both undergraduate and postgraduate courses and accommodate over 9000 students, including international students from various regions in the world. More than 9000 alumni have graduated from our faculties. We take great pride in producing graduates who make meaningful contributions to their communities and professions.
                                     </p>
                                 </div>
                             </div>
