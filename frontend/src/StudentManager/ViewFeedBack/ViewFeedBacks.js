@@ -94,6 +94,8 @@ class ViewFeedBacks extends Component {
                                         <h5><center><u><b> {item.title}</b></u></center></h5>
                                     </div>
 
+
+
                                     <br/>
                                     <h6>Inquiry Detail: </h6>
                                     <label>{item.description}</label>

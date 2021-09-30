@@ -18,6 +18,8 @@ class StudentNotices extends Component {
     }
 
 
+
+
     render() {
         return (
         <div className="student-notices">
