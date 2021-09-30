@@ -59,12 +59,32 @@ const deleteById = async (req, res) => {
     res.send("Deleted successfully");
 };
 
-
+/**
+ * Update only the status of student payment controller
+ * @param req
+ * @param res
+ * @returns {Promise<any>}
+ */
+const updateStatus = async (req, res) => {
+    const id = req.params.id;
+    const {status} = req.body;
+    const updateStatus= {
+        status
+    }
+    const update = await teacherTask.findByIdAndUpdate(id, updateStatus)
+        .then(() => {
+            res.status(200).send({status: "Status Updated"})
+        }).catch((err) => {
+            console.log(err);
+            res.status(500).send({status: " Error", error:err.message});
+        })
+}
 
 module.exports = {
     createteacherTask,
     getAllteacherTask,
     viewteacherTaskById,
     updateById,
-    deleteById
+    deleteById,
+    updateStatus
 }

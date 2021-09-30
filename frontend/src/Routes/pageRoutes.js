@@ -31,6 +31,7 @@ import EnterNotices from "../StudentManager/EnterNotices/EnterNotices";
 import ViewStudents from "../StudentManager/ViewStudentDetails/viewStudentDetails";
 import TakeStudents from "../StudentManager/Student Report Generation/RStudentReport";
 import PrintNotices from "../StudentManager/Student Report Generation/RNoticePrint";
+import TaskReport from "../Class/taskReport";
 
 
 //Manager
@@ -115,6 +116,7 @@ function PageRoutes() {
                         <Route path="/teacher/update-lesson-materials" component={UpdateTeacherMaterial}/>
                         <Route path="/supervisor/" component={supervisorDashboard}/>
 
+                        <Route path="/teacherTask/report" component={TaskReport}/>
                         <Route path="/teacherTaskUpdate/:id" component={teacherTaskUpdate}/>
                         <Route path="/teacherTask/" component={teacherTask}/>
                         <Route path="/teacherTaskList/" component={teacherTaskList}/>

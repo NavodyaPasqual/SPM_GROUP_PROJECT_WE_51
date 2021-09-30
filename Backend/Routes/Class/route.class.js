@@ -8,5 +8,6 @@ module.exports = function () {
     router.get('/TeacherTask/:id', controller.viewteacherTaskById);
     router.put('/TeacherTask/:id', controller.updateById);
     router.delete('/TeacherTask/:id', controller.deleteById);
+    router.put('/TeacherTask/status/:id', controller.updateStatus);
     return router;
 }
