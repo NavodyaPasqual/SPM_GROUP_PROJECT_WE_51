@@ -2,6 +2,7 @@ import React, { Component} from 'react';
 import axios from 'axios';
 import './StudentsNotices.css';
 
+
 class StudentNotices extends Component {
     constructor(props) {
         super(props);
@@ -17,6 +18,16 @@ class StudentNotices extends Component {
             })
     }
 
+    //to call the end point and delete a value using axios
+    deleteFeedback(){
+
+                alert('The Notice That you are looking For,\n\n' +
+                    'Student Enrollment For New Year 2022\n\n' +
+                    'DETAIL IN BRIEF\n\n'+
+                    'Competition in every domain and industry has persuade people to think deeply to give more than 100% to stay firm in competition and to retain existing customers.Education domains is not an exception of this as competition can be seen in this domain; especially with the inception of a number of world-class educational institutes, accreditation from world’s top universities, better placement record and above all an amazing and world-class environment and infrastructure.When it comes to attract students for different courses in your institute, it depends on different things like educational environment, events, and way of marketing to reach target audience and a lot more.')
+
+    }
+
     render() {
         return (
         <div className="student-notices">
@@ -28,13 +39,13 @@ class StudentNotices extends Component {
 
                 <div className="search-container">
                     <form>
-                        <input type="text" placeholder="Search.." name="search"/>
-                            <button type="submit"><i className="fa fa-search"></i></button>
+                        <input type="text" placeholder="Search.." name="search"
+                        />
+                            <button type="submit" onClick={e => this.deleteFeedback()} ><i className="fa fa-search"></i></button>
                     </form>
                 </div>
 
             </div>
-
 
 
 
