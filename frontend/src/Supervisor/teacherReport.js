@@ -68,6 +68,12 @@ class TeacherReport extends Component {
                 ))}
                 </tbody>
                 <thead>
+                <tr>
+                    <th className="mb-3 table-secondary" colSpan="3"><span
+                        className="text-success">TOTAL REGISTRATIONS</span></th>
+                </tr>
+                </thead>
+                <tbody>
                 <tr class="table-success">
                     <th><span className="text-dark">No of Registrations</span></th>
                     <th><span className="text-primary">Permanent</span></th>
@@ -83,7 +89,7 @@ class TeacherReport extends Component {
                     <th><span className="text-primary">All</span></th>
                     <th><span className="text-primary">5</span></th>
                 </tr>
-                </thead>
+                </tbody>
             </table>
 
         )
