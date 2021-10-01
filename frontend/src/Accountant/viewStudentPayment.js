@@ -4,6 +4,7 @@ import Typed from "react-typed";
 import spinner from "../Student/Payments/image/spinner.gif";
 import '../Student/Payments/style/loading.css';
 import './style/viewStudentPayment.css';
+import {Link} from "react-router-dom";
 
 const ViewStudentPayment = () => {
 
@@ -160,31 +161,21 @@ const ViewStudentPayment = () => {
                 <div className="search-wrapper">
                     <div className="row g-2">
                         <div className="col-md">
-                            <div className="input-group ">
-                                <Typed
-                                    strings={[
-                                        'Search by student name',
-                                        'Search by student ID',
-                                        'Search by payment type']}
-                                    typeSpeed={40}
-                                    backSpeed={50}
-                                    attr="placeholder"
-                                    loop >
-                                    <input
-                                        type="search"
-                                        className="form-control"
-                                        placeholder="Search..."
-                                        value={q}
-                                        onChange={(e) => setQ(e.target.value)}
-                                    />
-                                </Typed>
-                                <span className="input-group-text"><i className="fas fa-search"></i></span>
-                            </div>
+
                         </div>
                         <div className="col-md">
                             <div className="row">
-                                <div className="d-grid gap-2 d-md-flex justify-content-md-end">
-                                    <button className="btn btn-outline-success"><i className="fas fa-download">&nbsp;&nbsp;DOWNLOAD</i></button>
+                                <div className="justify-content-md-end">
+                                    <div className="input-group justify-content-md-end">
+                                        <input
+                                            type="search"
+                                            className="form-control"
+                                            placeholder="Search..."
+                                            value={q}
+                                            onChange={(e) => setQ(e.target.value)}
+                                        />
+                                        <span className="input-group-text"><i className="fas fa-search"></i></span>
+                                    </div>
                                 </div>
                             </div>
                         </div>

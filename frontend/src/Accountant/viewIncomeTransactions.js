@@ -99,7 +99,9 @@ const ViewIncomeTransaction = () => {
                     </div>
                     <div className="col-md">
                         <div className="mb-3 mt-2 d-md-flex justify-content-md-end">
-                            <button className="btn btn-outline-success"><i className="fas fa-download">&nbsp;&nbsp;DOWNLOAD</i></button>
+                            <Link to={`/accountant/report`}>
+                                <button className="btn btn-outline-success"><b>&nbsp;&nbsp;TRANSACTION REPORT&nbsp;&nbsp;<i className="fas fa-angle-double-right"></i>&nbsp;&nbsp;</b></button>
+                            </Link>
                         </div>
                     </div>
                 </div>
@@ -115,23 +117,13 @@ const ViewIncomeTransaction = () => {
                             <div className="row">
                                 <div className="justify-content-md-end">
                                     <div className="input-group justify-content-md-end">
-                                        <Typed
-                                            strings={[
-                                                'Search by name',
-                                                'Search by type',
-                                                'Search by name',]}
-                                            typeSpeed={40}
-                                            backSpeed={50}
-                                            attr="placeholder"
-                                            loop >
-                                            <input
-                                                type="search"
-                                                className="form-control"
-                                                placeholder="Search..."
-                                                value={q}
-                                                onChange={(e) => setQ(e.target.value)}
-                                            />
-                                        </Typed>
+                                        <input
+                                            type="search"
+                                            className="form-control"
+                                            placeholder="Search..."
+                                            value={q}
+                                            onChange={(e) => setQ(e.target.value)}
+                                        />
                                         <span className="input-group-text"><i className="fas fa-search"></i></span>
                                     </div>
                                 </div>

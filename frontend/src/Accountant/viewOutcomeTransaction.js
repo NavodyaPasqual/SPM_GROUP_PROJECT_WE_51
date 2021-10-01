@@ -99,7 +99,9 @@ const ViewOutcomeTransaction = () => {
                     </div>
                     <div className="col-md">
                         <div className="mb-3 mt-2 d-md-flex justify-content-md-end">
-                            <button className="btn btn-outline-success"><i className="fas fa-download">&nbsp;&nbsp;DOWNLOAD</i></button>
+                            <Link to={`/accountant/report`}>
+                                <button className="btn btn-outline-success"><b>&nbsp;&nbsp;TRANSACTION REPORT&nbsp;&nbsp;<i className="fas fa-angle-double-right"></i>&nbsp;&nbsp;</b></button>
+                            </Link>
                         </div>
                     </div>
                 </div>
