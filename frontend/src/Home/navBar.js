@@ -133,6 +133,27 @@ const Navbar = () =>{
                                             <Link className="nav-link" style={isActive(history, '/supervisor/')} to="/supervisor/">My Dashboard</Link>
                                         </li>
                                         <li className="nav-item">
+                                            <Link className="nav-link" style={isActive(history, '/teacher/view-registration')} to="/teacher/view-registration">Current Registration</Link>
+                                        </li>
+                                        <li className="nav-item">
+                                            <Link className="nav-link" style={isActive(history, '/supervisor/view-pending-teachers')} to="/supervisor/view-pending-teachers">Pending Teachers</Link>
+                                        </li>
+                                        <li className="nav-item">
+                                            <Link className="nav-link" style={isActive(history, '/teacher/view-approved-registration')} to="/teacher/view-approved-registration">Permanent Teachers</Link>
+                                        </li>
+                                        <li className="nav-item">
+                                            <Link className="nav-link" style={isActive(history, '/teacher/profile')} to="/teacher/profile">New Profile</Link>
+                                        </li>
+                                        <li className="nav-item">
+                                            <Link className="nav-link" style={isActive(history, '/teacher/view-profile')} to="/teacher/view-profile">Teacher Profiles</Link>
+                                        </li>
+                                        <li className="nav-item">
+                                            <Link className="nav-link" style={isActive(history, '/teacher/view-lesson-materials')} to="/teacher/view-lesson-materials">Lesson Materials</Link>
+                                        </li>
+                                        <li className="nav-item">
+                                            <Link className="nav-link" style={isActive(history, '/supervisor/report')} to="/supervisor/report">Registration Summary</Link>
+                                        </li>
+                                        <li className="nav-item">
                                             {/* link */}
                                         </li>
                                         <li className="nav-item">
