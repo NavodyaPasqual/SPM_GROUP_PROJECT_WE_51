@@ -146,6 +146,7 @@ const ViewOutcomeTransaction = () => {
                                 <th>Date</th>
                                 <th>Amount(Rs.)</th>
                                 <th>Type</th>
+                                <th>View</th>
                                 <th>Update</th>
                                 <th>Delete</th>
                             </tr>
@@ -164,6 +165,15 @@ const ViewOutcomeTransaction = () => {
                                     }
                                     {c.type === "Expenses" &&
                                     <td><span className="text-info">{c.type}</span></td>
+                                    }
+                                    {c.type === "Expenses" &&
+                                    <td>
+                                        <Link to={`/accountant/company-payment-incomes/view/${c._id}`}>
+                                            <button className="btn btn-outline-secondary me-md-2">
+                                                <i className="fas fa-eye"></i>
+                                            </button>
+                                        </Link>
+                                    </td>
                                     }
                                     {c.type === "Expenses" &&
                                     <td>

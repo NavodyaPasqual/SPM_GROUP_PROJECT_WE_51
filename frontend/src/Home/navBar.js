@@ -114,8 +114,15 @@ const Navbar = () =>{
                                             <Link className="nav-link" style={isActive(history, '/accountant/company-payment-expenses')} to="/accountant/company-payment-expenses">Company Expenses</Link>
                                         </li>
                                         <li className="nav-item">
+                                            <Link className="nav-link" style={isActive(history, '/accountant/report')} to="/accountant/report">Financial Report</Link>
+                                        </li>
+                                        <li className="nav-item">
                                             <Link className="nav-link" style={isActive(history, '/teacherTaskList/')} to="/teacherTaskList/">Teacher Task List</Link>
                                         </li>
+                                        <li className="nav-item">
+                                            <Link className="nav-link" style={isActive(history, '/accountant/calender')} to="/accountant/calender">Calender</Link>
+                                        </li>
+
                                     </>
                                 )}
 

@@ -35,6 +35,7 @@ import TaskReport from "../Class/taskReport";
 
 
 //Manager
+import CompanyTransactionOneAtTime from "../Accountant/companyTransactionOneAtTime";
 import AccountantDashboard from "../Accountant/dashboard";
 import ViewStudentPayment from "../Accountant/viewStudentPayment";
 import AddCompanyPayment from "../Accountant/addTransactions";
@@ -57,24 +58,15 @@ import ViewUploadedMaterials from "../Teacher/viewUploadedMaterials";
 import supervisorDashboard from "../Supervisor/supervisorDashboard";
 
 import NewPDF from "../Supervisor/basePDF";
-
 import UpdateTeacherProfile from "../Teacher/updateTeacherProfile";
-
-
 import teacherTaskUpdate from "../Class/teacherUpdate";
 import teacherTask from "../Class/teacher";
 import teacherTaskList from "../Class/teacherTask";
-
-
-
 import teachertaskteacher from "../Teacher/teacherTask";
-
 
 import MyProfile from "../Teacher/myProfile";
 import UpdatedProfile from "../Teacher/updatedProfile";
 import ViewApprovedMaterials from "../Supervisor/viewApprovedMaterials";
-
-
 
 function PageRoutes() {
     return (
@@ -107,6 +99,7 @@ function PageRoutes() {
                         <Route path="/studentManager/Take-Students-Details" component={TakeStudents}/>
                         <Route path="/studentManager/Print-Notices" component={PrintNotices}/>
 
+                        <Route path="/accountant/company-payment-incomes/view/:id" component={CompanyTransactionOneAtTime}/>
                         <Route path="/accountant/company-payment-incomes" component={ViewIncomeTransaction}/>
                         <Route path="/accountant/company-payment-expenses" component={ViewOutcomeTransaction}/>
                         <Route path="/accountant/update-payment/:id" component={UpdateCompanyPayment}/>

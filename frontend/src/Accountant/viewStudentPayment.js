@@ -110,27 +110,36 @@ const ViewStudentPayment = () => {
     }
 
     const approve = (id) =>{
-        axios.put(`http://localhost:8081/student-payment/update-status/${id}`, {status: "valid", id:id})
-            .then(response => {
-                alert('Status updated')
-                loadPayment()
-            })
+        let answer = window.confirm('Are you sure you want to update the status?');
+        if(answer) {
+            axios.put(`http://localhost:8081/student-payment/update-status/${id}`, {status: "valid", id: id})
+                .then(response => {
+                    alert('Status updated')
+                    loadPayment()
+                })
+        }
     }
 
     const decline =(id)=>{
-        axios.put(`http://localhost:8081/student-payment/update-status/${id}`, {status: "invalid", id:id})
-            .then(response => {
-                alert('Status updated')
-                loadPayment()
-            })
+        let answer = window.confirm('Are you sure you want to update the status?');
+        if(answer) {
+            axios.put(`http://localhost:8081/student-payment/update-status/${id}`, {status: "invalid", id: id})
+                .then(response => {
+                    alert('Status updated')
+                    loadPayment()
+                })
+        }
     }
 
     const notDecided =(id)=>{
-        axios.put(`http://localhost:8081/student-payment/update-status/${id}`, {status: "not decided", id:id})
-            .then(response => {
-                alert('Status updated')
-                loadPayment()
-            })
+        let answer = window.confirm('Are you sure you want to update the status?');
+        if(answer) {
+            axios.put(`http://localhost:8081/student-payment/update-status/${id}`, {status: "not decided", id: id})
+                .then(response => {
+                    alert('Status updated')
+                    loadPayment()
+                })
+        }
     }
 
     useEffect(() => {

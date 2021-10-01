@@ -1,0 +1,14 @@
+.bottom-left img{
+    position: absolute;
+    left: 5px;
+    margin-top: 320px;
+    width: 290px;
+}
+
+.background-one-time h3{
+    color: #7a067a;
+}
+
+.container-custom-3{
+    border:3px solid #7a067a;
+}
