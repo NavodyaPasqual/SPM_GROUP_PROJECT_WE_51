@@ -74,9 +74,9 @@ const AddCompanyPayment = () => {
         <div className="background row p-4 d-flex justify-content-center">
             {showLoading()}
             <div className="container-1 w-50 mt-4 mb-5 shadow pb-4 pt-4  rounded">
-                <h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;New Company Payment Record</h3>
+                <center><h3 data-testid='title-field-add-transaction'>New Company Payment Record</h3></center>
                 <div className="p-3">
-                    <form className="row g-3" onSubmit={clickSubmit}>
+                    <form className="row g-3" onSubmit={clickSubmit} data-testid='form-tag-add-transaction'>
                         <div className="col-12">
                             <label htmlFor="name" className="form-label">Name of the payment</label>
                             <div className="input-group mb-3">
@@ -84,6 +84,7 @@ const AddCompanyPayment = () => {
                                 <input
                                     type="text"
                                     className="form-control"
+                                    data-testid='payment-name-field'
                                     id="name"
                                     name="name"
                                     value={name}
@@ -98,6 +99,7 @@ const AddCompanyPayment = () => {
                                 <input
                                     type="text"
                                     className="form-control"
+                                    data-testid='payment-amount-field'
                                     id="amount"
                                     name="amount"
                                     value={amount}
@@ -112,6 +114,7 @@ const AddCompanyPayment = () => {
                                 <input
                                     type="date"
                                     className="form-control"
+                                    data-testid='payment-date-field'
                                     id="date"
                                     name="date"
                                     value={date}
@@ -126,6 +129,7 @@ const AddCompanyPayment = () => {
                                 <select
                                     className="form-select"
                                     onChange={handleChange('type')}
+                                    data-testid='payment-type-field'
                                     id='type'
                                     required="true"
                                     value={type}
@@ -137,7 +141,7 @@ const AddCompanyPayment = () => {
                                 </select>
                             </div>
                         </div>
-                        <button className="mt-5 button-green button2-green">Submit Payment</button>
+                        <button className="mt-5 button-green button2-green" data-testid='submit-button'>Submit Payment</button>
                     </form>
                 </div>
             </div>

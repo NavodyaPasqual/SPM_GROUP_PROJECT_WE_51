@@ -122,7 +122,6 @@ const Navbar = () =>{
                                         <li className="nav-item">
                                             <Link className="nav-link" style={isActive(history, '/accountant/calender')} to="/accountant/calender">Calender</Link>
                                         </li>
-
                                     </>
                                 )}
 

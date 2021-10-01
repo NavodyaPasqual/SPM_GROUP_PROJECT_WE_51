@@ -101,9 +101,9 @@ const AddStudentPayment = () => {
             {showLoading()}
             <div className="container mt-4 shadow p-3 mb-5 bg-body rounded needs-validation" novalidate>
                 <div >
-                    <h1>&nbsp;&nbsp;Student Payment Submission</h1>
+                    <center><h1 data-testid='title-field-add-student-payment'>Student Payment Submission</h1></center>
                     <div className="p-3">
-                        <form className="row g-3" onSubmit={clickSubmit}>
+                        <form className="row g-3" data-testid='form-tag-add-student-payment' onSubmit={clickSubmit}>
                             <h5>Student Details</h5>
                             <div className="col-12">
                                 <label htmlFor="name" className="form-label">Full Name</label>
@@ -112,6 +112,7 @@ const AddStudentPayment = () => {
                                     <input
                                         type="text"
                                         className="form-control"
+                                        data-testid='student-name-field'
                                         id="name"
                                         name="name"
                                         value={name}
@@ -127,6 +128,7 @@ const AddStudentPayment = () => {
                                     <input
                                         type="text"
                                         className="form-control"
+                                        data-testid='student-contactNo-field'
                                         id="contactNo"
                                         name="contactNo"
                                         value={contactNo}
@@ -142,6 +144,7 @@ const AddStudentPayment = () => {
                                     <input
                                         type="text"
                                         className="form-control"
+                                        data-testid='student-id-field'
                                         id="studentID"
                                         name="studentID"
                                         value={studentID}
@@ -157,6 +160,7 @@ const AddStudentPayment = () => {
                                     <input
                                         type="text"
                                         className="form-control"
+                                        data-testid='class-name-field'
                                         id="classes"
                                         name="classes"
                                         value={classes}
@@ -172,6 +176,7 @@ const AddStudentPayment = () => {
                                     <input
                                         type="text"
                                         className="form-control"
+                                        data-testid='teacher-name-field'
                                         id="teacher"
                                         name="teacher"
                                         value={teacher}
@@ -188,6 +193,7 @@ const AddStudentPayment = () => {
                                     <select
                                         className="form-select"
                                         onChange={handleChange('type')}
+                                        data-testid='payment-type-field'
                                         id='type'
                                         required="true"
                                         value={type}
@@ -206,6 +212,7 @@ const AddStudentPayment = () => {
                                     <input
                                         type="text"
                                         className="form-control"
+                                        data-testid='payment-amount-field'
                                         id="depositedAmount"
                                         name="depositedAmount"
                                         value={depositedAmount}
@@ -221,6 +228,7 @@ const AddStudentPayment = () => {
                                     <input
                                         type="date"
                                         className="form-control"
+                                        data-testid='payment-date-field'
                                         id="depositedDate"
                                         name="depositedDate"
                                         value={depositedDate}
@@ -235,6 +243,7 @@ const AddStudentPayment = () => {
                                     <span className="input-group-text"><i className="fas fa-money-check-alt"></i></span>
                                     <select
                                         className="form-select"
+                                        data-testid='bank-field'
                                         onChange={handleChange('bank')}
                                         id='bank'
                                         required="true"
@@ -256,6 +265,7 @@ const AddStudentPayment = () => {
                                     <input
                                         type="text"
                                         className="form-control"
+                                        data-testid='branch-field'
                                         id="branch"
                                         name="branch"
                                         value={branch}
@@ -269,13 +279,14 @@ const AddStudentPayment = () => {
                                 <input
                                     type="file"
                                     className="form-control"
+                                    data-testid='payment-slip-field'
                                     id="paymentSlip"
                                     name="paymentSlip"
                                     onChange={handleChange('paymentSlip')}
                                     accept="image/*"
                                 />
                             </div>
-                            <button className="button-purple button2-purple">Submit Payment</button>
+                            <button data-testid='submit-button' className="button-purple button2-purple">Submit Payment</button>
                         </form>
                     </div>
                 </div>
